@@ -1,0 +1,45 @@
+﻿@model IEnumerable<RealtorsPortal.Models.Category>
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>Categories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Parent</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @helper RenderCategory(IEnumerable<RealtorsPortal.Models.Category> categories, int? parentId, int level = 0)
+        {
+            var children = categories.Where(c => c.ParentCategoryID == parentId);
+            foreach (var cat in children)
+            {
+                <tr>
+                    <td style="padding-left:@(level * 30)px">@cat.CategoryName</td>
+                    <td>@cat.Description</td>
+                    <td>@(parentId == null ? "--" : categories.FirstOrDefault(p => p.CategoryID == parentId)?.CategoryName)</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = cat.CategoryID }) |
+                        @Html.ActionLink("Details", "Details", new { id = cat.CategoryID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = cat.CategoryID })
+                    </td>
+                </tr>
+
+                @RenderCategory(categories, cat.CategoryID, level + 1) @* Gọi đệ quy cho các con *@
+            }
+        }
+
+        @RenderCategory(Model, null) @* Bắt đầu từ danh mục gốc (ParentCategoryID = null) *@
+    </tbody>
+</table>
