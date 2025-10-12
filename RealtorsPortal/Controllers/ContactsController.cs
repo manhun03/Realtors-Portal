@@ -16,16 +16,59 @@ namespace RealtorsPortal.Controllers
 
         //Send contact form
         //Author: Le Quang Dung
-        public ActionResult SendContact()
+        public ActionResult SendContact(int ListingID, int AgentID)
         {
-            return View();
+            //Get ListingID (if there is), and AgentID from the view
+            //Then send it to the form
+            ContactForm contactForm = new ContactForm
+            {
+                ListingID = ListingID,
+                AgentID = AgentID
+            };
+            return View(contactForm);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SendContact(Contact Contact) 
+        public ActionResult SendContact(ContactForm ContactForm) 
         {
+            //Validate form input
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+            try
+            {
+                //Get CustomerID from session if they're logged in
+                int? CustomerID = null;
+                if (Session["CustomerID"] != null)
+                {
+                    CustomerID = Convert.ToInt32(Session["CustomerID"]);
+                }
 
-            return View();
+                //Create the contact
+                Contact contact = new Contact
+                {
+                    ListingID = ContactForm.ListingID,
+                    AgentID = ContactForm.AgentID,
+                    CustomerID = CustomerID,
+                    SenderName = ContactForm.SenderName,
+                    SenderEmail = ContactForm.SenderEmail,
+                    SenderPhone = ContactForm.SenderPhone,
+                    Message = ContactForm.Message,
+                    SentAt = DateTime.Now,
+                    IsRead = false
+                };
+
+                //Send the contact
+                db.Contacts.Add(contact);
+                db.SaveChanges();
+
+                return View();
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return View();
+            }
         }
         //================================================CRUD================================================
         //This section was first auto-genterated by Entity Framework 
@@ -48,6 +91,13 @@ namespace RealtorsPortal.Controllers
             if (contact == null)
             {
                 return HttpNotFound();
+            }
+
+            //Check IsRead
+            if (contact.IsRead != true)
+            {
+                contact.IsRead = true;
+                db.SaveChanges();
             }
             return View(contact);
         }
