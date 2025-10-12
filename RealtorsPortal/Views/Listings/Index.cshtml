@@ -1,0 +1,130 @@
+﻿@model IEnumerable<RealtorsPortal.Models.Listing>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsFeatured)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApprovedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpireAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApprovalNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BoostCount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingType1.TypeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Package.PackageName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ListingPayment.PaymentStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Property.PropertyName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListingType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListingStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsFeatured)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpireAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApprovalNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ViewCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BoostCount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListingType1.TypeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Package.PackageName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ListingPayment.PaymentStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Property.PropertyName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ListingID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ListingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ListingID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,156 @@
+﻿@model RealtorsPortal.Models.Listing
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Listing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListingType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListingType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListingStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListingStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFeatured)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFeatured)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpireAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpireAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoostCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoostCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListingType1.TypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListingType1.TypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ListingPayment.PaymentStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ListingPayment.PaymentStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Property.PropertyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property.PropertyName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ListingID }) |
+    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Send contact", "SendContact", "Contacts", new { ListingID = Model.ListingID, AgentID = Model.CustomerID }, new {})
+</p>

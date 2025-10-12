@@ -1,12 +1,14 @@
-﻿using System;
+﻿using RealtorsPortal.Models;
+using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
-using RealtorsPortal.Models;
 
 namespace RealtorsPortal.Controllers
 {
@@ -63,12 +65,52 @@ namespace RealtorsPortal.Controllers
                 db.Contacts.Add(contact);
                 db.SaveChanges();
 
+                Customer agent = db.Customers.Find(contact.AgentID);
+                UserAccount user = db.UserAccounts.Find(agent.UserID);
+
+                //Send contact mail
+                SendContactEmail(user.Email, contact.ContactID);
+
                 return View();
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 return View();
             }
+        }
+
+        //Send contact notification email
+        //Author: Le Quang Dung
+        private void SendContactEmail(string email, int ContactID)
+        {
+            //Create the view contact url
+            string contactUrl = Url.Action("Details", "Contacts", new { id = ContactID }, protocol: Request.Url.Scheme);
+
+            //Create values for subject and body of the email
+            string subject = "You have just received a contact";
+            string body = "<h3>You have just received a contact</h3>" +
+                          "<p>Click the link below to view the contact:</p>" +
+                         $"<a href=\"{contactUrl}\" target=\"_blank\">View contact</a><br/>";
+
+            //Get sender email's credentials from Web.config
+            string senderEmail = ConfigurationManager.AppSettings["SenderEmail"];
+            string senderPassword = ConfigurationManager.AppSettings["SenderPassword"];
+
+            //Create the email
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(senderEmail, "Realtors Portal");
+            mail.To.Add(email);
+            mail.Subject = subject;
+            mail.Body = body;
+            mail.IsBodyHtml = true;
+
+            //Config the sending method
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            smtp.Credentials = new NetworkCredential(senderEmail, senderPassword);
+            smtp.EnableSsl = true;
+
+            //Send the email
+            smtp.Send(mail);
         }
         //================================================CRUD================================================
         //This section was first auto-genterated by Entity Framework 

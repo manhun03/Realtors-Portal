@@ -134,6 +134,8 @@
     <Compile Include="Controllers\ContactsController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListingsController.cs" />
+    <Compile Include="Controllers\PropertiesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,6 +154,7 @@
     <Compile Include="Models\Contact.cs">
       <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactForm.cs" />
     <Compile Include="Models\Contract.cs">
       <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
     </Compile>
@@ -312,6 +315,17 @@
     <Content Include="Views\Contacts\Details.cshtml" />
     <Content Include="Views\Contacts\Edit.cshtml" />
     <Content Include="Views\Contacts\Index.cshtml" />
+    <Content Include="Views\Properties\Create.cshtml" />
+    <Content Include="Views\Properties\Delete.cshtml" />
+    <Content Include="Views\Properties\Details.cshtml" />
+    <Content Include="Views\Properties\Edit.cshtml" />
+    <Content Include="Views\Properties\Index.cshtml" />
+    <Content Include="Views\Listings\Create.cshtml" />
+    <Content Include="Views\Listings\Delete.cshtml" />
+    <Content Include="Views\Listings\Details.cshtml" />
+    <Content Include="Views\Listings\Edit.cshtml" />
+    <Content Include="Views\Listings\Index.cshtml" />
+    <Content Include="Views\Contacts\SendContact.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

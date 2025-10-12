@@ -13,6 +13,13 @@ namespace RealtorsPortal
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //Route for generating contact url
+            routes.MapRoute(
+                name: "ContactDetails",
+                url: "Contacts/Details/{id}",
+                defaults: new { controller = "Contacts", action = "Details" }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
