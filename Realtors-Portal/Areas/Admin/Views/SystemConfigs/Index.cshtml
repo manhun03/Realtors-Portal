@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Realtors_Portal.Models.SystemConfig>
+
+@{
+    ViewBag.Title = "Cấu hình hệ thống";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary"><i class="fa fa-cogs"></i> @ViewBag.Title</h2>
+        <a href="@Url.Action("Create")" class="btn btn-success">
+            <i class="fa fa-plus"></i> Thêm cấu hình
+        </a>
+    </div>
+
+    <!-- Bộ lọc tìm kiếm -->
+    <form method="get" action="@Url.Action("Index")" class="row g-3 mb-3 align-items-end">
+        <div class="col-md-4">
+            <label class="form-label fw-bold">Tìm theo khóa cấu hình</label>
+            <input type="text" name="searchKey" value="@Request.QueryString["searchKey"]"
+                   class="form-control" placeholder="Nhập từ khóa (ví dụ: SiteTitle, MailHost...)" />
+        </div>
+        <div class="col-md-3">
+            <label class="form-label fw-bold">Lọc theo loại</label>
+            @Html.DropDownList("configType", (SelectList)ViewBag.ConfigType, "-- Tất cả loại --",
+                new { @class = "form-select" })
+        </div>
+        <div class="col-md-2">
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="fa fa-search"></i> Lọc
+            </button>
+        </div>
+        <div class="col-md-2">
+            <a href="@Url.Action("Index")" class="btn btn-outline-secondary w-100">
+                <i class="fa fa-undo"></i> Xóa lọc
+            </a>
+        </div>
+    </form>
+
+    <!-- Bảng dữ liệu -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>Khóa cấu hình</th>
+                    <th>Giá trị</th>
+                    <th>Loại</th>
+                    <th>Người cập nhật</th>
+                    <th>Ngày tạo</th>
+                    <th class="text-center" style="width:150px;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="6" class="text-center text-muted py-3">
+                            <i class="fa fa-info-circle"></i> Không có cấu hình nào phù hợp.
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><strong>@item.ConfigKey</strong></td>
+                            <td>
+                                @(item.ConfigValue?.Length > 60
+                                    ? item.ConfigValue.Substring(0, 60) + "..."
+                                    : item.ConfigValue)
+                            </td>
+                            <td><span class="badge bg-info">@item.ConfigType</span></td>
+                            <td>@item.Employee?.FullName</td>
+                            <td>@item.CreatedAt?.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td class="text-center">
+                                <a href="@Url.Action("Edit", new { id = item.ID })" class="btn btn-sm btn-warning">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="@Url.Action("Details", new { id = item.ID })" class="btn btn-sm btn-info text-white">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="@Url.Action("Delete", new { id = item.ID })" class="btn btn-sm btn-danger"
+                                   onclick="return confirm('Bạn có chắc muốn xóa cấu hình này không?');">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

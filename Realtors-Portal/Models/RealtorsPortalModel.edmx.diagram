@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="becddbfe012a45efb2ec4d6238492c9a" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="RealtorsPortalModel.ActivityLog" Width="1.5" PointX="3" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Address" Width="1.5" PointX="9" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.BoostHistory" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Category" Width="1.5" PointX="6" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.City" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Contact" Width="1.5" PointX="8.25" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Contract" Width="1.5" PointX="5.25" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Customer" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.District" Width="1.5" PointX="6.75" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Employee" Width="1.5" PointX="2.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.FavoriteListing" Width="1.5" PointX="8.25" PointY="16.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Invoice" Width="1.5" PointX="12.75" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Listing" Width="1.5" PointX="8.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Notification" Width="1.5" PointX="3" PointY="32.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Package" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Payment" Width="1.5" PointX="10.5" PointY="25.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Property" Width="1.5" PointX="11.25" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.PropertyDetail" Width="1.5" PointX="13.5" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.PropertyImage" Width="1.5" PointX="13.5" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.StaticPage" Width="1.5" PointX="5.25" PointY="24.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.SystemConfig" Width="1.5" PointX="5.25" PointY="28.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.UserAccount" Width="1.5" PointX="0.75" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.Ward" Width="1.5" PointX="6.75" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__ActivityL__UserI__43D61337" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Address__CityID__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Address__Distric__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Address__WardID__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Propertie__Addre__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__BoostHist__Custo__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__BoostHist__Listi__4E53A1AA" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Listing__Categor__160F4887" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Propertie__Categ__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__District__CityID__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Contact__Listing__3864608B" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Contact__Receive__3A4CA8FD" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Contact__SenderC__395884C4" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Contract__Custom__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Contract__Packag__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Payment__Contrac__208CD6FA" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Customer__UserID__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__FavoriteL__Custo__3F115E1A" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Listing__Custome__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Payment__Custome__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Propertie__Custo__7E37BEF6" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Ward__DistrictID__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Employee__UserID__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Listing__Employe__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__SystemCon__Updat__29221CFB" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK_StaticPage_Employee_CreatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK_StaticPage_Employee_UpdatedBy" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__FavoriteL__Listi__40058253" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Invoice__Payment__55009F39" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Listing__Package__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Listing__Propert__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Payment__Listing__2180FB33" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Notificat__UserI__489AC854" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__Payment__Package__22751F6C" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK__PropertyD__Prope__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="RealtorsPortalModel.FK_PropertyImage_Properties" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="RealtorsPortalModel.PropertyType" Width="1.5" PointX="5.625" PointY="1.125" />
+        <AssociationConnector Association="RealtorsPortalModel.FK_Properties_PropertyType" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

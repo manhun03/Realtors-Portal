@@ -1,0 +1,229 @@
+﻿@model Realtors_Portal.Models.Listing
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Listing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoostCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoostCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFeatured)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFeatured)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Property.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property.Title)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ListingID }) |
+    @Html.ActionLink("Back to List", "Index") |
+</p>
+
+<!-- Open contact form button -->
+<button class="btn btn-success"
+        id="btnContact"
+        data-listing-id="@Model.ListingID"
+        data-receiver-customer-id="@Model.CustomerID">
+    Contact
+</button>
+
+<!-- The container for the form -->
+<div id="contactModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Contact</h5>
+                <button type="button" class="close" data-bs-dismiss="modal">x</button>
+            </div>
+            <div class="modal-body" id="contactFormContainer">
+                <!-- The form will load here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        $(function () {
+            $("#btnContact").click(function () {
+                //Get ListingID and ReceiverCustomerID
+                var ListingID = $(this).data("listing-id");
+                var ReceiverCustomerID = $(this).data("receiver-customer-id");
+                //Run the GET metod of SendContact
+                $.get('@Url.Action("SendContact", "Contacts")',
+                        { ListingID: ListingID, ReceiverCustomerID: ReceiverCustomerID },
+                        function (data) {
+                            $("#contactFormContainer").html(data);
+                            $("#contactModal").modal("show");
+                        });
+            });
+
+            $(document).on("submit", "#contactForm", function (e) {
+                e.preventDefault();
+                var form = $(this);
+
+                //Forbid the send button from being clicked while sending
+                var submitBtn = form.find('input[type="submit"]');
+                submitBtn.prop("disabled", true).val("Sending...");
+
+                //Ajax scripts for handling form's submit
+                $.ajax({
+                    type: "POST",
+                    url: form.attr("action"),
+                    data: form.serialize(),
+                    success: function (response) {
+                        if (response.success) {
+                            $("#contactModal").modal("hide");
+                            alert("Your message has been sent!");
+                        } else {
+                            $("#contactFormContainer").html(response);
+                            $("#contactFormContainer").find('input[type="submit"]').prop("disabled", false).val("Send");
+                        }
+                    },
+                    error: function () {
+                        alert("Something went wrong. Please try again.");
+                    },
+                    //Make the send button clickable again
+                    complete: function () {
+                        submitBtn.prop("disabled", false).text("Send");
+                    }
+                });
+            });
+        });
+    </script>
+}

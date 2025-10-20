@@ -1,0 +1,163 @@
+﻿/*Navbar Gallery*/
+body {
+    padding-top: 0 !important;
+    background-color: #fafafa;
+}
+
+.layout {
+    display: flex;
+    align-items: flex-start;
+    min-height: 80vh;
+    gap: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.sidebar-user {
+    width: 210px;
+    background: #fff;
+    border-right: 1px solid #eee;
+    padding: 16px 8px 16px 0 !important;
+    text-align: left;
+    margin-left: 0 !important;
+}
+
+
+    .sidebar-user .avatar {
+        background: #e74c3c;
+        color: #fff;
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        font-size: 20px;
+        border-radius: 50%;
+        margin-bottom: 8px;
+    }
+
+
+    .sidebar-user .username {
+        font-weight: 600;
+        font-size: 14px;
+        color: #222;
+        word-break: break-all;
+    }
+
+    .sidebar-user .points {
+        color: #777;
+        font-size: 12px;
+        margin-top: 2px;
+    }
+
+.account-box {
+    background: #fafafa;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 8px 10px;
+    margin: 12px 0 18px 0;
+}
+
+    .account-box h4 {
+        font-size: 14px;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+.balance-item {
+    font-size: 13px;
+    padding: 3px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-id {
+    font-size: 11px;
+    color: #666;
+    margin-top: 6px;
+}
+
+.btn-primary {
+    width: 100%;
+    margin-top: 8px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 7px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+    .btn-primary:hover {
+        background: #d93f1f;
+    }
+
+/* MENU TRONG SIDEBAR */
+.menu-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+    .menu-sidebar a {
+        text-decoration: none;
+        color: #333;
+        padding: 8px 10px;
+        border-radius: 6px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.2s ease;
+    }
+
+        .menu-sidebar a:hover {
+            background: #f5f5f5;
+            color: #e74c3c;
+        }
+
+        .menu-sidebar a.active {
+            background: #ffe8e4;
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+
+.layout {
+    display: flex;
+    align-items: flex-start;
+    min-height: 80vh;
+    gap: 0;
+}
+
+
+.content-main {
+    flex: 1;
+    padding: 25px 35px;
+    background: #fafafa;
+}
+
+.content,
+.content-main {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.layout {
+    margin-top: 0 !important;
+}
+
+main.content {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+}
+
+
+body, html {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+main, .content-main {
+    margin-left: 0 !important;
+}

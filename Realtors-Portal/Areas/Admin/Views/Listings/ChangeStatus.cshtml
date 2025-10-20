@@ -1,0 +1,176 @@
+﻿@model Realtors_Portal.Models.Listing
+
+@{
+    ViewBag.Title = "ApproveDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ApproveDetail</h2>
+
+<div>
+    <h4>Listing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ViewCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ViewCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BoostCount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BoostCount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFeatured)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFeatured)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApprovalNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApprovalNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.CategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Package.PackageName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Package.PackageName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Property.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Property.Title)
+        </dd>
+
+    </dl>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.ListingID);
+
+    <div class="form-group">
+        <label for="Status">Duyệt hay từ chối</label>
+        <select name="Status" id="Status" class="form-control">
+            <option value="Approved">Duyệt</option>
+            <option value="Rejected">Từ chối</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ApprovalNote">Thông tin thêm</label>
+        <input type="text" name="ApprovalNote" id="ApprovalNote" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
+
+<p>
+    @Html.ActionLink("Back to List", "ApproveListing")
+</p>

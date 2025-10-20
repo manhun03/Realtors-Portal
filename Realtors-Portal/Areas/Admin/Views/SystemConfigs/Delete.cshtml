@@ -1,0 +1,41 @@
+﻿@model Realtors_Portal.Models.SystemConfig
+
+@{
+    ViewBag.Title = "Xóa cấu hình";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <h2 class="text-danger"><i class="fa fa-trash"></i> @ViewBag.Title</h2>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Khóa cấu hình</dt>
+        <dd class="col-sm-9">@Model.ConfigKey</dd>
+
+        <dt class="col-sm-3">Giá trị</dt>
+        <dd class="col-sm-9">@Model.ConfigValue</dd>
+
+        <dt class="col-sm-3">Mô tả</dt>
+        <dd class="col-sm-9">@Model.Description</dd>
+
+        <dt class="col-sm-3">Loại</dt>
+        <dd class="col-sm-9">@Model.ConfigType</dd>
+
+        <dt class="col-sm-3">Người cập nhật</dt>
+        <dd class="col-sm-9">@Model.Employee?.FullName</dd>
+
+        <dt class="col-sm-3">Ngày tạo</dt>
+        <dd class="col-sm-9">@Model.CreatedAt?.ToString("dd/MM/yyyy HH:mm")</dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <button type="submit" class="btn btn-danger">
+            <i class="fa fa-trash"></i> Xóa
+        </button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">
+            <i class="fa fa-arrow-left"></i> Hủy
+        </a>
+    }
+</div>

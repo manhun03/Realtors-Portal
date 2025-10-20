@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Realtors_Portal.Models.Listing>
+
+@{
+    ViewBag.Title = "PendingListing";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PendingListing</h2>
+@{
+    if (!string.IsNullOrEmpty(ViewBag.Error))
+    {
+        <h1 class="text-danger">ViewBag.Error</h1>
+    }
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Tiêu đề
+        </th>
+        <th>
+            Ngày đăng
+        </th>
+        <th>
+            Gói tin
+        </th>
+        <th>
+            Tên khách hàng
+        </th>
+        <th>
+            Actions
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Package.PackageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FullName)
+            </td>
+            <td>
+                @Html.ActionLink("Xem chi tiết", "ChangeStatus", new { id = item.ListingID })
+            </td>
+        </tr>
+    }
+
+</table>

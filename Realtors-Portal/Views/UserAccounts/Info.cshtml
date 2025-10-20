@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Thông tin tài khoản";
+}
+
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <h2 class="text-success text-center">Thông báo</h2>
+        <hr />
+        <p class="text-center">@ViewBag.Message</p>
+        <div class="text-center mt-3">
+            <a href="@Url.Action("Login", "Account")" class="btn btn-primary">Đăng nhập</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,948 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RealtorsPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ActivityLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Action" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EntityName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EntityID" Type="int" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="DistrictID" Type="int" Nullable="false" />
+    <Property Name="WardID" Type="int" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="255" />
+    <Property Name="HouseNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="FullAddress" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="BoostHistory">
+    <Key>
+      <PropertyRef Name="BoostID" />
+    </Key>
+    <Property Name="BoostID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListingID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="BoostDate" Type="datetime" />
+    <Property Name="BoostType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="ParentCategoryID" Type="int" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="CityID" />
+    </Key>
+    <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+    </Key>
+    <Property Name="ContactID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ListingID" Type="int" Nullable="false" />
+    <Property Name="SenderCustomerID" Type="int" />
+    <Property Name="ReceiverCustomerID" Type="int" Nullable="false" />
+    <Property Name="SenderName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SenderEmail" Type="nvarchar" MaxLength="255" />
+    <Property Name="SenderPhone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="SentAt" Type="datetime" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="ResponseMessage" Type="nvarchar(max)" />
+    <Property Name="ResponseAt" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Contract">
+    <Key>
+      <PropertyRef Name="ContractID" />
+    </Key>
+    <Property Name="ContractID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="PackageID" Type="int" Nullable="false" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Address" Type="nvarchar" MaxLength="255" />
+    <Property Name="JoinDate" Type="datetime" />
+    <Property Name="CustomerType" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="DistrictID" />
+    </Key>
+    <Property Name="DistrictID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityID" Type="int" Nullable="false" />
+    <Property Name="DistrictName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FavoriteListing">
+    <Key>
+      <PropertyRef Name="FavoriteID" />
+    </Key>
+    <Property Name="FavoriteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="ListingID" Type="int" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentID" Type="int" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IssueDate" Type="datetime" />
+    <Property Name="TaxPercent" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Listing">
+    <Key>
+      <PropertyRef Name="ListingID" />
+    </Key>
+    <Property Name="ListingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="PackageID" Type="int" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Location" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="ApprovedAt" Type="datetime" />
+    <Property Name="ExpirationDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+    <Property Name="ViewCount" Type="int" />
+    <Property Name="BoostCount" Type="int" />
+    <Property Name="IsFeatured" Type="bit" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ApprovalNote" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Notification">
+    <Key>
+      <PropertyRef Name="NotificationID" />
+    </Key>
+    <Property Name="NotificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Package">
+    <Key>
+      <PropertyRef Name="PackageID" />
+    </Key>
+    <Property Name="PackageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PackageName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="PackageType" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DurationDays" Type="int" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="DiscountPercent" Type="int" />
+    <Property Name="Features" Type="nvarchar(max)" />
+    <Property Name="Multiplier" Type="int" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="UpdatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="ContractID" Type="int" />
+    <Property Name="ListingID" Type="int" />
+    <Property Name="PackageID" Type="int" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalAmount" Type="decimal" Precision="19" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="PaymentMethod" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="PaymentStatus" Type="nvarchar" MaxLength="20" />
+    <Property Name="DurationDays" Type="int" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Properties">
+    <Key>
+      <PropertyRef Name="PropertyID" />
+    </Key>
+    <Property Name="PropertyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CategoryID" Type="int" />
+    <Property Name="AddressID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Area" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="LegalStatus" Type="nvarchar" MaxLength="100" />
+    <Property Name="PropertyType" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="PropertyTypeID" Type="int" />
+  </EntityType>
+  <EntityType Name="PropertyDetail">
+    <Key>
+      <PropertyRef Name="PropertyDetailID" />
+    </Key>
+    <Property Name="PropertyDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+    <Property Name="Bedrooms" Type="int" />
+    <Property Name="Bathrooms" Type="int" />
+    <Property Name="Floors" Type="int" />
+    <Property Name="FrontWidth" Type="decimal" Precision="5" Scale="2" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="50" />
+    <Property Name="Furniture" Type="nvarchar" MaxLength="100" />
+    <Property Name="HasBalcony" Type="bit" />
+    <Property Name="HasGarage" Type="bit" />
+    <Property Name="HasGarden" Type="bit" />
+    <Property Name="HasElevator" Type="bit" />
+    <Property Name="AdditionalInfo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PropertyImage">
+    <Key>
+      <PropertyRef Name="ImageID" />
+    </Key>
+    <Property Name="ImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PropertyID" Type="int" Nullable="false" />
+    <Property Name="ImageUrl" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsMain" Type="bit" />
+    <Property Name="Caption" Type="nvarchar" MaxLength="255" />
+    <Property Name="SortOrder" Type="int" />
+    <Property Name="UploadedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeID" />
+    </Key>
+    <Property Name="PropertyTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="StaticPage">
+    <Key>
+      <PropertyRef Name="PageID" />
+    </Key>
+    <Property Name="PageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Slug" Type="nvarchar" MaxLength="200" />
+    <Property Name="PageType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Content" Type="nvarchar(max)" />
+    <Property Name="Thumbnail" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SystemConfig">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConfigKey" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ConfigValue" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="ConfigType" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="CreatedAt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="UserAccount">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Role" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="IsVerified" Type="bit" Nullable="false" />
+    <Property Name="VerificationCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="CreatedAt" Type="datetime" />
+    <Property Name="UpdatedAt" Type="datetime" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ward">
+    <Key>
+      <PropertyRef Name="WardID" />
+    </Key>
+    <Property Name="WardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictID" Type="int" Nullable="false" />
+    <Property Name="WardName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__ActivityL__UserI__3B40CD36">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="ActivityLog" Type="Self.ActivityLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="ActivityLog">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Address__CityID__75A278F5">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Address__Distric__76969D2E">
+    <End Role="District" Type="Self.District" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="DistrictID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="DistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Address__WardID__778AC167">
+    <End Role="Ward" Type="Self.Ward" Multiplicity="1" />
+    <End Role="Address" Type="Self.Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ward">
+        <PropertyRef Name="WardID" />
+      </Principal>
+      <Dependent Role="Address">
+        <PropertyRef Name="WardID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BoostHist__Custo__46B27FE2">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BoostHistory" Type="Self.BoostHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="BoostHistory">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BoostHist__Listi__45BE5BA9">
+    <End Role="Listing" Type="Self.Listing" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BoostHistory" Type="Self.BoostHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Listing">
+        <PropertyRef Name="ListingID" />
+      </Principal>
+      <Dependent Role="BoostHistory">
+        <PropertyRef Name="ListingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contact__Listing__2FCF1A8A">
+    <End Role="Listing" Type="Self.Listing" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Listing">
+        <PropertyRef Name="ListingID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="ListingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contact__Receive__31B762FC">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="ReceiverCustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contact__SenderC__30C33EC3">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+    <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="SenderCustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contract__Custom__6754599E">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Contract__Packag__68487DD7">
+    <End Role="Package" Type="Self.Package" Multiplicity="1" />
+    <End Role="Contract" Type="Self.Contract" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="PackageID" />
+      </Principal>
+      <Dependent Role="Contract">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer__UserID__59FA5E80">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Customer">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__District__CityID__6EF57B66">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="District" Type="Self.District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="CityID" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="CityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__UserID__534D60F1">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FavoriteL__Custo__367C1819">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FavoriteListing" Type="Self.FavoriteListing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="FavoriteListing">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FavoriteL__Listi__37703C52">
+    <End Role="Listing" Type="Self.Listing" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FavoriteListing" Type="Self.FavoriteListing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Listing">
+        <PropertyRef Name="ListingID" />
+      </Principal>
+      <Dependent Role="FavoriteListing">
+        <PropertyRef Name="ListingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Invoice__Payment__4C6B5938">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="PaymentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listing__Categor__160F4887">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Listing" Type="Self.Listing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Listing">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listing__Custome__151B244E">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Listing" Type="Self.Listing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Listing">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listing__Employe__18EBB532">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Listing" Type="Self.Listing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="Listing">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listing__Package__17036CC0">
+    <End Role="Package" Type="Self.Package" Multiplicity="0..1" />
+    <End Role="Listing" Type="Self.Listing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="PackageID" />
+      </Principal>
+      <Dependent Role="Listing">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Listing__Propert__17F790F9">
+    <End Role="Properties" Type="Self.Properties" Multiplicity="1" />
+    <End Role="Listing" Type="Self.Listing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Properties">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="Listing">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Notificat__UserI__40058253">
+    <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Notification" Type="Self.Notification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserAccount">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Notification">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__Contrac__208CD6FA">
+    <End Role="Contract" Type="Self.Contract" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Contract">
+        <PropertyRef Name="ContractID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="ContractID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__Custome__1F98B2C1">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__Listing__2180FB33">
+    <End Role="Listing" Type="Self.Listing" Multiplicity="0..1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Listing">
+        <PropertyRef Name="ListingID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="ListingID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Payment__Package__22751F6C">
+    <End Role="Package" Type="Self.Package" Multiplicity="1" />
+    <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Package">
+        <PropertyRef Name="PackageID" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="PackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Propertie__Addre__00200768">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Propertie__Categ__7F2BE32F">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Propertie__Custo__7E37BEF6">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PropertyD__Prope__06CD04F7">
+    <End Role="Properties" Type="Self.Properties" Multiplicity="1" />
+    <End Role="PropertyDetail" Type="Self.PropertyDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Properties">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="PropertyDetail">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SystemCon__Updat__29221CFB">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="SystemConfig" Type="Self.SystemConfig" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="SystemConfig">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ward__DistrictID__72C60C4A">
+    <End Role="District" Type="Self.District" Multiplicity="1" />
+    <End Role="Ward" Type="Self.Ward" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="DistrictID" />
+      </Principal>
+      <Dependent Role="Ward">
+        <PropertyRef Name="DistrictID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_PropertyType">
+    <End Role="PropertyType" Type="Self.PropertyType" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeID" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="PropertyTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropertyImage_Properties">
+    <End Role="Properties" Type="Self.Properties" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PropertyImage" Type="Self.PropertyImage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Properties">
+        <PropertyRef Name="PropertyID" />
+      </Principal>
+      <Dependent Role="PropertyImage">
+        <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaticPage_Employee_CreatedBy">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="StaticPage" Type="Self.StaticPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="StaticPage">
+        <PropertyRef Name="CreatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StaticPage_Employee_UpdatedBy">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="StaticPage" Type="Self.StaticPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="StaticPage">
+        <PropertyRef Name="UpdatedBy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="RealtorsPortalModelStoreContainer">
+    <EntitySet Name="ActivityLog" EntityType="Self.ActivityLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BoostHistory" EntityType="Self.BoostHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FavoriteListing" EntityType="Self.FavoriteListing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Listing" EntityType="Self.Listing" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyDetail" EntityType="Self.PropertyDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyImage" EntityType="Self.PropertyImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyType" EntityType="Self.PropertyType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StaticPage" EntityType="Self.StaticPage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemConfig" EntityType="Self.SystemConfig" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__ActivityL__UserI__3B40CD36" Association="Self.FK__ActivityL__UserI__3B40CD36">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="ActivityLog" EntitySet="ActivityLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Address__CityID__75A278F5" Association="Self.FK__Address__CityID__75A278F5">
+      <End Role="City" EntitySet="City" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Address__Distric__76969D2E" Association="Self.FK__Address__Distric__76969D2E">
+      <End Role="District" EntitySet="District" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Address__WardID__778AC167" Association="Self.FK__Address__WardID__778AC167">
+      <End Role="Ward" EntitySet="Ward" />
+      <End Role="Address" EntitySet="Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BoostHist__Custo__46B27FE2" Association="Self.FK__BoostHist__Custo__46B27FE2">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="BoostHistory" EntitySet="BoostHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BoostHist__Listi__45BE5BA9" Association="Self.FK__BoostHist__Listi__45BE5BA9">
+      <End Role="Listing" EntitySet="Listing" />
+      <End Role="BoostHistory" EntitySet="BoostHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contact__Listing__2FCF1A8A" Association="Self.FK__Contact__Listing__2FCF1A8A">
+      <End Role="Listing" EntitySet="Listing" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contact__Receive__31B762FC" Association="Self.FK__Contact__Receive__31B762FC">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contact__SenderC__30C33EC3" Association="Self.FK__Contact__SenderC__30C33EC3">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Contact" EntitySet="Contact" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contract__Custom__6754599E" Association="Self.FK__Contract__Custom__6754599E">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Contract__Packag__68487DD7" Association="Self.FK__Contract__Packag__68487DD7">
+      <End Role="Package" EntitySet="Package" />
+      <End Role="Contract" EntitySet="Contract" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer__UserID__59FA5E80" Association="Self.FK__Customer__UserID__59FA5E80">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="Customer" EntitySet="Customer" />
+    </AssociationSet>
+    <AssociationSet Name="FK__District__CityID__6EF57B66" Association="Self.FK__District__CityID__6EF57B66">
+      <End Role="City" EntitySet="City" />
+      <End Role="District" EntitySet="District" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__UserID__534D60F1" Association="Self.FK__Employee__UserID__534D60F1">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FavoriteL__Custo__367C1819" Association="Self.FK__FavoriteL__Custo__367C1819">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="FavoriteListing" EntitySet="FavoriteListing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FavoriteL__Listi__37703C52" Association="Self.FK__FavoriteL__Listi__37703C52">
+      <End Role="Listing" EntitySet="Listing" />
+      <End Role="FavoriteListing" EntitySet="FavoriteListing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Invoice__Payment__4C6B5938" Association="Self.FK__Invoice__Payment__4C6B5938">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listing__Categor__160F4887" Association="Self.FK__Listing__Categor__160F4887">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Listing" EntitySet="Listing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listing__Custome__151B244E" Association="Self.FK__Listing__Custome__151B244E">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Listing" EntitySet="Listing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listing__Employe__18EBB532" Association="Self.FK__Listing__Employe__18EBB532">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Listing" EntitySet="Listing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listing__Package__17036CC0" Association="Self.FK__Listing__Package__17036CC0">
+      <End Role="Package" EntitySet="Package" />
+      <End Role="Listing" EntitySet="Listing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Listing__Propert__17F790F9" Association="Self.FK__Listing__Propert__17F790F9">
+      <End Role="Properties" EntitySet="Properties" />
+      <End Role="Listing" EntitySet="Listing" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Notificat__UserI__40058253" Association="Self.FK__Notificat__UserI__40058253">
+      <End Role="UserAccount" EntitySet="UserAccount" />
+      <End Role="Notification" EntitySet="Notification" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__Contrac__208CD6FA" Association="Self.FK__Payment__Contrac__208CD6FA">
+      <End Role="Contract" EntitySet="Contract" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__Custome__1F98B2C1" Association="Self.FK__Payment__Custome__1F98B2C1">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__Listing__2180FB33" Association="Self.FK__Payment__Listing__2180FB33">
+      <End Role="Listing" EntitySet="Listing" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Payment__Package__22751F6C" Association="Self.FK__Payment__Package__22751F6C">
+      <End Role="Package" EntitySet="Package" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Propertie__Addre__00200768" Association="Self.FK__Propertie__Addre__00200768">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Propertie__Categ__7F2BE32F" Association="Self.FK__Propertie__Categ__7F2BE32F">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Propertie__Custo__7E37BEF6" Association="Self.FK__Propertie__Custo__7E37BEF6">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PropertyD__Prope__06CD04F7" Association="Self.FK__PropertyD__Prope__06CD04F7">
+      <End Role="Properties" EntitySet="Properties" />
+      <End Role="PropertyDetail" EntitySet="PropertyDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SystemCon__Updat__29221CFB" Association="Self.FK__SystemCon__Updat__29221CFB">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="SystemConfig" EntitySet="SystemConfig" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ward__DistrictID__72C60C4A" Association="Self.FK__Ward__DistrictID__72C60C4A">
+      <End Role="District" EntitySet="District" />
+      <End Role="Ward" EntitySet="Ward" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_PropertyType" Association="Self.FK_Properties_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyType" />
+      <End Role="Properties" EntitySet="Properties" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropertyImage_Properties" Association="Self.FK_PropertyImage_Properties">
+      <End Role="Properties" EntitySet="Properties" />
+      <End Role="PropertyImage" EntitySet="PropertyImage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaticPage_Employee_CreatedBy" Association="Self.FK_StaticPage_Employee_CreatedBy">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="StaticPage" EntitySet="StaticPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StaticPage_Employee_UpdatedBy" Association="Self.FK_StaticPage_Employee_UpdatedBy">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="StaticPage" EntitySet="StaticPage" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

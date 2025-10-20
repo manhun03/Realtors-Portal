@@ -1,0 +1,57 @@
+﻿@model Realtors_Portal.Models.SystemConfig
+
+@{
+    ViewBag.Title = "Thêm cấu hình hệ thống";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary"><i class="fa fa-plus-circle"></i> @ViewBag.Title</h2>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">
+            <i class="fa fa-arrow-left"></i> Quay lại
+        </a>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.ConfigKey, "Khóa cấu hình", new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(model => model.ConfigKey, new { @class = "form-control", placeholder = "Ví dụ: SiteTitle" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.ConfigValue, "Giá trị", new { @class = "form-label fw-bold" })
+                    @Html.TextAreaFor(model => model.ConfigValue, new { @class = "form-control", rows = 3 })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.ConfigType, "Loại cấu hình", new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(model => model.ConfigType, new { @class = "form-control", placeholder = "TEXT / INT / BOOL ..." })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Description, "Mô tả", new { @class = "form-label fw-bold" })
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 2 })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.UpdatedBy, "Người cập nhật", new { @class = "form-label fw-bold" })
+                    @Html.DropDownList("UpdatedBy", null, "-- Chọn nhân viên --", new { @class = "form-select" })
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-save"></i> Lưu cấu hình
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

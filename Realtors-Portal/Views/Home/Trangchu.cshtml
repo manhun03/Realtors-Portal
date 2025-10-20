@@ -1,0 +1,1495 @@
+﻿@model IEnumerable<Realtors_Portal.Models.Property>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="re__content-block re__home__hot-news-block js__home__hot-news-block">
+    <div class="re__content-container">
+        <div class="re__home__hot-news__article-container">
+
+
+            <div id="hometabs" class="re__article-tabs lazyload" data-func="initHotNewsGroup();" data-script="https://staticfile.batdongsan.com.vn/js/binnova/filestatic.verm-7a83ebc-1170.msvbds.FrontEnd.Home.HotNewsGroupBinnova.min.js">
+                <div class="re__tab-under-line-group">
+                    <h2 data-tab="hometab1" class="re__tab-under-line--lg re__actived js__tab-item">Tin nổi bật</h2>
+                    <h2 data-tab="hometab2" class="re__tab-under-line--lg js__tab-item">Tin tức</h2>
+                    <h2 data-tab="hometab3" class="re__tab-under-line--lg js__tab-item">BĐS TPHCM</h2>
+                    <h2 data-tab="hometab4" class="re__tab-under-line--lg js__tab-item">BĐS Hà Nội</h2>
+                </div>
+                <div class="re__article-tabs-border"></div>
+                <div class="clear"></div>
+            </div>
+            <a href="/tin-tuc" id="tabview" class="re__article-tab-link re__link-pr"><span>Xem thêm</span> <i class="re__icon-arrow-right--sm"></i></a>
+            <div id="re__article-info-preview news-slide">
+                <div id="hometab1" class="newscontain">
+                    <div class="re__article-info-container js__article-info-container">
+                        <div articleGADataLayer="{&quot;ecommerce&quot;:{&quot;impressions&quot;:[{&quot;id&quot;:&quot;ar847929&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847491&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar103041&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar846869&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847438&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847565&quot;,&quot;list&quot;:&quot;Home Page&quot;}]},&quot;event&quot;:&quot;eec.impression_nlcc&quot;}"></div>
+                        <div id="hottab-0" class="re__article-info-item ">
+                            <h3>
+                                <a title="Gi&#xE1; Chung C&#x1B0;  H&#xE0; N&#x1ED9;i T&#x103;ng Cao, T&#x1EC9; L&#x1EC7; H&#x1EA5;p Th&#x1EE5; V&#x1EAB;n T&#xED;ch C&#x1EF1;c" href="/phan-tich-danh-gia/gia-chung-cu-ha-noi-tang-cao-ti-le-hap-thu-van-tich-cuc-cd-hn-847929">
+                                    <img src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/ha-noi.jpg" />
+                                    <span class="re__link-se article-title">Giá Chung Cư  Hà Nội Tăng Cao, Tỉ Lệ Hấp Thụ Vẫn Tích Cực</span>
+                                </a>
+                            </h3>
+                            <span class="article-time"><i class="re__icon-clock--sm"></i> <span>9 gi&#x1EDD; tr&#x1B0;&#x1EDB;c</span></span>
+                        </div>
+                        <div id="hottab-1" class="re__article-info-item hidden">
+                            <h3>
+                                <a title="D&#xF2;ng Ti&#x1EC1;n B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n R&#x1EDD;i Trung T&#xE2;m, Lan T&#x1ECF;a Ra V&#xF9;ng Ven" href="/tin-tuc/dong-tien-bat-dong-san-roi-trung-tam-lan-toa-ra-vung-ven-cd-hcm-847491">
+                                    <img src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/tod-1-1.jpg" />
+                                    <span class="re__link-se article-title">Dòng Tiền Bất Động Sản Rời Trung Tâm, Lan Tỏa Ra Vùng Ven</span>
+                                </a>
+                            </h3>
+                            <span class="article-time"><i class="re__icon-clock--sm"></i> <span>2 ng&#xE0;y tr&#x1B0;&#x1EDB;c</span></span>
+                        </div>
+                        <div id="hottab-2" class="re__article-info-item hidden">
+                            <h3>
+                                <a title="Tr&#x1ECD;n B&#x1ED9; L&#xE3;i Su&#x1EA5;t Vay Mua Nh&#xE0; M&#x1EDB;i Nh&#x1EA5;t Th&#xE1;ng 10/2025" href="/tin-tuc/lai-suat-vay-mua-nha-ngan-hang-nao-thap-nhat-103041">
+                                    <img src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/08/vietcom.jpg" />
+                                    <span class="re__link-se article-title">Trọn Bộ Lãi Suất Vay Mua Nhà Mới Nhất Tháng 10/2025</span>
+                                </a>
+                            </h3>
+                            <span class="article-time"><i class="re__icon-clock--sm"></i> <span>3 ng&#xE0;y tr&#x1B0;&#x1EDB;c</span></span>
+                        </div>
+                        <div id="hottab-3" class="re__article-info-item hidden">
+                            <h3>
+                                <a title="L&#xE0;n S&#xF3;ng M&#xF4;i Gi&#x1EDB;i Ph&#xED;a B&#x1EAF;c &#x201C;Nam Ti&#x1EBF;n&#x201D; &#x2013; Th&#x1ECB; Tr&#x1B0;&#x1EDD;ng B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n Mi&#x1EC1;n Trung, Mi&#x1EC1;n Nam &#x110;&#x1ED5;i Nh&#x1ECB;p" href="/tin-tuc/lan-song-moi-gioi-phia-bac-nam-tien-thi-truong-bat-dong-san-mien-trung-mien-nam-doi-nhip-cd-hn-846869">
+                                    <img class="lazyload" error-image-class="error-photo" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/moi-2.jpg" />
+                                    <span class="re__link-se article-title">Làn Sóng Môi Giới Phía Bắc “Nam Tiến” – Thị Trường Bất Động Sản Miền Trung, Miền Nam Đổi Nhịp</span>
+                                </a>
+                            </h3>
+                            <span class="article-time"><i class="re__icon-clock--sm"></i> <span>3 ng&#xE0;y tr&#x1B0;&#x1EDB;c</span></span>
+                        </div>
+                        <div id="hottab-4" class="re__article-info-item hidden">
+                            <h3>
+                                <a title="B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n Gi&#x1EEF; Ng&#xF4;i V&#x1B0;&#x1A1;ng K&#xEA;nh &#x110;&#x1EA7;u T&#x1B0; H&#x1EA5;p D&#x1EAB;n N&#x103;m 2025" href="/tin-tuc/bat-dong-san-giu-ngoi-vuong-kenh-dau-tu-hap-dan-nam-2025-cd-hn-847438">
+                                    <img class="lazyload" error-image-class="error-photo" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/tod-2-2.jpeg" />
+                                    <span class="re__link-se article-title">Bất Động Sản Giữ Ngôi Vương Kênh Đầu Tư Hấp Dẫn Năm 2025</span>
+                                </a>
+                            </h3>
+                            <span class="article-time"><i class="re__icon-clock--sm"></i> <span>7 ng&#xE0;y tr&#x1B0;&#x1EDB;c</span></span>
+                        </div>
+                        <div id="hottab-5" class="re__article-info-item hidden">
+                            <h3>
+                                <a title="Nh&#xE0; &#x1EDE; X&#xE3; H&#x1ED9;i Ti&#x1EBF;p T&#x1EE5;c &#x110;&#xF3;n C&#xFA; H&#xED;ch Ch&#xED;nh S&#xE1;ch M&#x1EDB;i: M&#x1EDF; Ra Giai &#x110;o&#x1EA1;n T&#x103;ng T&#x1ED1;c" href="/tin-tuc/nha-o-xa-hoi-don-nhan-them-cu-hich-moi-ve-chinh-sach-cd-hn-847565">
+                                    <img class="lazyload" error-image-class="error-photo" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/no2.jpg" />
+                                    <span class="re__link-se article-title">Nhà Ở Xã Hội Tiếp Tục Đón Cú Hích Chính Sách Mới: Mở Ra Giai Đoạn Tăng Tốc</span>
+                                </a>
+                            </h3>
+                            <span class="article-time"><i class="re__icon-clock--sm"></i> <span>3 gi&#x1EDD; tr&#x1B0;&#x1EDB;c</span></span>
+                        </div>
+                    </div>
+                    <div class="re__article-list-container js__article-list-container">
+                        <ul>
+                            <li>
+                                <h3>
+                                    <a title="Gi&#xE1; Chung C&#x1B0;  H&#xE0; N&#x1ED9;i T&#x103;ng Cao, T&#x1EC9; L&#x1EC7; H&#x1EA5;p Th&#x1EE5; V&#x1EAB;n T&#xED;ch C&#x1EF1;c"
+                                       data-index="#hottab-0"
+                                       href="/phan-tich-danh-gia/gia-chung-cu-ha-noi-tang-cao-ti-le-hap-thu-van-tich-cuc-cd-hn-847929"
+                                       class="re__article-list-item">
+                                        Giá Chung Cư  Hà Nội Tăng Cao, Tỉ Lệ Hấp Thụ Vẫn Tích Cực
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a title="D&#xF2;ng Ti&#x1EC1;n B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n R&#x1EDD;i Trung T&#xE2;m, Lan T&#x1ECF;a Ra V&#xF9;ng Ven"
+                                       data-index="#hottab-1"
+                                       href="/tin-tuc/dong-tien-bat-dong-san-roi-trung-tam-lan-toa-ra-vung-ven-cd-hcm-847491"
+                                       class="re__article-list-item">
+                                        Dòng Tiền Bất Động Sản Rời Trung Tâm, Lan Tỏa Ra Vùng Ven
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a title="Tr&#x1ECD;n B&#x1ED9; L&#xE3;i Su&#x1EA5;t Vay Mua Nh&#xE0; M&#x1EDB;i Nh&#x1EA5;t Th&#xE1;ng 10/2025"
+                                       data-index="#hottab-2"
+                                       href="/tin-tuc/lai-suat-vay-mua-nha-ngan-hang-nao-thap-nhat-103041"
+                                       class="re__article-list-item">
+                                        Trọn Bộ Lãi Suất Vay Mua Nhà Mới Nhất Tháng 10/2025
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a title="L&#xE0;n S&#xF3;ng M&#xF4;i Gi&#x1EDB;i Ph&#xED;a B&#x1EAF;c &#x201C;Nam Ti&#x1EBF;n&#x201D; &#x2013; Th&#x1ECB; Tr&#x1B0;&#x1EDD;ng B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n Mi&#x1EC1;n Trung, Mi&#x1EC1;n Nam &#x110;&#x1ED5;i Nh&#x1ECB;p"
+                                       data-index="#hottab-3"
+                                       href="/tin-tuc/lan-song-moi-gioi-phia-bac-nam-tien-thi-truong-bat-dong-san-mien-trung-mien-nam-doi-nhip-cd-hn-846869"
+                                       class="re__article-list-item">
+                                        Làn Sóng Môi Giới Phía Bắc “Nam Tiến” – Thị Trường Bất Động Sản Miền Trung, Miền Nam Đổi Nhịp
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a title="B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n Gi&#x1EEF; Ng&#xF4;i V&#x1B0;&#x1A1;ng K&#xEA;nh &#x110;&#x1EA7;u T&#x1B0; H&#x1EA5;p D&#x1EAB;n N&#x103;m 2025"
+                                       data-index="#hottab-4"
+                                       href="/tin-tuc/bat-dong-san-giu-ngoi-vuong-kenh-dau-tu-hap-dan-nam-2025-cd-hn-847438"
+                                       class="re__article-list-item">
+                                        Bất Động Sản Giữ Ngôi Vương Kênh Đầu Tư Hấp Dẫn Năm 2025
+                                    </a>
+                                </h3>
+                            </li>
+                            <li>
+                                <h3>
+                                    <a title="Nh&#xE0; &#x1EDE; X&#xE3; H&#x1ED9;i Ti&#x1EBF;p T&#x1EE5;c &#x110;&#xF3;n C&#xFA; H&#xED;ch Ch&#xED;nh S&#xE1;ch M&#x1EDB;i: M&#x1EDF; Ra Giai &#x110;o&#x1EA1;n T&#x103;ng T&#x1ED1;c"
+                                       data-index="#hottab-5"
+                                       href="/tin-tuc/nha-o-xa-hoi-don-nhan-them-cu-hich-moi-ve-chinh-sach-cd-hn-847565"
+                                       class="re__article-list-item">
+                                        Nhà Ở Xã Hội Tiếp Tục Đón Cú Hích Chính Sách Mới: Mở Ra Giai Đoạn Tăng Tốc
+                                    </a>
+                                </h3>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="hometab2" class="hidden newscontain">
+                    <div class="clear"></div>
+                </div>
+                <div id="hometab3" class="hidden newscontain">
+                    <div class="clear"></div>
+                </div>
+                <div id="hometab4" class="hidden newscontain">
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+                function initHotNewsGroup() {
+                    new window.FrontEnd.Home.HotNewsGroupBinnova({
+                        getNewNewsAsHtmlUrl: '/Systems/Home/GetNewNewsAsHtml',
+                        getHotSubjectHCMAsHtmlUrl: '/Systems/Home/GetHotSubjectHCMAsHtml',
+                        getHotSubjectHNAsHtmlUrl: '/Systems/Home/GetHotSubjectHNAsHtml',
+                    });
+                }
+            </script>
+        </div>
+        <div class="re__home__hot-news__banner-container re__banner-container">
+
+            <div id='home-web-square-banner-1' class="re__home-square-banner resize-gam-banner" data-size="[250, 250]"></div>
+            <div id='home-web-square-banner-2' class="re__home-square-banner resize-gam-banner" data-size="[250, 250]"></div>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="re__content-block re__home__bds-for-you-block re__bg-grey-50">
+    <div class="re__content-container">
+        <link rel="stylesheet" href="https://staticfile.batdongsan.com.vn/lib/microtip/microtip.min.css" />
+
+        <h2 class="re__content-container-label">Bất động sản dành cho bạn</h2>
+        <span class="re__content-container-link">
+            <a class="re__link-se" href="/nha-dat-ban">Tin nhà đất bán mới nhất</a>
+            |
+            <a class="re__link-se" href="/nha-dat-cho-thue">Tin nhà đất cho thuê mới nhất</a>
+        </span>
+        <div id="interestedProductsBinnovaContent" class="re__product-container">
+
+            <div class="home-product product-4-you">
+                <div class="js__interested-product re__interested-product-cards">
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            var img = item.PropertyImages.FirstOrDefault(i => i.IsMain == true)?.ImageUrl
+                                      ?? item.PropertyImages.FirstOrDefault()?.ImageUrl
+                                      ?? Url.Content("~/Content/images/no-image.jpg");
+
+                            var priceStr = (item.Price ?? 0) >= 1_000_000_000
+                                ? string.Format("{0:N1} tỷ", (item.Price ?? 0) / 1_000_000_000)
+                                : string.Format("{0:N0} triệu", (item.Price ?? 0) / 1_000_000);
+
+                            var areaStr = $"{item.Area} m²";
+                            var locationStr = $"{item.Address?.District?.DistrictName}, {item.Address?.City?.CityName}";
+                            var daysAgo = (DateTime.Now - (item.CreatedAt ?? DateTime.Now)).Days;
+
+                            <div class="re__product-item re__interested-product-card js__product-item">
+
+                                <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-silver"
+                                     prav="@img"
+                                     prid="@item.PropertyID"
+                                     vtp="vip-silver"
+                                     clo="hpre">
+
+                                    <a class="js__product-link-for-product-id"
+                                       data-product-id="@item.PropertyID"
+                                       href="@Url.Action("Details", "Properties", new { id = item.PropertyID })"
+                                       title="@item.Title">
+
+                                        <div class="re__card-image">
+                                            <img alt="Ảnh đại diện" class="pr-img lazyloaded"
+                                                 data-src="@img"
+                                                 src="@img" />
+                                            <div class="re__card-image-feature">
+                                                <i class="re__icon-image"></i>
+                                                <span>@item.PropertyImages.Count</span>
+                                            </div>
+                                            <div class="card-label-img label--v2"></div>
+                                        </div>
+
+                                        <div class="re__card-info">
+                                            <div class="re__card-info-content">
+                                                <div class="re__card-title">
+                                                    <h3 class="js__card-title">
+                                                        <span class="re__card-image-verified"></span>
+                                                        @item.Title
+                                                    </h3>
+                                                </div>
+
+                                                <div class="re__card-config">
+                                                    <span class="re__card-config-price">@priceStr</span>
+                                                    <span class="re__card-config-area"><span class="re__card-config-dot">·</span>@areaStr</span>
+                                                    <div class="re__clear"></div>
+                                                </div>
+
+                                                <div class="re__card-location">
+                                                    <i class="re__icon-location--sm"></i>
+                                                    <span>@locationStr</span>
+                                                </div>
+
+                                                <div class="re__clearfix"></div>
+
+                                                <div class="re__card-contact">
+                                                    <div class="re__card-published-info">
+                                                        <span class="re__card-published-info-published-at">
+                                                            Đăng @(daysAgo == 0 ? "hôm nay" : $"{daysAgo} ngày trước")
+                                                        </span>
+                                                    </div>
+                                                    <div class="re__card-contact-button">
+                                                        <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm"
+                                                              aria-label="Bấm để lưu tin">
+                                                            <i class="re__icon-heart--sm"></i>
+                                                            <i class="re__icon-heart-pressed--sm"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="re__clear-both"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="re__clearfix"></div>
+                                    </a>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
+                        <p class="text-muted text-center py-5">
+                            Hiện chưa có tin đăng nào. Hãy thêm dữ liệu mới trong quản trị viên nhé!
+                        </p>
+                    }
+
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/08/27/20250827193900-7d4c_wm.jpg" uid="3218802" prid="43894381" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="43894381" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-hem-xe-hoi-7m-be-pr43894381" title="Bán nhà hẻm xe hơi 7m đường Huỳnh Thị Đồng - Thị trấn Nhà Bè" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=2,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="pr-img lazyloaded" abc="3.20250827193900-7d4c_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/27/20250827193900-7d4c_wm.jpg" src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/27/20250827193900-7d4c_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>16</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Bán nhà hẻm xe hơi 7m đường Huỳnh Thị Đồng - Thị trấn Nhà Bè
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,65 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>53 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="19/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng hôm nay
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;43894381&quot;,&quot;productId&quot;:43894381,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/08/27/20250827193900-7d4c_wm.jpg&quot;,&quot;title&quot;:&quot;Bán nhà hẻm xe hơi 7m đường Huỳnh Thị Đồng - Thị trấn Nhà Bè&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-hem-xe-hoi-7m-be-pr43894381&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/10/16/20251016101008-f82e_wm.jpg" uid="649020" prid="44293357" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44293357" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-hem-xe-hoi-1979-tan-phat-lien-ke-quan-7-dt-4-8x11-gia-5-ty-890tr-pr44293357" title="Bán Nhà Hẻm Xe Hơi 1979 Huỳnh Tấn Phát , Thị Trấn Nhà Bè Liền Kề Quận 7 DT 4.8x11, Giá 5 tỷ 890tr" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=3,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="pr-img lazyloaded" abc="3.20251016101008-f82e_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/16/20251016101008-f82e_wm.jpg" src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/16/20251016101008-f82e_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>10</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Bán Nhà Hẻm Xe Hơi 1979 Huỳnh Tấn Phát , Thị Trấn Nhà Bè Liền Kề Quận 7 DT 4.8x11, Giá 5 tỷ 890tr
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">5,89 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>50 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="18/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng hôm qua
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44293357&quot;,&quot;productId&quot;:44293357,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/10/16/20251016101008-f82e_wm.jpg&quot;,&quot;title&quot;:&quot;Bán Nhà Hẻm Xe Hơi 1979 Huỳnh Tấn Phát , Thị Trấn Nhà Bè Liền Kề Quận 7 DT 4.8x11, Giá 5 tỷ 890tr&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-hem-xe-hoi-1979-tan-phat-lien-ke-quan-7-dt-4-8x11-gia-5-ty-890tr-pr44293357&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/08/14/20250814142832-1373_wm.jpg" uid="2020015" prid="43786279" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="43786279" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-3-tang-o-to-do-cua-4-phong-ngu-5tolet-trong-phong-vao-o-ngay-pr43786279" title="Nhà 3 tầng đường Huỳnh Thị Đồng ô tô đổ cửa 4 phòng ngủ 5 toilet riêng trong phòng vào ở ngay" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=4,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="pr-img lazyloaded" abc="3.20250814142832-1373_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/14/20250814142832-1373_wm.jpg" src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/14/20250814142832-1373_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>11</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Nhà 3 tầng đường Huỳnh Thị Đồng ô tô đổ cửa 4 phòng ngủ 5 toilet riêng trong phòng vào ở ngay
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">5,9 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>52,8 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="18/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng hôm qua
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;43786279&quot;,&quot;productId&quot;:43786279,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/08/14/20250814142832-1373_wm.jpg&quot;,&quot;title&quot;:&quot;Nhà 3 tầng đường Huỳnh Thị Đồng ô tô đổ cửa 4 phòng ngủ 5 toilet riêng trong phòng vào ở ngay&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-3-tang-o-to-do-cua-4-phong-ngu-5tolet-trong-phong-vao-o-ngay-pr43786279&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/10/17/20251017190159-0419_wm.jpg" uid="4289335" prid="44308734" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44308734" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-pho-4-tang-ngay-trung-tam-lien-ke-q7-53m-xe-hoi-ngay-cua-tai-be-pr44308734" title="Bán nhà phố 4 tầng ngay trung tâm liền kề Q7 53m xe hơi ngay cửa tại Huỳnh Thị Đồng Nhà Bè" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=5,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="pr-img lazyloaded" abc="3.20251017190159-0419_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/17/20251017190159-0419_wm.jpg" src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/17/20251017190159-0419_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>17</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Bán nhà phố 4 tầng ngay trung tâm liền kề Q7 53m xe hơi ngay cửa tại Huỳnh Thị Đồng Nhà Bè
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,65 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>53 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="17/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 2 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44308734&quot;,&quot;productId&quot;:44308734,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/10/17/20251017190159-0419_wm.jpg&quot;,&quot;title&quot;:&quot;Bán nhà phố 4 tầng ngay trung tâm liền kề Q7 53m xe hơi ngay cửa tại Huỳnh Thị Đồng Nhà Bè&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-pho-4-tang-ngay-trung-tam-lien-ke-q7-53m-xe-hoi-ngay-cua-tai-be-pr44308734&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/10/17/20251017095003-a0c1_wm.jpg" uid="983510" prid="44302774" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44302774" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/hang-hiem-lo-nhi-24m-shr-be-pr44302774" title="HÀNG HIẾM - NHÀ LÔ NHÌ ĐƯỜNG 24M SHR THỊ TRẤN NHÀ BÈ" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=6,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="pr-img lazyloaded" abc="3.20251017095003-a0c1_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/17/20251017095003-a0c1_wm.jpg" src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/17/20251017095003-a0c1_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>9</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                HÀNG HIẾM - NHÀ LÔ NHÌ ĐƯỜNG 24M SHR THỊ TRẤN NHÀ BÈ
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">5 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>55 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="17/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 2 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44302774&quot;,&quot;productId&quot;:44302774,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/10/17/20251017095003-a0c1_wm.jpg&quot;,&quot;title&quot;:&quot;HÀNG HIẾM - NHÀ LÔ NHÌ ĐƯỜNG 24M SHR THỊ TRẤN NHÀ BÈ&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/hang-hiem-lo-nhi-24m-shr-be-pr44302774&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/10/14/20251014141128-4422_wm.jpg" uid="4118760" prid="44275548" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44275548" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/chinh-chu-ban-hxh-4x19m-tret-2-lau-st-shr-8-3-ty-tl-pr44275548" title="CHÍNH CHỦ BÁN NHÀ HXH 4X19M TRỆT 2 LẦU, ST, SHR 8,3 TỶ/ TL" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=7,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="pr-img ls-is-cached lazyloaded" abc="3.20251014141128-4422_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/14/20251014141128-4422_wm.jpg" src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/14/20251014141128-4422_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>5</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                CHÍNH CHỦ BÁN NHÀ HXH 4X19M TRỆT 2 LẦU, ST, SHR 8,3 TỶ/ TL
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">8,3 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>76 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="16/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 3 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44275548&quot;,&quot;productId&quot;:44275548,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/10/14/20251014141128-4422_wm.jpg&quot;,&quot;title&quot;:&quot;CHÍNH CHỦ BÁN NHÀ HXH 4X19M TRỆT 2 LẦU, ST, SHR 8,3 TỶ/ TL&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/chinh-chu-ban-hxh-4x19m-tret-2-lau-st-shr-8-3-ty-tl-pr44275548&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/08/27/20250827194200-3fef_wm.jpg" uid="983510" prid="43894392" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="43894392" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-pho-hien-dai-moi-hoan-en-7m-tt-full-noi-that-cao-cap-pr43894392" title="Nhà phố hiện đại mới hoàn thiện đường 7m Huỳnh Thị Đồng - TT Nhà Bè - full nội thất cao cấp" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=8,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="pr-img ls-is-cached lazyloaded" abc="3.20250827194200-3fef_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/27/20250827194200-3fef_wm.jpg" src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/27/20250827194200-3fef_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>23</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                <span class="re__card-image-verified "></span>
+                                                Nhà phố hiện đại mới hoàn thiện đường 7m Huỳnh Thị Đồng - TT Nhà Bè - full nội thất cao cấp
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,65 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>50 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="16/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 3 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;43894392&quot;,&quot;productId&quot;:43894392,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/08/27/20250827194200-3fef_wm.jpg&quot;,&quot;title&quot;:&quot;Nhà phố hiện đại mới hoàn thiện đường 7m Huỳnh Thị Đồng - TT Nhà Bè - full nội thất cao cấp&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-pho-hien-dai-moi-hoan-en-7m-tt-full-noi-that-cao-cap-pr43894392&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/09/29/20250929174948-6582_wm.jpg" uid="2266105" prid="44142890" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44142890" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-tai-xe-hoi-ngu-trong-1979-tan-phat-pr44142890" title="Bán nhà riêng tại Huỳnh Thị Đồng, Nhà Bè, xe hơi ngủ trong nhà. 1979 Huỳnh Tấn Phát" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=9,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20250929174948-6582_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/09/29/20250929174948-6582_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>5</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Bán nhà riêng tại Huỳnh Thị Đồng, Nhà Bè, xe hơi ngủ trong nhà. 1979 Huỳnh Tấn Phát
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">6,55 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>70 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="15/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 4 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44142890&quot;,&quot;productId&quot;:44142890,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/09/29/20250929174948-6582_wm.jpg&quot;,&quot;title&quot;:&quot;Bán nhà riêng tại Huỳnh Thị Đồng, Nhà Bè, xe hơi ngủ trong nhà. 1979 Huỳnh Tấn Phát&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-tai-xe-hoi-ngu-trong-1979-tan-phat-pr44142890&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/10/04/20251004115452-cea4_wm.jpg" uid="4506951" prid="44187135" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44187135" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-moi-o-ngay-4-tang-thang-may-ngang-khung-8-5m-50m2-hem-xe-hoi-6m-tt-chi-7-ty-2-pr44187135" title="NHÀ MỚI Ở NGAY - 4 TẦNG - THANG MÁY - NGANG KHỦNG 8.5M -50M2 - HẺM XE HƠI 6M TT NHÀ BÈ -CHỈ 7 tỷ 2" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=10,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20251004115452-cea4_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/04/20251004115452-cea4_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>4</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                NHÀ MỚI Ở NGAY - 4 TẦNG - THANG MÁY - NGANG KHỦNG 8.5M -50M2 - HẺM XE HƠI 6M TT NHÀ BÈ -CHỈ 7 tỷ 2
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,2 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>50 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="14/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 5 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44187135&quot;,&quot;productId&quot;:44187135,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/10/04/20251004115452-cea4_wm.jpg&quot;,&quot;title&quot;:&quot;NHÀ MỚI Ở NGAY - 4 TẦNG - THANG MÁY - NGANG KHỦNG 8.5M -50M2 - HẺM XE HƠI 6M TT NHÀ BÈ -CHỈ 7 tỷ 2&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-moi-o-ngay-4-tang-thang-may-ngang-khung-8-5m-50m2-hem-xe-hoi-6m-tt-chi-7-ty-2-pr44187135&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/08/28/20250828150103-2e30_wm.jpg" uid="2020015" prid="43899961" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="43899961" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-dep-4-tang-co-thang-may-4x19-pr43899961" title="Nhà đẹp 4 tầng có thang máy 4x19m" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=11,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20250828150103-2e30_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/28/20250828150103-2e30_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>14</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Nhà đẹp 4 tầng có thang máy 4x19m
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">9,8 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>76 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="14/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 5 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;43899961&quot;,&quot;productId&quot;:43899961,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/08/28/20250828150103-2e30_wm.jpg&quot;,&quot;title&quot;:&quot;Nhà đẹp 4 tầng có thang máy 4x19m&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/-dep-4-tang-co-thang-may-4x19-pr43899961&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/08/28/20250828090139-a2b9_wm.jpg" uid="4483921" prid="43896149" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="43896149" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-hem-xe-hoi-8m-5m3-x-10m-7ty650-pr43896149" title="Bán Nhà Hẻm Xe Hơi 8m Đường Huỳnh Thị Đồng, Thị Trấn Nhà Bè - 5M3 x 10M - 7Tỷ650" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=12,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20250828090139-a2b9_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/08/28/20250828090139-a2b9_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>24</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Bán Nhà Hẻm Xe Hơi 8m Đường Huỳnh Thị Đồng, Thị Trấn Nhà Bè - 5M3 x 10M - 7Tỷ650
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,65 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>53 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="13/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 6 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;43896149&quot;,&quot;productId&quot;:43896149,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/08/28/20250828090139-a2b9_wm.jpg&quot;,&quot;title&quot;:&quot;Bán Nhà Hẻm Xe Hơi 8m Đường Huỳnh Thị Đồng, Thị Trấn Nhà Bè - 5M3 x 10M - 7Tỷ650&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-hem-xe-hoi-8m-5m3-x-10m-7ty650-pr43896149&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/09/08/20250908231316-fe84_wm.jpg" uid="505293" prid="43967340" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="43967340" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-khu-1979-bo-cao-tang-dt-53m2-gia-7ty650-canh-quan-7-lh-pr43967340" title="Bán Nhà Khu 1979 Huỳnh Thị Đồng Nhà Đồng Bộ Cao Tầng DT 53m2 Giá 7tỷ650 Cạnh Quận 7.LH 0909 519 ***" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=13,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20250908231316-fe84_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/09/08/20250908231316-fe84_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>10</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Bán Nhà Khu 1979 Huỳnh Thị Đồng Nhà Đồng Bộ Cao Tầng DT 53m2 Giá 7tỷ650 Cạnh Quận 7.LH <span class="hidden-mobile m-on-title" raw="73f718f4b501b2e5ac7cc2bbc3345cf5">0909 519 ***</span>
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,65 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>53 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="10/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 1 tuần trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;43967340&quot;,&quot;productId&quot;:43967340,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/09/08/20250908231316-fe84_wm.jpg&quot;,&quot;title&quot;:&quot;Bán Nhà Khu 1979 Huỳnh Thị Đồng Nhà Đồng Bộ Cao Tầng DT 53m2 Giá 7tỷ650 Cạnh Quận 7.LH 0909519399&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-khu-1979-bo-cao-tang-dt-53m2-gia-7ty650-canh-quan-7-lh-pr43967340&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/10/10/20251010103104-97cd_wm.jpg" uid="3555672" prid="44240193" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44240193" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/12-5-ty-bot-loc-5-tang-5x-14-5-hem-xe-hoi-tt-be-pr44240193" title="12,5 tỷ bớt lộc nhà 5 tầng 5x 14,5m hẻm xe hơi Huỳnh Thị Đồng, TT Nhà Bè" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=14,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20251010103104-97cd_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/10/20251010103104-97cd_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>14</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                12,5 tỷ bớt lộc nhà 5 tầng 5x 14,5m hẻm xe hơi Huỳnh Thị Đồng, TT Nhà Bè
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">12,5 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>72,5 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="10/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 1 tuần trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44240193&quot;,&quot;productId&quot;:44240193,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/10/10/20251010103104-97cd_wm.jpg&quot;,&quot;title&quot;:&quot;12,5 tỷ bớt lộc nhà 5 tầng 5x 14,5m hẻm xe hơi Huỳnh Thị Đồng, TT Nhà Bè&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/12-5-ty-bot-loc-5-tang-5x-14-5-hem-xe-hoi-tt-be-pr44240193&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-normal" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/10/04/20251004165313-8839_wm.jpg" uid="2500169" prid="44189542" vtp="vip-normal" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44189542" href="/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-gap-dep-o-ngay-mtkd-xe-hoi-ngu-56m2-4t-shr-hcd-chi-7-5-ty-pr44189542" title="Bán gấp nhà đẹp ở ngay MTKD Huỳnh Thị Đồng, xe hơi ngủ nhà, 56m2, 4T, SHR, HCĐ, chỉ 7.5 tỷ." tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=15,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20251004165313-8839_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/10/04/20251004165313-8839_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>8</span>
+                                    </div>
+
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                Bán gấp nhà đẹp ở ngay MTKD Huỳnh Thị Đồng, xe hơi ngủ nhà, 56m2, 4T, SHR, HCĐ, chỉ 7.5 tỷ.
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,5 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>56 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="04/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 2 tuần trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44189542&quot;,&quot;productId&quot;:44189542,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/10/04/20251004165313-8839_wm.jpg&quot;,&quot;title&quot;:&quot;Bán gấp nhà đẹp ở ngay MTKD Huỳnh Thị Đồng, xe hơi ngủ nhà, 56m2, 4T, SHR, HCĐ, chỉ 7.5 tỷ.&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-huynh-thi-dong-thi-tran-nha-be/ban-gap-dep-o-ngay-mtkd-xe-hoi-ngu-56m2-4t-shr-hcd-chi-7-5-ty-pr44189542&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="re__product-item re__interested-product-card js__product-item">
+
+                        <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-diamond" prav="https://file4.batdongsan.com.vn/crop/200x140/2025/09/20/20250920183632-3794_wm.jpg" uid="1455042" prid="44063480" vtp="vip-diamond" clo="hpre">
+                            <a class="js__product-link-for-product-id" data-product-id="44063480" href="/ban-nha-rieng-duong-dao-tong-nguyen-thi-tran-nha-be/-pho-hien-dai-sang-trong-8m-kdc-83-cao-tang-4m-x-14m-gia-7-25-ty-pr44063480" title="Nhà phố hiện đại, sang trọng - đường 8m KDC 83 Đào Tông Nguyên, nhà cao tầng - 4m x 14m Giá 7,25 tỷ" tracking-id="navigate-ldp-from-home" tracking-label="loc=Other-Home,ipos=16,intentType=Bottom">
+                                <div class="re__card-image">
+                                    <img alt="Ảnh đại diện" class="lazyload pr-img" abc="3.20250920183632-3794_wm.jpg" data-src="https://file4.batdongsan.com.vn/crop/393x222/2025/09/20/20250920183632-3794_wm.jpg">
+                                    <div class="re__card-image-feature">
+                                        <i class="re__icon-image"></i>
+                                        <span>19</span>
+                                    </div>
+                                    <div class="card-label-img label--v2"></div>
+                                </div>
+                                <div class="re__card-info">
+                                    <div class="re__card-info-content">
+                                        <div class="re__card-title">
+                                            <h3 class="js__card-title">
+                                                <span class="re__card-image-verified "></span>
+                                                Nhà phố hiện đại, sang trọng - đường 8m KDC 83 Đào Tông Nguyên, nhà cao tầng - 4m x 14m Giá 7,25 tỷ
+                                            </h3>
+                                        </div>
+                                        <div class="re__card-config">
+                                            <span class="re__card-config-price">7,25 tỷ</span>
+                                            <span class="re__card-config-area"><span class="re__card-config-dot">·</span>54 m²</span>
+                                            <div class="re__clear"></div>
+                                        </div>
+                                        <div class="re__card-location">
+                                            <i class="re__icon-location--sm"></i>
+                                            <span>Nhà Bè, Hồ Chí Minh</span>
+                                        </div>
+                                        <div class="re__clearfix"></div>
+                                        <div class="re__card-contact">
+                                            <div class="re__card-published-info">
+                                                <span class="re__card-published-info-published-at" aria-label="14/10/2025" data-microtip-position="right" role="tooltip">
+                                                    Đăng 5 ngày trước
+                                                </span>
+
+                                            </div>
+                                            <div class="re__card-contact-button">
+                                                <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm" data-marked-product-info-as-json="{&quot;documentId&quot;:&quot;44063480&quot;,&quot;productId&quot;:44063480,&quot;avatarinfowap&quot;:&quot;https://file4.batdongsan.com.vn/crop/200x140/2025/09/20/20250920183632-3794_wm.jpg&quot;,&quot;title&quot;:&quot;Nhà phố hiện đại, sang trọng - đường 8m KDC 83 Đào Tông Nguyên, nhà cao tầng - 4m x 14m Giá 7,25 tỷ&quot;,&quot;url&quot;:&quot;/ban-nha-rieng-duong-dao-tong-nguyen-thi-tran-nha-be/-pho-hien-dai-sang-trong-8m-kdc-83-cao-tang-4m-x-14m-gia-7-25-ty-pr44063480&quot;}" aria-label="Bấm để lưu tin" data-microtip-position="bottom" role="tooltip" kyc-tracking-id="save-listing" tracking-label="loc=Other-Home,status=save" title="" data-change-marking="1">
+                                                    <i class="re__icon-heart--sm"></i>
+                                                    <i class="re__icon-heart-pressed--sm"></i>
+                                                </span>
+                                            </div>
+                                            <div class="re__clear-both"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="re__clearfix"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="ucHomeProductInterest_pnlViewMore">
+                    <div class="re__product-view-more">
+                        <a href="javascript:void(0)" id="prd-viewmore" class="re__btn re__btn-icon-right--md re__btn-se-border--md js__kyc-product-extend">
+                            <span>Mở rộng</span><i class="re__icon-chevron-down--sm"></i>
+                        </a>
+                        <a href="/ban-nha-rieng-duong-dao-tong-nguyen-thi-tran-nha-be" id="prd-viewless" class="re__btn re__btn-se-border--md display-none js__kyc-product-view-more">
+                            Xem tiếp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div data-layer-1="[{&quot;id&quot;:&quot;pr44216814&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:1},{&quot;id&quot;:&quot;pr43894381&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:2},{&quot;id&quot;:&quot;pr44293357&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:3},{&quot;id&quot;:&quot;pr43786279&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:4},{&quot;id&quot;:&quot;pr44308734&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:5},{&quot;id&quot;:&quot;pr44302774&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:6},{&quot;id&quot;:&quot;pr44275548&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:7},{&quot;id&quot;:&quot;pr43894392&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:8}]" data-layer-2="[{&quot;id&quot;:&quot;pr44142890&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:9},{&quot;id&quot;:&quot;pr44187135&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:10},{&quot;id&quot;:&quot;pr43899961&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:11},{&quot;id&quot;:&quot;pr43896149&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:12},{&quot;id&quot;:&quot;pr43967340&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:13},{&quot;id&quot;:&quot;pr44240193&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:14},{&quot;id&quot;:&quot;pr44189542&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:15},{&quot;id&quot;:&quot;pr44063480&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:16}]">
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            function initInterestedProducts() {
+                new window.FrontEnd.Home.InterestedProductsBinnova({
+                    getInterestedProductsBinnovaUrl: '/Systems/Home/GetInterestedProductsBinnova'
+                });
+            }
+        </script>
+    </div>
+</div>
+
+<div class="re__content-block re__home__project-block">
+    <div class="re__content-container">
+
+
+        <h2 class="re__content-container-label">Dự án bất động sản nổi bật</h2>
+        <span class="re__content-container-link"><a class="re__link-pr" href="https://batdongsan.com.vn/du-an-bat-dong-san"><span>Xem thêm</span> <i class="re__icon-arrow-right--sm"></i></a></span>
+        <div class="re__home-project">
+            <div class="js__home-project swiper-container lazyload" data-func="new window.FrontEnd.Home.HighlightProjectsBinnova();"
+                 data-script="https://staticfile.batdongsan.com.vn/js/binnova/filestatic.verm-7a83ebc-1170.msvbds.FrontEnd.Home.HighlightProjectsBinnova.min.js"
+                 data-tracking="[{&quot;id&quot;:&quot;pj21392&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:1},{&quot;id&quot;:&quot;pj27740&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:2},{&quot;id&quot;:&quot;pj27477&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:3},{&quot;id&quot;:&quot;pj25166&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:4},{&quot;id&quot;:&quot;pj28332&quot;,&quot;list&quot;:&quot;Home Page&quot;,&quot;position&quot;:5}]">
+
+                <div class="swiper-wrapper">
+
+
+                    <div class="re__prj-card-compact swiper-slide" tracking-id="notable-project-home" tracking-label="pos=1,prid=4826">
+                        <a title=" Vinhomes Global Gate" href="https://batdongsan.com.vn/du-an-khu-do-thi-moi-dong-anh/vinhomes-global-gate-pj4826">
+                            <div class="re__prj-card-image">
+                                <img class="lazyload " data-src="https://file4.batdongsan.com.vn/crop/260x146/2020/02/21/hmcVYWuR/20200221100954-b701.jpg" alt=" Vinhomes Global Gate" />
+                                <div class="re__prj-card-image-feature">
+                                    <i class="re__icon-image"></i>
+                                    <span>7</span>
+                                </div>
+                            </div>
+                            <div class="re__prj-card-info">
+                                <div class="re__prj-card-info-content">
+                                    <div class="re__project-open re__prj-tag-info re__prj-tag-info-fix">
+                                        <label>Đang mở bán</label>
+                                    </div>
+                                    <div class="re__prj-card-title">
+                                        Vinhomes Global Gate
+                                    </div>
+                                    <div class="re__prj-card-wrap">
+                                        <div class="re__prj-card-config">
+
+                                            <span class="re__prj-card-config-area">299 ha</span><span class="re__prj-card-config-dot">·</span>
+
+                                        </div>
+                                        <div class="re__prj-card-location" title=" Đông Anh, Hà Nội">
+                                            Đông Anh, Hà Nội
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="re__prj-card-compact swiper-slide" tracking-id="notable-project-home" tracking-label="pos=2,prid=5693">
+                        <a title="The Emerald 68" href="https://batdongsan.com.vn/du-an-can-ho-chung-cu-thuan-an-bd/the-emerald-68-pj5693">
+                            <div class="re__prj-card-image">
+                                <img class="lazyload " data-src="https://file4.batdongsan.com.vn/crop/260x146/2022/09/19/20220919121247-3f76_wm.jpg" alt="The Emerald 68" />
+                                <div class="re__prj-card-image-feature">
+                                    <i class="re__icon-image"></i>
+                                    <span>5</span>
+                                </div>
+                            </div>
+                            <div class="re__prj-card-info">
+                                <div class="re__prj-card-info-content">
+                                    <div class="re__project-open re__prj-tag-info re__prj-tag-info-fix">
+                                        <label>Đang mở bán</label>
+                                    </div>
+                                    <div class="re__prj-card-title">
+                                        The Emerald 68
+                                    </div>
+                                    <div class="re__prj-card-wrap">
+                                        <div class="re__prj-card-config">
+
+                                            <span class="re__prj-card-config-area">2,8 ha</span><span class="re__prj-card-config-dot">·</span>
+
+                                        </div>
+                                        <div class="re__prj-card-location" title="Thuận An, Bình Dương">
+                                            Thuận An, Bình Dương
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="re__prj-card-compact swiper-slide" tracking-id="notable-project-home" tracking-label="pos=3,prid=5431">
+                        <a title="Vinhomes Ocean Park 2" href="https://batdongsan.com.vn/du-an-khu-do-thi-moi-van-giang-hy/vinhomes-ocean-park-2-pj5431">
+                            <div class="re__prj-card-image">
+                                <img class="lazyload " data-src="https://file4.batdongsan.com.vn/crop/260x146/2022/04/25/20220425144400-58f3.jpg" alt="Vinhomes Ocean Park 2" />
+                                <div class="re__prj-card-image-feature">
+                                    <i class="re__icon-image"></i>
+                                    <span>24</span>
+                                </div>
+                            </div>
+                            <div class="re__prj-card-info">
+                                <div class="re__prj-card-info-content">
+                                    <div class="re__project-open re__prj-tag-info re__prj-tag-info-fix">
+                                        <label>Đang mở bán</label>
+                                    </div>
+                                    <div class="re__prj-card-title">
+                                        Vinhomes Ocean Park 2
+                                    </div>
+                                    <div class="re__prj-card-wrap">
+                                        <div class="re__prj-card-config">
+
+                                            <span class="re__prj-card-config-area">457,92 ha</span><span class="re__prj-card-config-dot">·</span>
+
+                                        </div>
+                                        <div class="re__prj-card-location" title="Văn Giang, Hưng Yên">
+                                            Văn Giang, Hưng Yên
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="re__prj-card-compact swiper-slide" tracking-id="notable-project-home" tracking-label="pos=4,prid=2764">
+                        <a title="Vinhomes Wonder City" href="https://batdongsan.com.vn/du-an-khu-phuc-hop-dan-phuong/vinhomes-wonder-city-pj2764">
+                            <div class="re__prj-card-image">
+                                <img class="lazyload " data-src="https://file4.batdongsan.com.vn/crop/260x146/2025/03/13/20250313100915-7b40_wm.jpg" alt="Vinhomes Wonder City" />
+                                <div class="re__prj-card-image-feature">
+                                    <i class="re__icon-play"></i>
+                                    <i class="re__icon-image"></i>
+                                    <span>20</span>
+                                </div>
+                            </div>
+                            <div class="re__prj-card-info">
+                                <div class="re__prj-card-info-content">
+                                    <div class="re__project-open re__prj-tag-info re__prj-tag-info-fix">
+                                        <label>Đang mở bán</label>
+                                    </div>
+                                    <div class="re__prj-card-title">
+                                        Vinhomes Wonder City
+                                    </div>
+                                    <div class="re__prj-card-wrap">
+                                        <div class="re__prj-card-config">
+
+                                            <span class="re__prj-card-config-area">133,44 ha</span><span class="re__prj-card-config-dot">·</span>
+
+                                        </div>
+                                        <div class="re__prj-card-location" title="Đan Phượng, Hà Nội">
+                                            Đan Phượng, Hà Nội
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="re__prj-card-compact swiper-slide" tracking-id="notable-project-home" tracking-label="pos=5,prid=6274">
+                        <a title="Masteri Trinity Square" href="https://batdongsan.com.vn/du-an-can-ho-chung-cu-van-giang-hy/masteri-trinity-square-pj6274">
+                            <div class="re__prj-card-image">
+                                <img class="lazyload " data-src="https://file4.batdongsan.com.vn/crop/260x146/2025/03/14/20250314151210-19b0_wm.jpg" alt="Masteri Trinity Square" />
+                                <div class="re__prj-card-image-feature">
+                                    <i class="re__icon-image"></i>
+                                    <span>9</span>
+                                </div>
+                            </div>
+                            <div class="re__prj-card-info">
+                                <div class="re__prj-card-info-content">
+                                    <div class="re__project-open re__prj-tag-info re__prj-tag-info-fix">
+                                        <label>Đang mở bán</label>
+                                    </div>
+                                    <div class="re__prj-card-title">
+                                        Masteri Trinity Square
+                                    </div>
+                                    <div class="re__prj-card-wrap">
+                                        <div class="re__prj-card-config">
+
+                                            <span class="re__prj-card-config-area">8,19 ha</span><span class="re__prj-card-config-dot">·</span>
+
+                                        </div>
+                                        <div class="re__prj-card-location" title="Văn Giang, Hưng Yên">
+                                            Văn Giang, Hưng Yên
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <a class="js__project-go-left re__btn re__btn-se-ghost--md re__left re__btn-icon--md">
+                <i class="re__icon-chevron-left"></i>
+            </a>
+            <a class="js__project-go-right re__btn re__btn-se-ghost--md re__right re__btn-icon--md">
+                <i class="re__icon-chevron-right"></i>
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="re__content-block re__home__banner-middle-block">
+
+    <div class="re__content-container re__banner-container js__banner-middle-home">
+
+        <div id='home-web-middle-banner-1' class="re__home-middle-banner" data-size="[1120, 250]"></div>
+
+    </div>
+</div>
+
+
+<div class="re__content-block re__home__place-block">
+    <div class="re__content-container">
+
+
+        <h2 class="re__content-container-label">Bất động sản theo địa điểm</h2>
+        <div class="re__home__place-container lazyload" data-func="new window.FrontEnd.Home.ProductCountBinnova({});" data-script="https://staticfile.batdongsan.com.vn/js/binnova/filestatic.verm-7a83ebc-1170.msvbds.FrontEnd.Home.ProductCountBinnova.min.js">
+
+            <div class="re__place-big re__place-item">
+                <div class="re__place-img place-img">
+                    <img src="https://file4.batdongsan.com.vn/images/newhome/cities1/HCM-web-1.jpg">
+                    <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/HCM-web-2.jpg">
+                    <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/HCM-web-3.jpg">
+                </div>
+                <h3>
+                    <a class="re__place-info buy-info" href="/nha-dat-ban-tp-hcm" title="Bán nhà TPHCM">
+                        <span class="place-name">TP. Hồ Chí Minh</span><br />
+                        <span class="place-number">85.937 tin đăng</span>
+                    </a>
+                    <a class="re__place-info rent-info" href="/nha-dat-cho-thue-tp-hcm" title="Thuê nhà TPHCM">
+                        <span class="place-name">TP. Hồ Chí Minh</span><br />
+                        <span class="place-number">27.866 tin đăng</span>
+                    </a>
+                </h3>
+            </div>
+
+            <div class="re__place-small">
+                <div class="re__place-item">
+                    <div class="re__place-img place-img">
+                        <img src="https://file4.batdongsan.com.vn/images/newhome/cities1/HN-web-1.jpg">
+                        <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/HN-web-2.jpg">
+                        <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/HN-web-3.jpg">
+                    </div>
+                    <h3>
+                        <a class="re__place-info buy-info" href="/nha-dat-ban-ha-noi" title="Bán nhà Hà Nội">
+                            <span class="place-name">Hà Nội</span><br />
+                            <span class="place-number">58.080 tin đăng</span>
+                        </a>
+                        <a class="re__place-info rent-info" href="/nha-dat-cho-thue-ha-noi" title="Thuê nhà Hà Nội">
+                            <span class="place-name">Hà Nội</span><br />
+                            <span class="place-number">13.094 tin đăng</span>
+                        </a>
+                    </h3>
+                </div>
+                <div class="re__place-item">
+                    <div class="re__place-img place-img">
+                        <img src="https://file4.batdongsan.com.vn/images/newhome/cities1/DDN-web-1.jpg">
+                        <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/DDN-web-2.jpg">
+                        <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/DDN-web-3.jpg">
+                    </div>
+                    <h3>
+                        <a class="re__place-info buy-info" href="/nha-dat-ban-da-nang" title="Bán nhà Đà Nẵng">
+                            <span class="place-name">Đà Nẵng</span><br />
+                            <span class="place-number">10.203 tin đăng</span>
+                        </a>
+                        <a class="re__place-info rent-info" href="/nha-dat-cho-thue-da-nang" title="Thuê nhà Đà Nẵng">
+                            <span class="place-name">Đà Nẵng</span><br />
+                            <span class="place-number">498 tin đăng</span>
+                        </a>
+                    </h3>
+                </div>
+                <div class="re__place-item">
+                    <div class="re__place-img place-img">
+                        <img src="https://file4.batdongsan.com.vn/images/newhome/cities1/BD-web-1.jpg">
+                        <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/BD-web-2.jpg">
+                    </div>
+                    <h3>
+                        <a class="re__place-info buy-info" href="/nha-dat-ban-binh-duong" title="Bán nhà Bình Dương">
+                            <span class="place-name">Bình Dương</span><br />
+                            <span class="place-number">8.812 tin đăng</span>
+                        </a>
+                        <a class="re__place-info rent-info" href="/nha-dat-cho-thue-binh-duong" title="Thuê nhà Bình Dương">
+                            <span class="place-name">Bình Dương</span><br />
+                            <span class="place-number">1.200 tin đăng</span>
+                        </a>
+                    </h3>
+                </div>
+                <div class="re__place-item">
+                    <div class="re__place-img place-img">
+                        <img src="https://file4.batdongsan.com.vn/images/newhome/cities1/DNA-web-1.jpg">
+                        <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/DNA-web-2.jpg">
+                        <img class="lazyload" data-src="https://file4.batdongsan.com.vn/images/newhome/cities1/DNA-web-3.jpg">
+                    </div>
+                    <h3>
+                        <a class="re__place-info buy-info" href="/nha-dat-ban-dong-nai" title="Bán nhà Đồng Nai">
+                            <span class="place-name">Đồng Nai</span><br />
+                            <span class="place-number">3.903 tin đăng</span>
+                        </a>
+                        <a class="re__place-info rent-info" href="/nha-dat-cho-thue-dong-nai" title="Thuê nhà Đồng Nai">
+                            <span class="place-name">Đồng Nai</span><br />
+                            <span class="place-number">403 tin đăng</span>
+                        </a>
+                    </h3>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <style type="text/css">
+            .rent-info {
+                display: none;
+            }
+        </style>
+
+
+
+        <div class="re__home__tag-container js__home__tag-container swiper-container lazyload" data-func="new window.FrontEnd.Home.HomeTagsBinnova();" data-script="https://staticfile.batdongsan.com.vn/js/binnova/filestatic.verm-7a83ebc-1170.msvbds.FrontEnd.Home.HomeTagsBinnova.min.js">
+            <div class="ui-draggable swiper-wrapper" style="position: relative;">
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-vinhomes-central-park" title="Vinhomes Central Park">Vinhomes Central Park</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-vinhomes-grand-park-quan-9" title="Vinhomes Grand Park">Vinhomes Grand Park</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-vinhomes-smart-city" title="Vinhomes Smart City">Vinhomes Smart City</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-vinhomes-ocean-park-gia-lam" title="Vinhomes Ocean Park">Vinhomes Ocean Park</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-vung-tau-pearl" title="Vũng Tàu Pearl">Vũng Tàu Pearl</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-bcons-green-view" title="Bcons Green View">Bcons Green View</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-grandeur-palace-giang-vo" title="Grandeur Palace">Grandeur Palace</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-diamond-island" title="Diamond Island">Diamond Island</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-hado-centrosa-garden" title="HaDo Centrosa Garden">HaDo Centrosa Garden</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/ban-can-ho-chung-cu-the-sun-avenue" title="The Sun Avenue">The Sun Avenue</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/nha-dat-ban-hai-phong" title="Nhà đất Hải Phòng">Nhà đất Hải Phòng</a>
+                </h3>
+                <h3 class="re__tag--md swiper-slide">
+                    <a href="/nha-dat-ban-quy-nhon-bdd" title="Nhà đất Quy Nhơn">Nhà đất Quy Nhơn</a>
+                </h3>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="re__content-block re__home__vip-news-block">
+    <div class="re__content-container">
+
+
+        <h2 class="re__content-container-label">Tin tức bất động sản</h2>
+        <div class="re__home__vip-news__article-container js__home__vip-news__article-container lazyload" data-func="new window.FrontEnd.Home.VipNewsBinnova({});" data-script="https://staticfile.batdongsan.com.vn/js/binnova/filestatic.verm-7a83ebc-1170.msvbds.FrontEnd.Home.VipNewsBinnova.min.js">
+            <div articleGADataLayer="{&quot;ecommerce&quot;:{&quot;impressions&quot;:[{&quot;id&quot;:&quot;ar847565&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847892&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847345&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847910&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847754&quot;,&quot;list&quot;:&quot;Home Page&quot;},{&quot;id&quot;:&quot;ar847491&quot;,&quot;list&quot;:&quot;Home Page&quot;}]},&quot;event&quot;:&quot;eec.impression_nlcc&quot;}"></div>
+            <div class="swiper-container">
+                <ul class="re__article-list-container swiper-wrapper">
+                    <li uid="847565" class="re__article-list-item swiper-slide">
+                        <div class="vip-news-img">
+                            <a href="/tin-tuc/nha-o-xa-hoi-don-nhan-them-cu-hich-moi-ve-chinh-sach-cd-hn-847565" title="Nh&#xE0; &#x1EDE; X&#xE3; H&#x1ED9;i Ti&#x1EBF;p T&#x1EE5;c &#x110;&#xF3;n C&#xFA; H&#xED;ch Ch&#xED;nh S&#xE1;ch M&#x1EDB;i: M&#x1EDF; Ra Giai &#x110;o&#x1EA1;n T&#x103;ng T&#x1ED1;c">
+                                <img class="lazyload" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/no2.jpg" alt="Nh&#xE0; &#x1EDE; X&#xE3; H&#x1ED9;i Ti&#x1EBF;p T&#x1EE5;c &#x110;&#xF3;n C&#xFA; H&#xED;ch Ch&#xED;nh S&#xE1;ch M&#x1EDB;i: M&#x1EDF; Ra Giai &#x110;o&#x1EA1;n T&#x103;ng T&#x1ED1;c" />
+                            </a>
+                        </div>
+                        <h3 class="vip-news-link">
+                            <span class="index">01</span>
+                            <a class="re__link-se article-title" href="/tin-tuc/nha-o-xa-hoi-don-nhan-them-cu-hich-moi-ve-chinh-sach-cd-hn-847565" title="Nh&#xE0; &#x1EDE; X&#xE3; H&#x1ED9;i Ti&#x1EBF;p T&#x1EE5;c &#x110;&#xF3;n C&#xFA; H&#xED;ch Ch&#xED;nh S&#xE1;ch M&#x1EDB;i: M&#x1EDF; Ra Giai &#x110;o&#x1EA1;n T&#x103;ng T&#x1ED1;c">Nhà Ở Xã Hội Tiếp Tục Đón Cú Hích Chính Sách Mới: Mở Ra Giai Đoạn Tăng Tốc</a>
+                        </h3>
+                    </li>
+                    <li uid="847892" class="re__article-list-item swiper-slide">
+                        <div class="vip-news-img">
+                            <a href="/tin-tuc/vi-sao-d-homme-la-du-an-dang-so-huu-nhat-phia-tay-nam-cua-tp.hcm-hien-nay-847892" title="V&#xEC; Sao D-Homme L&#xE0; D&#x1EF1; &#xC1;n &#x110;&#xE1;ng S&#x1EDF; H&#x1EEF;u Nh&#x1EA5;t Ph&#xED;a T&#xE2;y Nam C&#x1EE7;a TP.HCM Hi&#x1EC7;n Nay?">
+                                <img class="lazyload" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/b2b-1.png" alt="V&#xEC; Sao D-Homme L&#xE0; D&#x1EF1; &#xC1;n &#x110;&#xE1;ng S&#x1EDF; H&#x1EEF;u Nh&#x1EA5;t Ph&#xED;a T&#xE2;y Nam C&#x1EE7;a TP.HCM Hi&#x1EC7;n Nay?" />
+                            </a>
+                        </div>
+                        <h3 class="vip-news-link">
+                            <span class="index">02</span>
+                            <a class="re__link-se article-title" href="/tin-tuc/vi-sao-d-homme-la-du-an-dang-so-huu-nhat-phia-tay-nam-cua-tp.hcm-hien-nay-847892" title="V&#xEC; Sao D-Homme L&#xE0; D&#x1EF1; &#xC1;n &#x110;&#xE1;ng S&#x1EDF; H&#x1EEF;u Nh&#x1EA5;t Ph&#xED;a T&#xE2;y Nam C&#x1EE7;a TP.HCM Hi&#x1EC7;n Nay?">Vì Sao D-Homme Là Dự Án Đáng Sở Hữu Nhất Phía Tây Nam Của TP.HCM Hiện Nay?</a>
+                        </h3>
+                    </li>
+                    <li uid="847345" class="re__article-list-item swiper-slide">
+                        <div class="vip-news-img">
+                            <a href="/wiki/thien-thuong-hoa-847345" title="Thi&#xEA;n Th&#x1B0;&#x1EE3;ng H&#x1ECF;a L&#xE0; G&#xEC;? Gi&#x1EA3;i M&#xE3; T&#x1EED; Vi V&#xE0; &#x1EE8;ng D&#x1EE5;ng Phong Th&#x1EE7;y">
+                                <img class="lazyload" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/thien-thuong-hoa.png" alt="Thi&#xEA;n Th&#x1B0;&#x1EE3;ng H&#x1ECF;a L&#xE0; G&#xEC;? Gi&#x1EA3;i M&#xE3; T&#x1EED; Vi V&#xE0; &#x1EE8;ng D&#x1EE5;ng Phong Th&#x1EE7;y" />
+                            </a>
+                        </div>
+                        <h3 class="vip-news-link">
+                            <span class="index">03</span>
+                            <a class="re__link-se article-title" href="/wiki/thien-thuong-hoa-847345" title="Thi&#xEA;n Th&#x1B0;&#x1EE3;ng H&#x1ECF;a L&#xE0; G&#xEC;? Gi&#x1EA3;i M&#xE3; T&#x1EED; Vi V&#xE0; &#x1EE8;ng D&#x1EE5;ng Phong Th&#x1EE7;y">Thiên Thượng Hỏa Là Gì? Giải Mã Tử Vi Và Ứng Dụng Phong Thủy</a>
+                        </h3>
+                    </li>
+                    <li uid="847910" class="re__article-list-item swiper-slide">
+                        <div class="vip-news-img">
+                            <a href="/tin-tuc/phu-my-&#x2013;-diem-sang-moi-tren-ban-do-kinh-te-vung-dong-nam-847910" title="Ph&#xFA; M&#x1EF9; &#x2013; &#x110;i&#x1EC3;m S&#xE1;ng M&#x1EDB;i Tr&#xEA;n B&#x1EA3;n &#x110;&#x1ED3; Kinh T&#x1EBF; V&#xF9;ng &#x110;&#xF4;ng Nam">
+                                <img class="lazyload" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/a1.png" alt="Ph&#xFA; M&#x1EF9; &#x2013; &#x110;i&#x1EC3;m S&#xE1;ng M&#x1EDB;i Tr&#xEA;n B&#x1EA3;n &#x110;&#x1ED3; Kinh T&#x1EBF; V&#xF9;ng &#x110;&#xF4;ng Nam" />
+                            </a>
+                        </div>
+                        <h3 class="vip-news-link">
+                            <span class="index">04</span>
+                            <a class="re__link-se article-title" href="/tin-tuc/phu-my-&#x2013;-diem-sang-moi-tren-ban-do-kinh-te-vung-dong-nam-847910" title="Ph&#xFA; M&#x1EF9; &#x2013; &#x110;i&#x1EC3;m S&#xE1;ng M&#x1EDB;i Tr&#xEA;n B&#x1EA3;n &#x110;&#x1ED3; Kinh T&#x1EBF; V&#xF9;ng &#x110;&#xF4;ng Nam">Phú Mỹ – Điểm Sáng Mới Trên Bản Đồ Kinh Tế Vùng Đông Nam</a>
+                        </h3>
+                    </li>
+                    <li uid="847754" class="re__article-list-item swiper-slide">
+                        <div class="vip-news-img">
+                            <a href="/wiki/gia-dien-binh-quan-847754" title="Gi&#xE1; &#x110;i&#x1EC7;n B&#xEC;nh Qu&#xE2;n L&#xE0; G&#xEC;? C&#x1EAD;p Nh&#x1EAD;t Khung Gi&#xE1; &#x110;i&#x1EC7;n M&#x1EDB;i Nh&#x1EA5;t Hi&#x1EC7;n Nay">
+                                <img class="lazyload" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/gia-dien-binh-quan-5.jpg" alt="Gi&#xE1; &#x110;i&#x1EC7;n B&#xEC;nh Qu&#xE2;n L&#xE0; G&#xEC;? C&#x1EAD;p Nh&#x1EAD;t Khung Gi&#xE1; &#x110;i&#x1EC7;n M&#x1EDB;i Nh&#x1EA5;t Hi&#x1EC7;n Nay" />
+                            </a>
+                        </div>
+                        <h3 class="vip-news-link">
+                            <span class="index">05</span>
+                            <a class="re__link-se article-title" href="/wiki/gia-dien-binh-quan-847754" title="Gi&#xE1; &#x110;i&#x1EC7;n B&#xEC;nh Qu&#xE2;n L&#xE0; G&#xEC;? C&#x1EAD;p Nh&#x1EAD;t Khung Gi&#xE1; &#x110;i&#x1EC7;n M&#x1EDB;i Nh&#x1EA5;t Hi&#x1EC7;n Nay">Giá Điện Bình Quân Là Gì? Cập Nhật Khung Giá Điện Mới Nhất Hiện Nay</a>
+                        </h3>
+                    </li>
+                    <li uid="847491" class="re__article-list-item swiper-slide">
+                        <div class="vip-news-img">
+                            <a href="/tin-tuc/dong-tien-bat-dong-san-roi-trung-tam-lan-toa-ra-vung-ven-cd-hcm-847491" title="D&#xF2;ng Ti&#x1EC1;n B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n R&#x1EDD;i Trung T&#xE2;m, Lan T&#x1ECF;a Ra V&#xF9;ng Ven">
+                                <img class="lazyload" data-src="https://img.iproperty.com.my/angel/610x342-crop/wp-content/uploads/sites/7/2025/10/tod-1-1.jpg" alt="D&#xF2;ng Ti&#x1EC1;n B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n R&#x1EDD;i Trung T&#xE2;m, Lan T&#x1ECF;a Ra V&#xF9;ng Ven" />
+                            </a>
+                        </div>
+                        <h3 class="vip-news-link">
+                            <span class="index">06</span>
+                            <a class="re__link-se article-title" href="/tin-tuc/dong-tien-bat-dong-san-roi-trung-tam-lan-toa-ra-vung-ven-cd-hcm-847491" title="D&#xF2;ng Ti&#x1EC1;n B&#x1EA5;t &#x110;&#x1ED9;ng S&#x1EA3;n R&#x1EDD;i Trung T&#xE2;m, Lan T&#x1ECF;a Ra V&#xF9;ng Ven">Dòng Tiền Bất Động Sản Rời Trung Tâm, Lan Tỏa Ra Vùng Ven</a>
+                        </h3>
+                    </li>
+                </ul>
+            </div>
+            <a action="go-left" class="re__btn re__btn-se-ghost--md re__left re__btn-icon--md go-left">
+                <i class="re__icon-chevron-left"></i>
+            </a>
+            <a action="go-right" class="re__btn re__btn-se-ghost--md re__right re__btn-icon--md go-right">
+                <i class="re__icon-chevron-right"></i>
+            </a>
+        </div>
+
+    </div>
+</div>

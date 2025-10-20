@@ -1,0 +1,80 @@
+﻿@model Realtors_Portal.Models.Package
+
+@{
+    ViewBag.Title = "Xóa gói dịch vụ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-danger text-white d-flex align-items-center">
+            <i class="fa fa-trash me-2"></i>
+            <h4 class="mb-0">@ViewBag.Title</h4>
+        </div>
+        <div class="card-body">
+            <h5 class="text-danger"><i class="fa fa-exclamation-triangle"></i> Bạn có chắc chắn muốn xóa gói này?</h5>
+            <p class="text-muted">Hành động này không thể hoàn tác.</p>
+
+            <hr />
+
+            <dl class="row">
+                <dt class="col-sm-3">Tên gói</dt>
+                <dd class="col-sm-9 fw-bold">@Html.DisplayFor(m => m.PackageName)</dd>
+
+                <dt class="col-sm-3">Loại gói</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(m => m.PackageType)</dd>
+
+                <dt class="col-sm-3">Giá</dt>
+                <dd class="col-sm-9">@String.Format("{0:N0} ₫", Model.Price)</dd>
+
+                <dt class="col-sm-3">Thời hạn</dt>
+                <dd class="col-sm-9">@Model.DurationDays ngày</dd>
+
+                <dt class="col-sm-3">Giảm giá</dt>
+                <dd class="col-sm-9">@Model.DiscountPercent %</dd>
+
+                <dt class="col-sm-3">Hệ số (x lần)</dt>
+                <dd class="col-sm-9">@Model.Multiplier</dd>
+
+                <dt class="col-sm-3">Trạng thái</dt>
+                <dd class="col-sm-9">
+                    @if (Model.IsActive)
+                    {
+                        <span class="badge bg-success">Đang hoạt động</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Ngừng hoạt động</span>
+                    }
+                </dd>
+
+                <dt class="col-sm-3">Ngày tạo</dt>
+                <dd class="col-sm-9">@Model.CreatedAt.ToString("dd/MM/yyyy")</dd>
+
+                <dt class="col-sm-3">Cập nhật</dt>
+                <dd class="col-sm-9">@Model.UpdatedAt?.ToString("dd/MM/yyyy")</dd>
+            </dl>
+
+            <hr />
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="d-flex justify-content-between mt-4">
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Quay lại
+                    </a>
+
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa gói này?');">
+                        <i class="fa fa-trash"></i> Xóa gói
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

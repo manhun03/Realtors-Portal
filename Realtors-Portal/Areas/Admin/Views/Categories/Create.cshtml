@@ -1,0 +1,50 @@
+﻿@model Realtors_Portal.Models.Category
+
+@{
+    ViewBag.Title = "Thêm danh mục mới";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary"><i class="fa fa-plus-circle"></i> @ViewBag.Title</h2>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">
+            <i class="fa fa-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                @Html.ValidationSummary(true, "", new { @class = "alert alert-danger" })
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.CategoryName, "Tên danh mục", htmlAttributes: new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(model => model.CategoryName, new { @class = "form-control", placeholder = "Nhập tên danh mục..." })
+                    @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(model => model.Description, "Mô tả", htmlAttributes: new { @class = "form-label fw-bold" })
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control", rows = 3, placeholder = "Nhập mô tả (tùy chọn)..." })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.Label("Danh mục cha", htmlAttributes: new { @class = "form-label fw-bold" })
+                    @Html.DropDownList("ParentCategoryID", (SelectList)ViewBag.ParentCategories, "-- Không có (Danh mục gốc) --", new { @class = "form-select" })
+                    @Html.ValidationMessageFor(model => model.ParentCategoryID, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="text-end">
+                    <button type="submit" class="btn btn-success">
+                        <i class="fa fa-save"></i> Tạo danh mục
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>

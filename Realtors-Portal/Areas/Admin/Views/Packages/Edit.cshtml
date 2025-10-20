@@ -1,0 +1,96 @@
+﻿@model Realtors_Portal.Models.Package
+
+@{
+    ViewBag.Title = "Chỉnh sửa gói dịch vụ";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid mt-3">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-warning text-dark">
+            <h4><i class="fa fa-edit"></i> @ViewBag.Title</h4>
+        </div>
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.PackageID)
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.PackageName, "Tên gói", new { @class = "form-label fw-bold" })
+                    @Html.TextBoxFor(m => m.PackageName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.PackageName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Description, "Mô tả", new { @class = "form-label fw-bold" })
+                    @Html.TextAreaFor(m => m.Description, new { @class = "form-control", rows = 3 })
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.PackageType, "Loại gói", new { @class = "form-label fw-bold" })
+                    @Html.DropDownListFor(m => m.PackageType,
+                        new SelectList(new[] {
+                            new { Value = "Membership", Text = "Gói Hội Viên" },
+                            new { Value = "Listing", Text = "Gói Tin Đăng" }
+                        }, "Value", "Text", Model.PackageType),
+                        "-- Chọn loại gói --",
+                        new { @class = "form-select" })
+                    @Html.ValidationMessageFor(m => m.PackageType, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.DurationDays, "Thời hạn (ngày)", new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(m => m.DurationDays, new { @class = "form-control", type = "number", min = "1" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Price, "Giá (VNĐ)", new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", type = "number", step = "1000", min = "0" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.DiscountPercent, "Giảm giá (%)", new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(m => m.DiscountPercent, new { @class = "form-control", type = "number", min = "0", max = "100" })
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        @Html.LabelFor(m => m.Multiplier, "Hệ số (x lần)", new { @class = "form-label fw-bold" })
+                        @Html.TextBoxFor(m => m.Multiplier, new { @class = "form-control", type = "number", min = "1" })
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    @Html.LabelFor(m => m.Features, "Tính năng / quyền lợi", new { @class = "form-label fw-bold" })
+                    @Html.TextAreaFor(m => m.Features, new { @class = "form-control", rows = 3 })
+                </div>
+
+                <div class="form-check form-switch mb-4">
+                    @Html.CheckBoxFor(m => m.IsActive, new { @class = "form-check-input", id = "IsActive" })
+                    <label class="form-check-label" for="IsActive">Kích hoạt gói này</label>
+                </div>
+
+                <!-- Hidden timestamps -->
+                @Html.HiddenFor(m => m.CreatedAt)
+                @Html.HiddenFor(m => m.UpdatedAt)
+
+                <div class="d-flex justify-content-between">
+                    <a href="@Url.Action("Index")" class="btn btn-secondary">
+                        <i class="fa fa-arrow-left"></i> Quay lại
+                    </a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fa fa-save"></i> Lưu thay đổi
+                    </button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

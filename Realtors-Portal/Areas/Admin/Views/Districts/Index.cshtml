@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Realtors_Portal.Models.District>
+
+@{
+    ViewBag.Title = "Danh sách quận/huyện";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid mt-4">
+
+    <!-- Thông báo -->
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show">
+            <i class="fa fa-check-circle"></i> @TempData["Success"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show">
+            <i class="fa fa-exclamation-triangle"></i> @TempData["Error"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <!-- Header -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="text-primary"><i class="fa fa-map"></i> @ViewBag.Title</h2>
+        <a href="@Url.Action("Create")" class="btn btn-success">
+            <i class="fa fa-plus"></i> Thêm quận/huyện mới
+        </a>
+    </div>
+
+    <!-- Bảng dữ liệu -->
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th style="width:50px" class="text-center">#</th>
+                    <th>Tên quận/huyện</th>
+                    <th class="text-center">Trạng thái</th>
+                    <th>Tên thành phố</th>
+                    <th class="text-center" style="width:150px;">Hành động</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-4">
+                            <i class="fa fa-info-circle"></i> Chưa có dữ liệu
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    int stt = 1;
+                    foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="text-center">@stt</td>
+                            <td><strong>@item.DistrictName</strong></td>
+                            <td class="text-center">
+                                @if (item.IsActive)
+                                {
+                                    <span class="badge bg-success">Hoạt động</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Ngừng</span>
+                                }
+                            </td>
+                            <td>@item.City.CityName</td>
+                            <td class="text-center">
+                                <a href="@Url.Action("Edit", new { id = item.DistrictID })" class="btn btn-sm btn-warning" title="Chỉnh sửa">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a href="@Url.Action("Details", new { id = item.DistrictID })" class="btn btn-sm btn-info text-white" title="Chi tiết">
+                                    <i class="fa fa-eye"></i>
+                                </a>
+                                <a href="@Url.Action("Delete", new { id = item.DistrictID })" class="btn btn-sm btn-danger"
+                                   onclick="return confirm('Bạn có chắc muốn xóa quận/huyện này không?');" title="Xóa">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        stt++;
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

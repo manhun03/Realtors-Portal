@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+   
+    <link href="~/Content/clients/menu/asset/header.css" rel="stylesheet" />
+    <link href="~/Content/clients/menu/asset/Style.css" rel="stylesheet" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+           <a href="~/Home"> <img src="~/Content/Image/logo/logo.png" /></a>
+            
+        </div>
+
+        <nav class="menu">
+            <!-- Dropdown Nhà đất bán -->
+            <div class="dropdown">
+                <a href="#" class="active">Nhà đất bán</a>
+                <div class="dropdown-content">
+                    <a href="#">Căn hộ chung cư</a>
+                    <a href="#">Nhà riêng</a>
+                    <a href="#">Biệt thự</a>
+                    <a href="#">Đất nền dự án</a>
+                    <a href="#">Nhà mặt phố</a>
+                    <a href="#">Trang trại, khu nghỉ dưỡng</a>
+                </div>
+            </div>
+
+            <!-- Dropdown Nhà đất cho thuê -->
+            <div class="dropdown">
+                <a href="#">Nhà đất cho thuê </a>
+                <div class="dropdown-content">
+                    <a href="#">Căn hộ</a>
+                    <a href="#">Nhà riêng</a>
+                    <a href="#">Văn phòng</a>
+                    <a href="#">Mặt bằng kinh doanh</a>
+                    <a href="#">Kho, xưởng</a>
+                </div>
+            </div>
+
+            <a href="#">Dự án</a>
+            <a href="#">Tin tức</a>
+            <a href="#">Wiki BĐS</a>
+            <a href="#">Phân tích đánh giá</a>
+            <a href="#">Danh bạ</a>
+        </nav>
+        <!--Dropdown User thêm đoạn này-->
+        <div class="right-menu">
+            <a href="#">Tải ứng dụng</a>
+            <i data-lucide="heart" class="heart"></i>
+            <div class="right-menu">
+
+
+                @if (Session["UserID"] == null)
+                {
+
+                    <a href="@Url.Action("Login", "UserAccounts")">Đăng nhập</a>
+                    <span class="divider">|</span>
+                    <a href="@Url.Action("Register", "UserAccounts")">Đăng ký</a>
+                }
+                else
+                {
+
+                    <div class="user-dropdown" id="userDropdown">
+                        <div class="user-info" id="userInfo">
+
+                            <span class="user-name">@Session["Email"]</span>
+                            <i data-lucide="chevron-down" class="chevron-icon"></i>
+                        </div>
+
+                        <div class="user-menu" id="userMenu">
+                            <a href="#">Tổng quan <span class="new-tag">Mới</span></a>
+                            <a href="#">Quản lý tin đăng</a>
+                            <a href="#">Gói hội viên</a>
+                            <a href="@Url.Action("Index", "Customers")">Quản lý khách hàng</a>
+                            <a href="#">Quản lý tin tài trợ</a>
+                            <a href="#">Thay đổi thông tin cá nhân</a>
+                            <a href="#">Thay đổi mật khẩu</a>
+                            <a href="#">Môi giới chuyên nghiệp <span class="new-tag">Mới</span></a>
+                            <a href="#">Nạp tiền</a>
+                            <a href="@Url.Action("Logout", "UserAccounts")" class="logout">Đăng xuất</a>
+                        </div>
+                    </div>
+                }
+
+
+
+
+                <button class="post-btn">Đăng tin</button>
+            </div>
+
+        </div>
+
+        <!-- Nút menu mobile responsive -->
+        <div class="mobile-toggle">
+            <i data-lucide="menu"></i>
+        </div>
+    </header>
+
+    <!-- ===== NỘI DUNG MẪU ===== -->
+    <main class="content">
+        <body>
+            <div class="layout">
+                <!-- ===== SIDEBAR ===== -->
+                <aside class="sidebar-user">
+                    <div class="user-info">
+                        <div class="username">@Session["Email"]</div>
+                        <div class="points">0 điểm</div>
+                    </div>
+
+                    <div class="account-box">
+                        <h4>Số dư tài khoản</h4>
+                        <div class="balance-item"><span>TK tin đăng</span><span>0</span></div>
+                        <div class="balance-item"><span>TK khuyến mãi</span><span>0</span></div>
+                        <div class="account-id">Mã số: BDSVN047760400</div>
+                        <button class="btn-primary">Nạp tiền</button>
+                    </div>
+
+                    <nav class="menu-sidebar">
+                        <a href="#">Tổng quan</a>
+                        <a href="#">Quản lý tin đăng</a>
+                        <a href="#" class="active">Quản lý khách hàng</a>
+                        <a href="#">Tài khoản Pro</a>
+                        <a href="#">Quản lý tài chính</a>
+                        <a href="#">Quản lý TK cá nhân</a>
+                        <a href="#">Chỉnh sửa thông tin</a>
+                    </nav>
+                </aside>
+
+                <!-- ===== NỘI DUNG ===== -->
+                <main class="content-main">
+                    @RenderBody()
+                </main>
+            </div>
+        </body>
+
+    </main>
+</body>
+</html>
+
+<!--JS thục hiện dropdown-->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+
+        const userInfo = document.getElementById("userInfo");
+        const userMenu = document.getElementById("userMenu");
+
+        if (userInfo) {
+            userInfo.addEventListener("click", function (e) {
+                e.stopPropagation();
+                userMenu.classList.toggle("show");
+                userInfo.querySelector(".chevron-icon").classList.toggle("rotated");
+            });
+
+            document.addEventListener("click", function (e) {
+                if (!userInfo.contains(e.target)) {
+                    userMenu.classList.remove("show");
+                    userInfo.querySelector(".chevron-icon").classList.remove("rotated");
+                }
+            });
+        }
+    });
+</script>
