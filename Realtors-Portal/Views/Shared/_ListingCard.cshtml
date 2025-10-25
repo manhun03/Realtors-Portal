@@ -1,0 +1,50 @@
+﻿@model Realtors_Portal.Models.Property
+@using System.Linq
+@{
+    var firstImg = Model.PropertyImages?.OrderBy(i => i.SortOrder).FirstOrDefault()
+                  ?? Model.PropertyImages?.FirstOrDefault();
+    var detail = Model.PropertyDetails; // giả định 1-1
+    var typeName = Model.PropertyType?.TypeName ?? "Bất động sản";
+    // Vì sao: fallback ảnh/giá để không vỡ layout
+}
+<div class="card h-100 shadow-sm re__listing-card">
+    <a href="@Url.Action("Details", "Property", new { id = Model.PropertyID })" class="text-decoration-none">
+        <div class="ratio ratio-16x9 bg-light">
+            @if (!string.IsNullOrWhiteSpace(firstImg?.ImageUrl))
+            {
+                <img src="@firstImg.ImageUrl"
+                     class="card-img-top object-fit-cover"
+                     alt="@firstImg.Caption ?? Model.Title"
+                     loading="lazy" />
+            }
+            else
+            {
+                <div class="d-flex align-items-center justify-content-center text-muted" style="height:100%;">
+                    <span>Không có ảnh</span>
+                </div>
+            }
+        </div>
+        <div class="card-body">
+            <h6 class="card-subtitle mb-1 text-muted">@typeName</h6>
+            <h5 class="card-title text-truncate" title="@Model.Title">@Model.Title</h5>
+
+            <ul class="list-unstyled small mb-2">
+                @if (detail != null)
+                {
+                    if (detail.FloorArea.HasValue)
+                    {
+                        <li>Diện tích: @detail.FloorArea.Value.ToString("0.#") m²</li>
+                    }
+                    <li>Phòng ngủ: @(detail.Bedrooms ?? 0) — WC: @(detail.Bathrooms ?? 0)</li>
+                }
+            </ul>
+
+            @if (detail?.Price != null)
+            {
+                <div class="fw-bold h6 mb-0">
+                    @string.Format("{0:#,0} {1}", detail.Price, string.IsNullOrWhiteSpace(detail.Currency) ? "VND" : detail.Currency)
+                </div>
+            }
+        </div>
+    </a>
+</div>

@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<Realtors_Portal.Models.Property>
+
+
 @{
     ViewBag.Title = "Home Page";
 }
@@ -205,71 +207,13 @@
                             var daysAgo = (DateTime.Now - (item.CreatedAt ?? DateTime.Now)).Days;
 
                             <div class="re__product-item re__interested-product-card js__product-item">
-
-                                <div class="js__card js__card-compact-webpr-container re__card-compact re__vip-silver"
-                                     prav="@img"
-                                     prid="@item.PropertyID"
-                                     vtp="vip-silver"
-                                     clo="hpre">
-
-                                    <a class="js__product-link-for-product-id"
-                                       data-product-id="@item.PropertyID"
-                                       href="@Url.Action("Details", "Properties", new { id = item.PropertyID })"
-                                       title="@item.Title">
-
-                                        <div class="re__card-image">
-                                            <img alt="Ảnh đại diện" class="pr-img lazyloaded"
-                                                 data-src="@img"
-                                                 src="@img" />
-                                            <div class="re__card-image-feature">
-                                                <i class="re__icon-image"></i>
-                                                <span>@item.PropertyImages.Count</span>
-                                            </div>
-                                            <div class="card-label-img label--v2"></div>
+                                <div class="row">
+                                    @foreach (var item in (Model ?? Enumerable.Empty<Realtors_Portal.Models.Property>()))
+                                    {
+                                        <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                                            @Html.Partial("~/Views/Shared/_ListingCard.cshtml", listing)
                                         </div>
-
-                                        <div class="re__card-info">
-                                            <div class="re__card-info-content">
-                                                <div class="re__card-title">
-                                                    <h3 class="js__card-title">
-                                                        <span class="re__card-image-verified"></span>
-                                                        @item.Title
-                                                    </h3>
-                                                </div>
-
-                                                <div class="re__card-config">
-                                                    <span class="re__card-config-price">@priceStr</span>
-                                                    <span class="re__card-config-area"><span class="re__card-config-dot">·</span>@areaStr</span>
-                                                    <div class="re__clear"></div>
-                                                </div>
-
-                                                <div class="re__card-location">
-                                                    <i class="re__icon-location--sm"></i>
-                                                    <span>@locationStr</span>
-                                                </div>
-
-                                                <div class="re__clearfix"></div>
-
-                                                <div class="re__card-contact">
-                                                    <div class="re__card-published-info">
-                                                        <span class="re__card-published-info-published-at">
-                                                            Đăng @(daysAgo == 0 ? "hôm nay" : $"{daysAgo} ngày trước")
-                                                        </span>
-                                                    </div>
-                                                    <div class="re__card-contact-button">
-                                                        <span class="js__marking-product__KYC re__btn re__btn-se-border--sm re__btn-icon--sm"
-                                                              aria-label="Bấm để lưu tin">
-                                                            <i class="re__icon-heart--sm"></i>
-                                                            <i class="re__icon-heart-pressed--sm"></i>
-                                                        </span>
-                                                    </div>
-                                                    <div class="re__clear-both"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="re__clearfix"></div>
-                                    </a>
+                                    }
                                 </div>
                             </div>
                         }

@@ -82,10 +82,10 @@ namespace Realtors_Portal.Controllers
                     Price = model.Price,
                     Area = model.Area,
                     LegalStatus = model.LegalStatus,
-                    PropertyType = db.PropertyTypes
-                        .Where(p => p.PropertyTypeID == model.PropertyTypeID)
-                        .Select(p => p.TypeName)
-                        .FirstOrDefault(),
+                    //PropertyType = db.PropertyTypes
+                    //    .Where(p => p.PropertyTypeID == model.PropertyTypeID)
+                    //    .Select(p => p.TypeName)
+                    //    .FirstOrDefault(),
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now,
                     PropertyTypeID = model.PropertyTypeID,
@@ -316,10 +316,27 @@ namespace Realtors_Portal.Controllers
 
         //==============================Auto generated code by Entity Framework========================================
         //Listings list
-        public ActionResult Index()
+        public ActionResult Index(string q, string status)
         {
-            var listings = db.Listings.Include(l => l.Category).Include(l => l.Customer).Include(l => l.Employee).Include(l => l.Package).Include(l => l.Property);
-            return View(listings.ToList());
+            var query = db.Listings
+                .Include(l => l.Category)
+                .Include(l => l.Customer)
+                .Include(l => l.Employee)
+                .Include(l => l.Package)
+                .Include(l => l.Property)
+                .Include(l => l.Property.PropertyImages);
+
+            if (!string.IsNullOrWhiteSpace(q))
+                query = query.Where(l => l.Title.Contains(q) || l.Description.Contains(q) || l.Location.Contains(q));
+
+            if (!string.IsNullOrWhiteSpace(status))
+                query = query.Where(l => l.Status == status);
+
+            var data = query
+                .OrderByDescending(l => l.CreatedAt)
+                .ToList();
+
+            return View(data);
         }
 
         //Listing's detail

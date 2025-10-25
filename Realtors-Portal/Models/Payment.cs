@@ -18,6 +18,8 @@ namespace Realtors_Portal.Models
         public Payment()
         {
             this.Invoices = new HashSet<Invoice>();
+            this.PaymentLogs = new HashSet<PaymentLog>();
+            this.PaymentTransactions = new HashSet<PaymentTransaction>();
         }
     
         public int PaymentID { get; set; }
@@ -35,6 +37,11 @@ namespace Realtors_Portal.Models
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
         public string Description { get; set; }
+        public string TransactionCode { get; set; }
+        public string ExternalTransactionId { get; set; }
+        public string CurrencyCode { get; set; }
+        public string Status { get; set; }
+        public System.DateTime UpdatedAt { get; set; }
     
         public virtual Contract Contract { get; set; }
         public virtual Customer Customer { get; set; }
@@ -42,5 +49,9 @@ namespace Realtors_Portal.Models
         public virtual ICollection<Invoice> Invoices { get; set; }
         public virtual Listing Listing { get; set; }
         public virtual Package Package { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PaymentLog> PaymentLogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PaymentTransaction> PaymentTransactions { get; set; }
     }
 }

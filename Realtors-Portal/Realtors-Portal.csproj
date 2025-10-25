@@ -159,6 +159,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListingsController.cs" />
     <Compile Include="Controllers\PackagesController.cs" />
+    <Compile Include="Controllers\PropertysController.cs" />
     <Compile Include="Controllers\UserAccountsController.cs" />
     <Compile Include="Controllers\WardsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -183,6 +184,9 @@
       <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Contract.cs">
+      <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Currency.cs">
       <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
@@ -210,6 +214,15 @@
       <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Payment.cs">
+      <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentGateway.cs">
+      <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentLog.cs">
+      <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentTransaction.cs">
       <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Property.cs">
@@ -252,6 +265,21 @@
     <Compile Include="Models\Ward.cs">
       <DependentUpon>RealtorsPortalModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Payment\Controllers\PaymentController.cs" />
+    <Compile Include="Modules\Payment\Models\DTOs.cs" />
+    <Compile Include="Modules\Payment\Models\Enums.cs" />
+    <Compile Include="Modules\Payment\Models\PaymentMeta.cs" />
+    <Compile Include="Modules\Payment\PaymentConfig.cs" />
+    <Compile Include="Modules\Payment\Services\CurrencyService.cs" />
+    <Compile Include="Modules\Payment\Services\IListingPaymentService.cs" />
+    <Compile Include="Modules\Payment\Services\IMembershipPaymentService.cs" />
+    <Compile Include="Modules\Payment\Services\IPaymentService.cs" />
+    <Compile Include="Modules\Payment\Services\ListingPaymentService.cs" />
+    <Compile Include="Modules\Payment\Services\MembershipPaymentService.cs" />
+    <Compile Include="Modules\Payment\Services\PaymentService.cs" />
+    <Compile Include="Modules\Payment\VnPay\VnPayHelper.cs" />
+    <Compile Include="Modules\Payment\VnPay\VnPaySettings.cs" />
+    <Compile Include="Modules\Payment\Webhooks\PaymentWebhookController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2370,13 +2398,6 @@
     <Content Include="Scripts\bootstrap.esm.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\RealtorsPortalModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>RealtorsPortalModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\RealtorsPortalModel.edmx.diagram">
-      <DependentUpon>RealtorsPortalModel.edmx</DependentUpon>
-    </Content>
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Content\clients\dist\css\adminlte.css.map" />
@@ -2652,6 +2673,13 @@
     <Content Include="Areas\Admin\Views\SystemConfigs\Create.cshtml" />
     <Content Include="Areas\Admin\Views\SystemConfigs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\SystemConfigs\Delete.cshtml" />
+    <EntityDeploy Include="Models\RealtorsPortalModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RealtorsPortalModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RealtorsPortalModel.edmx.diagram">
+      <DependentUpon>RealtorsPortalModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
@@ -2700,6 +2728,7 @@
     <Content Include="Views\Customers\Index.cshtml" />
     <Content Include="Views\UserAccounts\ForgotPassword.cshtml" />
     <Content Include="Views\Home\Trangchu.cshtml" />
+    <Content Include="Views\Shared\_ListingCard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2707,6 +2736,7 @@
     <Folder Include="Content\Uploads\" />
     <Folder Include="Views\Addresses\" />
     <Folder Include="Views\Districts\" />
+    <Folder Include="Views\Propertys\" />
     <Folder Include="Views\Wards\" />
   </ItemGroup>
   <ItemGroup>

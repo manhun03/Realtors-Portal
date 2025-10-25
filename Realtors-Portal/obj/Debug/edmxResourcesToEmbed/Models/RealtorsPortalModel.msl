@@ -17,13 +17,13 @@
     <EntitySetMapping Name="Addresses">
       <EntityTypeMapping TypeName="RealtorsPortalModel.Address">
         <MappingFragment StoreEntitySet="Address">
-          <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
           <ScalarProperty Name="AddressID" ColumnName="AddressID" />
           <ScalarProperty Name="CityID" ColumnName="CityID" />
           <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
           <ScalarProperty Name="WardID" ColumnName="WardID" />
           <ScalarProperty Name="Street" ColumnName="Street" />
           <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+          <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -86,6 +86,15 @@
           <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="EndDate" ColumnName="EndDate" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Currencies">
+      <EntityTypeMapping TypeName="RealtorsPortalModel.Currency">
+        <MappingFragment StoreEntitySet="Currency">
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -216,13 +225,55 @@
           <ScalarProperty Name="StartDate" ColumnName="StartDate" />
           <ScalarProperty Name="EndDate" ColumnName="EndDate" />
           <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+          <ScalarProperty Name="ExternalTransactionId" ColumnName="ExternalTransactionId" />
+          <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentGateways">
+      <EntityTypeMapping TypeName="RealtorsPortalModel.PaymentGateway">
+        <MappingFragment StoreEntitySet="PaymentGateway">
+          <ScalarProperty Name="GatewayId" ColumnName="GatewayId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+          <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+          <ScalarProperty Name="Endpoint" ColumnName="Endpoint" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+          <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentLogs">
+      <EntityTypeMapping TypeName="RealtorsPortalModel.PaymentLog">
+        <MappingFragment StoreEntitySet="PaymentLog">
+          <ScalarProperty Name="LogId" ColumnName="LogId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="LogType" ColumnName="LogType" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentTransactions">
+      <EntityTypeMapping TypeName="RealtorsPortalModel.PaymentTransaction">
+        <MappingFragment StoreEntitySet="PaymentTransaction">
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+          <ScalarProperty Name="ResponseMessage" ColumnName="ResponseMessage" />
+          <ScalarProperty Name="RawResponse" ColumnName="RawResponse" />
+          <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Properties">
       <EntityTypeMapping TypeName="RealtorsPortalModel.Property">
         <MappingFragment StoreEntitySet="Properties">
-          <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
           <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
           <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
@@ -234,6 +285,7 @@
           <ScalarProperty Name="LegalStatus" ColumnName="LegalStatus" />
           <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
           <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+          <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -266,6 +318,16 @@
           <ScalarProperty Name="Caption" ColumnName="Caption" />
           <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
           <ScalarProperty Name="UploadedAt" ColumnName="UploadedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyTypes">
+      <EntityTypeMapping TypeName="RealtorsPortalModel.PropertyType">
+        <MappingFragment StoreEntitySet="PropertyType">
+          <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -324,16 +386,6 @@
           <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
           <ScalarProperty Name="WardName" ColumnName="WardName" />
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PropertyTypes">
-      <EntityTypeMapping TypeName="RealtorsPortalModel.PropertyType">
-        <MappingFragment StoreEntitySet="PropertyType">
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
-          <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -32,6 +32,7 @@ namespace Realtors_Portal.Models
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<Contact> Contacts { get; set; }
         public virtual DbSet<Contract> Contracts { get; set; }
+        public virtual DbSet<Currency> Currencies { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<District> Districts { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
@@ -41,13 +42,16 @@ namespace Realtors_Portal.Models
         public virtual DbSet<Notification> Notifications { get; set; }
         public virtual DbSet<Package> Packages { get; set; }
         public virtual DbSet<Payment> Payments { get; set; }
+        public virtual DbSet<PaymentGateway> PaymentGateways { get; set; }
+        public virtual DbSet<PaymentLog> PaymentLogs { get; set; }
+        public virtual DbSet<PaymentTransaction> PaymentTransactions { get; set; }
         public virtual DbSet<Property> Properties { get; set; }
         public virtual DbSet<PropertyDetail> PropertyDetails { get; set; }
         public virtual DbSet<PropertyImage> PropertyImages { get; set; }
+        public virtual DbSet<PropertyType> PropertyTypes { get; set; }
         public virtual DbSet<StaticPage> StaticPages { get; set; }
         public virtual DbSet<SystemConfig> SystemConfigs { get; set; }
         public virtual DbSet<UserAccount> UserAccounts { get; set; }
         public virtual DbSet<Ward> Wards { get; set; }
-        public virtual DbSet<PropertyType> PropertyTypes { get; set; }
     }
 }

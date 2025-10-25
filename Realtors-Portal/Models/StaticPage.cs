@@ -20,12 +20,12 @@ namespace Realtors_Portal.Models
         public string PageType { get; set; }
         public string Content { get; set; }
         public string Thumbnail { get; set; }
-        public int CreatedBy { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
         public Nullable<int> UpdatedBy { get; set; }
         public Nullable<System.DateTime> CreatedAt { get; set; }
         public Nullable<System.DateTime> UpdatedAt { get; set; }
         public string Status { get; set; }
-        public bool IsActive { get; set; }
+        public Nullable<bool> IsActive { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Employee Employee1 { get; set; }

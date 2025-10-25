@@ -1,61 +1,205 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\",
+  "WorkspaceRootPath": "D:\\Realtor\\Realtors-Portal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|d:\\project\\realtors-portal\\realtors-portal\\realtors-portal\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|d:\\realtor\\realtors-portal\\realtors-portal\\views\\shared\\_listingcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\shared\\_listingcard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|d:\\project\\realtors-portal\\realtors-portal\\realtors-portal\\views\\listings\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\listings\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\views\\useraccounts\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\useraccounts\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\areas\\admin\\views\\shared\\_partiasidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\areas\\admin\\views\\shared\\_partiasidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\property.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\controllers\\listingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\listingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\controllers\\propertyscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\propertyscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\models\\realtorsportalmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\realtorsportalmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\propertydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\propertydetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\propertyimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\propertyimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\models\\realtorsportalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\realtorsportalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\propertytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\propertytype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\views\\home\\trangchu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\home\\trangchu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\home\\trangchu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\realtorsportalmodel.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\realtorsportalmodel.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\realtorsportalmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\realtorsportalmodel.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\realtorsportalmodel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\realtorsportalmodel.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\realtorsportalmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\realtorsportalmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\realtorsportalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\realtorsportalmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\webhooks\\paymentwebhookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\webhooks\\paymentwebhookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\paymentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\paymentconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\services\\paymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\global.asax.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\vnpay\\vnpayhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\vnpay\\vnpayhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\vnpay\\vnpaysettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\vnpay\\vnpaysettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\controllers\\listingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\listingscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\services\\membershippaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\services\\membershippaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\services\\listingpaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\services\\listingpaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\services\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\services\\ipaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\services\\imembershippaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\services\\imembershippaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\services\\ilistingpaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\services\\ilistingpaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\services\\currencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\services\\currencyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\controllers\\packagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\packagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\models\\viewmodels\\listingcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\models\\viewmodels\\listingcreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\models\\paymentmeta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\models\\paymentmeta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\models\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\modules\\payment\\models\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\modules\\payment\\models\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\customerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\favicon.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\listings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\listings\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\areas\\admin\\views\\systemconfigs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\listings\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\listings\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\listings\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\listings\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\listings\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\listings\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\shared\\_layoutemp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\shared\\_layoutemp.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\controllers\\contactscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\listings\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\listings\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\views\\useraccounts\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\views\\useraccounts\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\areas\\admin\\views\\shared\\_partiasidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\areas\\admin\\views\\shared\\_partiasidebar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\areas\\admin\\views\\systemconfigs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\areas\\admin\\views\\systemconfigs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\realtors-portal\\areas\\admin\\controllers\\systemconfigscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|D:\\Realtor\\Realtors-Portal\\realtors-portal\\areas\\admin\\controllers\\systemconfigscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CEA3F8FE-2426-468A-9C6E-F63B8071D181}|Realtors-Portal\\Realtors-Portal.csproj|solutionrelative:realtors-portal\\areas\\admin\\controllers\\systemconfigscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -66,103 +210,571 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ContactsController.cs",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Controllers\\ContactsController.cs",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\ContactsController.cs",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Controllers\\ContactsController.cs",
-              "RelativeToolTip": "Realtors-Portal\\Controllers\\ContactsController.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T12:59:52.217Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Create.cshtml",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Listings\\Create.cshtml",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Create.cshtml",
-              "RelativeToolTip": "Realtors-Portal\\Views\\Listings\\Create.cshtml",
-              "ViewState": "AgIAABQBAAAAAAAAAADwvxYBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T12:23:19.822Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
-              "RelativeToolTip": "Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T12:13:25.582Z",
-              "EditorCaption": ""
+              "Title": "PropertysController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\PropertysController.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\PropertysController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\PropertysController.cs*",
+              "RelativeToolTip": "Realtors-Portal\\Controllers\\PropertysController.cs*",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBEAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T05:43:00.541Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ListingsController.cs",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Controllers\\ListingsController.cs",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\ListingsController.cs",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Controllers\\ListingsController.cs",
-              "RelativeToolTip": "Realtors-Portal\\Controllers\\ListingsController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAUwFUAAABNAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "PropertyDetail.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\PropertyDetail.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\PropertyDetail.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\PropertyDetail.cs",
+              "RelativeToolTip": "Realtors-Portal\\Models\\PropertyDetail.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAUwCEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T10:46:16.091Z"
+              "WhenOpened": "2025-10-24T05:40:26.823Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PropertyImage.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\PropertyImage.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\PropertyImage.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\PropertyImage.cs",
+              "RelativeToolTip": "Realtors-Portal\\Models\\PropertyImage.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T05:40:22.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PropertyType.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\PropertyType.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\PropertyType.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\PropertyType.cs",
+              "RelativeToolTip": "Realtors-Portal\\Models\\PropertyType.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwB8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-24T05:40:12.69Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Property.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\Property.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\Property.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\Property.cs",
+              "RelativeToolTip": "Realtors-Portal\\Models\\Property.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAA+wC0AAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T10:42:10.515Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "RealtorsPortalModel.Context.cs",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.Context.cs",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\RealtorsPortalModel.Context.cs",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.Context.cs",
-              "RelativeToolTip": "Realtors-Portal\\Models\\RealtorsPortalModel.Context.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T10:45:31.498Z"
+              "Title": "RealtorsPortalModel.edmx.diagram",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.edmx.diagram",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\RealtorsPortalModel.edmx.diagram",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.edmx.diagram",
+              "RelativeToolTip": "Realtors-Portal\\Models\\RealtorsPortalModel.edmx.diagram",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-10-23T10:41:55.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_ListingCard.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Shared\\_ListingCard.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Shared\\_ListingCard.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Shared\\_ListingCard.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Shared\\_ListingCard.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T01:41:48.396Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "RealtorsPortalModel.tt",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.tt",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\RealtorsPortalModel.tt",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.tt",
+              "RelativeToolTip": "Realtors-Portal\\Models\\RealtorsPortalModel.tt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-10-23T10:41:56.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RealtorsPortalModel.Designer.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.Designer.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\RealtorsPortalModel.Designer.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.Designer.cs",
+              "RelativeToolTip": "Realtors-Portal\\Models\\RealtorsPortalModel.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T10:41:54.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RealtorsPortalModel.Context.tt",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.Context.tt",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\RealtorsPortalModel.Context.tt",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.Context.tt",
+              "RelativeToolTip": "Realtors-Portal\\Models\\RealtorsPortalModel.Context.tt",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-10-23T10:41:50.605Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Trangchu.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAANoAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T10:37:14.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\_ViewStart.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-23T10:38:59.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "PaymentWebhookController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Webhooks\\PaymentWebhookController.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Webhooks\\PaymentWebhookController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Webhooks\\PaymentWebhookController.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Webhooks\\PaymentWebhookController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACkAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:31:12.003Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "PaymentConfig.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\PaymentConfig.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\PaymentConfig.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\PaymentConfig.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\PaymentConfig.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAxwAcAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:31:22.587Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Web.config",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Web.config",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Web.config",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Web.config",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Web.config",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-10-23T06:11:27.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RealtorsPortalModel.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.edmx",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\RealtorsPortalModel.edmx",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.edmx [Diagram1]",
+              "RelativeToolTip": "Realtors-Portal\\Models\\RealtorsPortalModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-10-22T20:41:32.014Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "PaymentService.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\PaymentService.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Services\\PaymentService.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\PaymentService.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Services\\PaymentService.cs",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAAwEsBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:36:26.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "VnPaySettings.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\VnPay\\VnPaySettings.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\VnPay\\VnPaySettings.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\VnPay\\VnPaySettings.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\VnPay\\VnPaySettings.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAowBAAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T06:05:16.889Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Web.config",
               "RelativeDocumentMoniker": "Realtors-Portal\\Web.config",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Web.config",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Web.config",
               "RelativeToolTip": "Realtors-Portal\\Web.config",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADkAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
               "WhenOpened": "2025-10-20T10:42:30.028Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Property.cs",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Models\\Property.cs",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\Property.cs",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Models\\Property.cs",
-              "RelativeToolTip": "Realtors-Portal\\Models\\Property.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAgwCgAAABPAAAAAAAAAA==",
+              "DocumentIndex": 18,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Controllers\\PaymentController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAAHkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T10:41:37.513Z"
+              "WhenOpened": "2025-10-22T20:27:54.779Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 19,
+              "Title": "Global.asax.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Global.asax.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Global.asax.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Global.asax.cs",
+              "RelativeToolTip": "Realtors-Portal\\Global.asax.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:21:43.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "VnPayHelper.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\VnPay\\VnPayHelper.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\VnPay\\VnPayHelper.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\VnPay\\VnPayHelper.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\VnPay\\VnPayHelper.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAkwGoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T06:06:33.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "MembershipPaymentService.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\MembershipPaymentService.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Services\\MembershipPaymentService.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\MembershipPaymentService.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Services\\MembershipPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:30:52.148Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ListingsController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\ListingsController.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\ListingsController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\ListingsController.cs",
+              "RelativeToolTip": "Realtors-Portal\\Controllers\\ListingsController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAYwFAAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T10:46:16.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IPaymentService.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\IPaymentService.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Services\\IPaymentService.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\IPaymentService.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Services\\IPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:30:30.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ListingPaymentService.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\ListingPaymentService.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Services\\ListingPaymentService.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\ListingPaymentService.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Services\\ListingPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:30:42.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "IMembershipPaymentService.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\IMembershipPaymentService.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Services\\IMembershipPaymentService.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\IMembershipPaymentService.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Services\\IMembershipPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:30:20.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IListingPaymentService.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\IListingPaymentService.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Services\\IListingPaymentService.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\IListingPaymentService.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Services\\IListingPaymentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:30:09.796Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "CurrencyService.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\CurrencyService.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Services\\CurrencyService.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Services\\CurrencyService.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Services\\CurrencyService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAA4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:29:58.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "PackagesController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\PackagesController.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\PackagesController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\PackagesController.cs",
+              "RelativeToolTip": "Realtors-Portal\\Controllers\\PackagesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:28:11.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ListingCreateViewModel.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\ViewModels\\ListingCreateViewModel.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\ViewModels\\ListingCreateViewModel.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Models\\ViewModels\\ListingCreateViewModel.cs",
+              "RelativeToolTip": "Realtors-Portal\\Models\\ViewModels\\ListingCreateViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:37:36.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "PaymentMeta.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Models\\PaymentMeta.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Models\\PaymentMeta.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Models\\PaymentMeta.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Models\\PaymentMeta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:29:24.115Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Models\\Enums.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Models\\Enums.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Models\\Enums.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Models\\Enums.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:29:14.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DTOs.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Models\\DTOs.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Modules\\Payment\\Models\\DTOs.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Modules\\Payment\\Models\\DTOs.cs",
+              "RelativeToolTip": "Realtors-Portal\\Modules\\Payment\\Models\\DTOs.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAA1wAMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:28:55.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\favicon.ico",
+              "RelativeDocumentMoniker": "Realtors-Portal\\favicon.ico",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "RelativeToolTip": "Realtors-Portal\\favicon.ico - Icon [16x16, 32 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2025-10-22T20:23:10.61Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "CustomersController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\CustomersController.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\CustomersController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\CustomersController.cs",
+              "RelativeToolTip": "Realtors-Portal\\Controllers\\CustomersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T20:23:01.675Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Details.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Listings\\Details.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Details.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Listings\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:08:55.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Listings\\Edit.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Edit.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Listings\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:08:54.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:08:32.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "_LayoutEmp.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Shared\\_LayoutEmp.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Shared\\_LayoutEmp.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Shared\\_LayoutEmp.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Shared\\_LayoutEmp.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:08:32.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Listings\\Delete.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Delete.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Listings\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T02:08:57.492Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAANcFAAAAAAAAAAAAANcFAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T10:37:35.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Index.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Listings\\Index.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Index.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Listings\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-22T01:09:35.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\UserAccounts\\Login.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T12:13:25.582Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Create.cshtml",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Listings\\Create.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Views\\Listings\\Create.cshtml",
+              "RelativeToolTip": "Realtors-Portal\\Views\\Listings\\Create.cshtml",
+              "ViewState": "AgIAABQBAAAAAAAAAADwvxYBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-20T12:23:19.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "ContactsController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\ContactsController.cs",
+              "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\ContactsController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\ContactsController.cs",
+              "RelativeToolTip": "Realtors-Portal\\Controllers\\ContactsController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T12:59:52.217Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Realtors-Portal\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Realtors-Portal\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -170,73 +782,35 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 47,
               "Title": "_PartiaSideBar.cshtml",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\Shared\\_PartiaSideBar.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\Shared\\_PartiaSideBar.cshtml",
               "RelativeDocumentMoniker": "Realtors-Portal\\Areas\\Admin\\Views\\Shared\\_PartiaSideBar.cshtml",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\Shared\\_PartiaSideBar.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\Shared\\_PartiaSideBar.cshtml",
               "RelativeToolTip": "Realtors-Portal\\Areas\\Admin\\Views\\Shared\\_PartiaSideBar.cshtml",
               "ViewState": "AgIAAO0AAAAAAAAAAADwvwIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T10:25:34.729Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-20T10:25:34.729Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RealtorsPortalModel.edmx [Diagram1]",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.edmx",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Models\\RealtorsPortalModel.edmx",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Models\\RealtorsPortalModel.edmx [Diagram1]",
-              "RelativeToolTip": "Realtors-Portal\\Models\\RealtorsPortalModel.edmx [Diagram1]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2025-10-20T10:41:05.325Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 48,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Realtors-Portal\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAM8FAAAAAAAAACBjwNcFAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T10:37:35.883Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Trangchu.cshtml",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
-              "RelativeDocumentMoniker": "Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
-              "RelativeToolTip": "Realtors-Portal\\Views\\Home\\Trangchu.cshtml",
-              "ViewState": "AgIAAKIFAAAAAAAAAAAAANcFAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T10:37:14.554Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\SystemConfigs\\Index.cshtml",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\SystemConfigs\\Index.cshtml",
               "RelativeDocumentMoniker": "Realtors-Portal\\Areas\\Admin\\Views\\SystemConfigs\\Index.cshtml",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\SystemConfigs\\Index.cshtml",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Views\\SystemConfigs\\Index.cshtml",
               "RelativeToolTip": "Realtors-Portal\\Areas\\Admin\\Views\\SystemConfigs\\Index.cshtml",
               "ViewState": "AgIAACMAAAAAAAAAAIBZwF4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-20T10:27:02.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-20T10:27:02.898Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 49,
               "Title": "SystemConfigsController.cs",
-              "DocumentMoniker": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Controllers\\SystemConfigsController.cs",
+              "DocumentMoniker": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Controllers\\SystemConfigsController.cs",
               "RelativeDocumentMoniker": "Realtors-Portal\\Areas\\Admin\\Controllers\\SystemConfigsController.cs",
-              "ToolTip": "D:\\PROJECT\\Realtors-Portal\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Controllers\\SystemConfigsController.cs",
+              "ToolTip": "D:\\Realtor\\Realtors-Portal\\Realtors-Portal\\Areas\\Admin\\Controllers\\SystemConfigsController.cs",
               "RelativeToolTip": "Realtors-Portal\\Areas\\Admin\\Controllers\\SystemConfigsController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

@@ -23,11 +23,11 @@
     <Property Name="WardID" Type="Int32" Nullable="false" />
     <Property Name="Street" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
     <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullAddress" Type="String" MaxLength="342" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
     <NavigationProperty Name="City" Relationship="Self.FK__Address__CityID__75A278F5" FromRole="Address" ToRole="City" />
     <NavigationProperty Name="District" Relationship="Self.FK__Address__Distric__76969D2E" FromRole="Address" ToRole="District" />
     <NavigationProperty Name="Ward" Relationship="Self.FK__Address__WardID__778AC167" FromRole="Address" ToRole="Ward" />
     <NavigationProperty Name="Properties" Relationship="Self.FK__Propertie__Addre__00200768" FromRole="Address" ToRole="Properties" />
-    <Property Name="FullAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="BoostHistory">
     <Key>
@@ -97,6 +97,14 @@
     <NavigationProperty Name="Customer" Relationship="Self.FK__Contract__Custom__6754599E" FromRole="Contract" ToRole="Customer" />
     <NavigationProperty Name="Package" Relationship="Self.FK__Contract__Packag__68487DD7" FromRole="Contract" ToRole="Package" />
     <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__Contrac__208CD6FA" FromRole="Contract" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ExchangeRate" Type="Decimal" Precision="18" Scale="6" />
+    <Property Name="LastUpdated" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -251,11 +259,55 @@
     <Property Name="StartDate" Type="DateTime" Precision="3" />
     <Property Name="EndDate" Type="DateTime" Precision="3" />
     <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TransactionCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ExternalTransactionId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Contract" Relationship="Self.FK__Payment__Contrac__208CD6FA" FromRole="Payment" ToRole="Contract" />
     <NavigationProperty Name="Customer" Relationship="Self.FK__Payment__Custome__1F98B2C1" FromRole="Payment" ToRole="Customer" />
     <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__Payment__55009F39" FromRole="Payment" ToRole="Invoice" />
     <NavigationProperty Name="Listing" Relationship="Self.FK__Payment__Listing__2180FB33" FromRole="Payment" ToRole="Listing" />
     <NavigationProperty Name="Package" Relationship="Self.FK__Payment__Package__22751F6C" FromRole="Payment" ToRole="Package" />
+    <NavigationProperty Name="PaymentLogs" Relationship="Self.FK_PaymentLog_Payment" FromRole="Payment" ToRole="PaymentLog" />
+    <NavigationProperty Name="PaymentTransactions" Relationship="Self.FK_PaymentTransaction_Payment" FromRole="Payment" ToRole="PaymentTransaction" />
+  </EntityType>
+  <EntityType Name="PaymentGateway">
+    <Key>
+      <PropertyRef Name="GatewayId" />
+    </Key>
+    <Property Name="GatewayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ApiKey" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="SecretKey" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Endpoint" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="PaymentLog">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentId" Type="Int32" />
+    <Property Name="LogType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_PaymentLog_Payment" FromRole="PaymentLog" ToRole="Payment" />
+  </EntityType>
+  <EntityType Name="PaymentTransaction">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentId" Type="Int32" Nullable="false" />
+    <Property Name="ActionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ResponseCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ResponseMessage" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="RawResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Payment" Relationship="Self.FK_PaymentTransaction_Payment" FromRole="PaymentTransaction" ToRole="Payment" />
   </EntityType>
   <EntityType Name="Property">
     <Key>
@@ -272,14 +324,14 @@
     <Property Name="LegalStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="CreatedAt" Type="DateTime" Precision="3" />
     <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+    <Property Name="PropertyTypeID" Type="Int32" />
     <NavigationProperty Name="Address" Relationship="Self.FK__Propertie__Addre__00200768" FromRole="Properties" ToRole="Address" />
     <NavigationProperty Name="Category" Relationship="Self.FK__Propertie__Categ__7F2BE32F" FromRole="Properties" ToRole="Category" />
     <NavigationProperty Name="Customer" Relationship="Self.FK__Propertie__Custo__7E37BEF6" FromRole="Properties" ToRole="Customer" />
     <NavigationProperty Name="Listings" Relationship="Self.FK__Listing__Propert__17F790F9" FromRole="Properties" ToRole="Listing" />
     <NavigationProperty Name="PropertyDetails" Relationship="Self.FK__PropertyD__Prope__06CD04F7" FromRole="Properties" ToRole="PropertyDetail" />
+    <NavigationProperty Name="PropertyType" Relationship="Self.FK_Properties_PropertyType" FromRole="Properties" ToRole="PropertyType" />
     <NavigationProperty Name="PropertyImages" Relationship="Self.FK_PropertyImage_Properties" FromRole="Properties" ToRole="PropertyImage" />
-    <Property Name="PropertyTypeID" Type="Int32" />
-    <NavigationProperty Name="PropertyType1" Relationship="RealtorsPortalModel.FK_Properties_PropertyType" FromRole="Property" ToRole="PropertyType" />
   </EntityType>
   <EntityType Name="PropertyDetail">
     <Key>
@@ -313,6 +365,16 @@
     <Property Name="UploadedAt" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Property" Relationship="Self.FK_PropertyImage_Properties" FromRole="PropertyImage" ToRole="Properties" />
   </EntityType>
+  <EntityType Name="PropertyType">
+    <Key>
+      <PropertyRef Name="PropertyTypeID" />
+    </Key>
+    <Property Name="PropertyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_PropertyType" FromRole="PropertyType" ToRole="Properties" />
+  </EntityType>
   <EntityType Name="StaticPage">
     <Key>
       <PropertyRef Name="PageID" />
@@ -323,12 +385,12 @@
     <Property Name="PageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Thumbnail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+    <Property Name="CreatedBy" Type="Int32" />
     <Property Name="UpdatedBy" Type="Int32" />
     <Property Name="CreatedAt" Type="DateTime" Precision="3" />
     <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
     <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="IsActive" Type="Boolean" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
     <NavigationProperty Name="Employee" Relationship="Self.FK_StaticPage_Employee_CreatedBy" FromRole="StaticPage" ToRole="Employee" />
     <NavigationProperty Name="Employee1" Relationship="Self.FK_StaticPage_Employee_UpdatedBy" FromRole="StaticPage" ToRole="Employee" />
   </EntityType>
@@ -685,7 +747,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_StaticPage_Employee_CreatedBy">
-    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
     <End Role="StaticPage" Type="Self.StaticPage" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employee">
@@ -796,6 +858,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PaymentLog_Payment">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="PaymentLog" Type="Self.PaymentLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="PaymentLog">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentTransaction_Payment">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
+    <End Role="PaymentTransaction" Type="Self.PaymentTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="PaymentTransaction">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__PropertyD__Prope__06CD04F7">
     <End Role="Properties" Type="Self.Property" Multiplicity="1" />
     <End Role="PropertyDetail" Type="Self.PropertyDetail" Multiplicity="*" />
@@ -805,6 +891,18 @@
       </Principal>
       <Dependent Role="PropertyDetail">
         <PropertyRef Name="PropertyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Properties_PropertyType">
+    <End Role="PropertyType" Type="Self.PropertyType" Multiplicity="0..1" />
+    <End Role="Properties" Type="Self.Property" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyType">
+        <PropertyRef Name="PropertyTypeID" />
+      </Principal>
+      <Dependent Role="Properties">
+        <PropertyRef Name="PropertyTypeID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -830,6 +928,7 @@
     <EntitySet Name="Cities" EntityType="Self.City" />
     <EntitySet Name="Contacts" EntityType="Self.Contact" />
     <EntitySet Name="Contracts" EntityType="Self.Contract" />
+    <EntitySet Name="Currencies" EntityType="Self.Currency" />
     <EntitySet Name="Customers" EntityType="Self.Customer" />
     <EntitySet Name="Districts" EntityType="Self.District" />
     <EntitySet Name="Employees" EntityType="Self.Employee" />
@@ -839,9 +938,13 @@
     <EntitySet Name="Notifications" EntityType="Self.Notification" />
     <EntitySet Name="Packages" EntityType="Self.Package" />
     <EntitySet Name="Payments" EntityType="Self.Payment" />
+    <EntitySet Name="PaymentGateways" EntityType="Self.PaymentGateway" />
+    <EntitySet Name="PaymentLogs" EntityType="Self.PaymentLog" />
+    <EntitySet Name="PaymentTransactions" EntityType="Self.PaymentTransaction" />
     <EntitySet Name="Properties" EntityType="Self.Property" />
     <EntitySet Name="PropertyDetails" EntityType="Self.PropertyDetail" />
     <EntitySet Name="PropertyImages" EntityType="Self.PropertyImage" />
+    <EntitySet Name="PropertyTypes" EntityType="Self.PropertyType" />
     <EntitySet Name="StaticPages" EntityType="Self.StaticPage" />
     <EntitySet Name="SystemConfigs" EntityType="Self.SystemConfig" />
     <EntitySet Name="UserAccounts" EntityType="Self.UserAccount" />
@@ -982,40 +1085,25 @@
       <End Role="Package" EntitySet="Packages" />
       <End Role="Payment" EntitySet="Payments" />
     </AssociationSet>
+    <AssociationSet Name="FK_PaymentLog_Payment" Association="Self.FK_PaymentLog_Payment">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="PaymentLog" EntitySet="PaymentLogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentTransaction_Payment" Association="Self.FK_PaymentTransaction_Payment">
+      <End Role="Payment" EntitySet="Payments" />
+      <End Role="PaymentTransaction" EntitySet="PaymentTransactions" />
+    </AssociationSet>
     <AssociationSet Name="FK__PropertyD__Prope__06CD04F7" Association="Self.FK__PropertyD__Prope__06CD04F7">
       <End Role="Properties" EntitySet="Properties" />
       <End Role="PropertyDetail" EntitySet="PropertyDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Properties_PropertyType" Association="Self.FK_Properties_PropertyType">
+      <End Role="PropertyType" EntitySet="PropertyTypes" />
+      <End Role="Properties" EntitySet="Properties" />
     </AssociationSet>
     <AssociationSet Name="FK_PropertyImage_Properties" Association="Self.FK_PropertyImage_Properties">
       <End Role="Properties" EntitySet="Properties" />
       <End Role="PropertyImage" EntitySet="PropertyImages" />
     </AssociationSet>
-    <EntitySet Name="PropertyTypes" EntityType="RealtorsPortalModel.PropertyType" />
-    <AssociationSet Name="FK_Properties_PropertyType" Association="RealtorsPortalModel.FK_Properties_PropertyType">
-      <End Role="PropertyType" EntitySet="PropertyTypes" />
-      <End Role="Property" EntitySet="Properties" />
-    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="PropertyType">
-    <Key>
-      <PropertyRef Name="PropertyTypeID" />
-    </Key>
-    <Property Name="PropertyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="TypeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-    <Property Name="IsActive" Type="Boolean" />
-    <NavigationProperty Name="Properties" Relationship="RealtorsPortalModel.FK_Properties_PropertyType" FromRole="PropertyType" ToRole="Property" />
-  </EntityType>
-  <Association Name="FK_Properties_PropertyType">
-    <End Type="RealtorsPortalModel.PropertyType" Role="PropertyType" Multiplicity="0..1" />
-    <End Type="RealtorsPortalModel.Property" Role="Property" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="PropertyType">
-        <PropertyRef Name="PropertyTypeID" />
-      </Principal>
-      <Dependent Role="Property">
-        <PropertyRef Name="PropertyTypeID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema>

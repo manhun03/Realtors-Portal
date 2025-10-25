@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Realtors_Portal.Modules.Payment;
 
 namespace Realtors_Portal
 {
@@ -16,6 +17,8 @@ namespace Realtors_Portal
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            PaymentConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }

@@ -22,7 +22,7 @@
     <Property Name="WardID" Type="int" Nullable="false" />
     <Property Name="Street" Type="nvarchar" MaxLength="255" />
     <Property Name="HouseNumber" Type="nvarchar" MaxLength="50" />
-    <Property Name="FullAddress" Type="varchar(max)" />
+    <Property Name="FullAddress" Type="nvarchar" MaxLength="342" StoreGeneratedPattern="Computed" Nullable="false" />
   </EntityType>
   <EntityType Name="BoostHistory">
     <Key>
@@ -80,6 +80,14 @@
     <Property Name="StartDate" Type="datetime" />
     <Property Name="EndDate" Type="datetime" />
     <Property Name="Status" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Currency">
+    <Key>
+      <PropertyRef Name="CurrencyCode" />
+    </Key>
+    <Property Name="CurrencyCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ExchangeRate" Type="decimal" Precision="18" Scale="6" />
+    <Property Name="LastUpdated" Type="datetime" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -201,6 +209,46 @@
     <Property Name="StartDate" Type="datetime" />
     <Property Name="EndDate" Type="datetime" />
     <Property Name="Description" Type="nvarchar" MaxLength="255" />
+    <Property Name="TransactionCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="ExternalTransactionId" Type="nvarchar" MaxLength="100" />
+    <Property Name="CurrencyCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentGateway">
+    <Key>
+      <PropertyRef Name="GatewayId" />
+    </Key>
+    <Property Name="GatewayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ApiKey" Type="nvarchar" MaxLength="200" />
+    <Property Name="SecretKey" Type="nvarchar" MaxLength="200" />
+    <Property Name="Endpoint" Type="nvarchar" MaxLength="400" />
+    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentLog">
+    <Key>
+      <PropertyRef Name="LogId" />
+    </Key>
+    <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentId" Type="int" />
+    <Property Name="LogType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Message" Type="nvarchar" MaxLength="400" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentTransaction">
+    <Key>
+      <PropertyRef Name="TransactionId" />
+    </Key>
+    <Property Name="TransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentId" Type="int" Nullable="false" />
+    <Property Name="ActionType" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ResponseCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="ResponseMessage" Type="nvarchar" MaxLength="400" />
+    <Property Name="RawResponse" Type="nvarchar(max)" />
+    <Property Name="CreatedAt" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Properties">
     <Key>
@@ -215,7 +263,6 @@
     <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Area" Type="decimal" Precision="10" Scale="2" />
     <Property Name="LegalStatus" Type="nvarchar" MaxLength="100" />
-    <Property Name="PropertyType" Type="nvarchar" MaxLength="100" />
     <Property Name="CreatedAt" Type="datetime" />
     <Property Name="UpdatedAt" Type="datetime" />
     <Property Name="PropertyTypeID" Type="int" />
@@ -269,12 +316,12 @@
     <Property Name="PageType" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Content" Type="nvarchar(max)" />
     <Property Name="Thumbnail" Type="nvarchar" MaxLength="255" />
-    <Property Name="CreatedBy" Type="int" Nullable="false" />
+    <Property Name="CreatedBy" Type="int" />
     <Property Name="UpdatedBy" Type="int" />
     <Property Name="CreatedAt" Type="datetime" />
     <Property Name="UpdatedAt" Type="datetime" />
     <Property Name="Status" Type="nvarchar" MaxLength="20" />
-    <Property Name="IsActive" Type="bit" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
   </EntityType>
   <EntityType Name="SystemConfig">
     <Key>
@@ -313,7 +360,7 @@
     <Property Name="WardName" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
   </EntityType>
-  <Association Name="FK__ActivityL__UserI__3B40CD36">
+  <Association Name="FK__ActivityL__UserI__43D61337">
     <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
     <End Role="ActivityLog" Type="Self.ActivityLog" Multiplicity="*" />
     <ReferentialConstraint>
@@ -361,7 +408,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BoostHist__Custo__46B27FE2">
+  <Association Name="FK__BoostHist__Custo__4F47C5E3">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -375,7 +422,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__BoostHist__Listi__45BE5BA9">
+  <Association Name="FK__BoostHist__Listi__4E53A1AA">
     <End Role="Listing" Type="Self.Listing" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -389,7 +436,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Contact__Listing__2FCF1A8A">
+  <Association Name="FK__Contact__Listing__3864608B">
     <End Role="Listing" Type="Self.Listing" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -403,7 +450,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Contact__Receive__31B762FC">
+  <Association Name="FK__Contact__Receive__3A4CA8FD">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
     <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
     <ReferentialConstraint>
@@ -415,7 +462,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Contact__SenderC__30C33EC3">
+  <Association Name="FK__Contact__SenderC__395884C4">
     <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
     <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
     <ReferentialConstraint>
@@ -487,7 +534,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__FavoriteL__Custo__367C1819">
+  <Association Name="FK__FavoriteL__Custo__3F115E1A">
     <End Role="Customer" Type="Self.Customer" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -501,7 +548,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__FavoriteL__Listi__37703C52">
+  <Association Name="FK__FavoriteL__Listi__40058253">
     <End Role="Listing" Type="Self.Listing" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -515,7 +562,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Invoice__Payment__4C6B5938">
+  <Association Name="FK__Invoice__Payment__55009F39">
     <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
     <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
     <ReferentialConstraint>
@@ -587,7 +634,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Notificat__UserI__40058253">
+  <Association Name="FK__Notificat__UserI__489AC854">
     <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1">
       <OnDelete Action="Cascade" />
     </End>
@@ -721,6 +768,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PaymentLog_Payment">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+    <End Role="PaymentLog" Type="Self.PaymentLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="PaymentLog">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PaymentTransaction_Payment">
+    <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
+    <End Role="PaymentTransaction" Type="Self.PaymentTransaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="PaymentTransaction">
+        <PropertyRef Name="PaymentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Properties_PropertyType">
     <End Role="PropertyType" Type="Self.PropertyType" Multiplicity="0..1" />
     <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
@@ -748,7 +819,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_StaticPage_Employee_CreatedBy">
-    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
     <End Role="StaticPage" Type="Self.StaticPage" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employee">
@@ -779,6 +850,7 @@
     <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
@@ -788,6 +860,9 @@
     <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentGateway" EntityType="Self.PaymentGateway" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentLog" EntityType="Self.PaymentLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentTransaction" EntityType="Self.PaymentTransaction" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PropertyDetail" EntityType="Self.PropertyDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PropertyImage" EntityType="Self.PropertyImage" Schema="dbo" store:Type="Tables" />
@@ -796,7 +871,7 @@
     <EntitySet Name="SystemConfig" EntityType="Self.SystemConfig" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__ActivityL__UserI__3B40CD36" Association="Self.FK__ActivityL__UserI__3B40CD36">
+    <AssociationSet Name="FK__ActivityL__UserI__43D61337" Association="Self.FK__ActivityL__UserI__43D61337">
       <End Role="UserAccount" EntitySet="UserAccount" />
       <End Role="ActivityLog" EntitySet="ActivityLog" />
     </AssociationSet>
@@ -812,23 +887,23 @@
       <End Role="Ward" EntitySet="Ward" />
       <End Role="Address" EntitySet="Address" />
     </AssociationSet>
-    <AssociationSet Name="FK__BoostHist__Custo__46B27FE2" Association="Self.FK__BoostHist__Custo__46B27FE2">
+    <AssociationSet Name="FK__BoostHist__Custo__4F47C5E3" Association="Self.FK__BoostHist__Custo__4F47C5E3">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="BoostHistory" EntitySet="BoostHistory" />
     </AssociationSet>
-    <AssociationSet Name="FK__BoostHist__Listi__45BE5BA9" Association="Self.FK__BoostHist__Listi__45BE5BA9">
+    <AssociationSet Name="FK__BoostHist__Listi__4E53A1AA" Association="Self.FK__BoostHist__Listi__4E53A1AA">
       <End Role="Listing" EntitySet="Listing" />
       <End Role="BoostHistory" EntitySet="BoostHistory" />
     </AssociationSet>
-    <AssociationSet Name="FK__Contact__Listing__2FCF1A8A" Association="Self.FK__Contact__Listing__2FCF1A8A">
+    <AssociationSet Name="FK__Contact__Listing__3864608B" Association="Self.FK__Contact__Listing__3864608B">
       <End Role="Listing" EntitySet="Listing" />
       <End Role="Contact" EntitySet="Contact" />
     </AssociationSet>
-    <AssociationSet Name="FK__Contact__Receive__31B762FC" Association="Self.FK__Contact__Receive__31B762FC">
+    <AssociationSet Name="FK__Contact__Receive__3A4CA8FD" Association="Self.FK__Contact__Receive__3A4CA8FD">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Contact" EntitySet="Contact" />
     </AssociationSet>
-    <AssociationSet Name="FK__Contact__SenderC__30C33EC3" Association="Self.FK__Contact__SenderC__30C33EC3">
+    <AssociationSet Name="FK__Contact__SenderC__395884C4" Association="Self.FK__Contact__SenderC__395884C4">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="Contact" EntitySet="Contact" />
     </AssociationSet>
@@ -852,15 +927,15 @@
       <End Role="UserAccount" EntitySet="UserAccount" />
       <End Role="Employee" EntitySet="Employee" />
     </AssociationSet>
-    <AssociationSet Name="FK__FavoriteL__Custo__367C1819" Association="Self.FK__FavoriteL__Custo__367C1819">
+    <AssociationSet Name="FK__FavoriteL__Custo__3F115E1A" Association="Self.FK__FavoriteL__Custo__3F115E1A">
       <End Role="Customer" EntitySet="Customer" />
       <End Role="FavoriteListing" EntitySet="FavoriteListing" />
     </AssociationSet>
-    <AssociationSet Name="FK__FavoriteL__Listi__37703C52" Association="Self.FK__FavoriteL__Listi__37703C52">
+    <AssociationSet Name="FK__FavoriteL__Listi__40058253" Association="Self.FK__FavoriteL__Listi__40058253">
       <End Role="Listing" EntitySet="Listing" />
       <End Role="FavoriteListing" EntitySet="FavoriteListing" />
     </AssociationSet>
-    <AssociationSet Name="FK__Invoice__Payment__4C6B5938" Association="Self.FK__Invoice__Payment__4C6B5938">
+    <AssociationSet Name="FK__Invoice__Payment__55009F39" Association="Self.FK__Invoice__Payment__55009F39">
       <End Role="Payment" EntitySet="Payment" />
       <End Role="Invoice" EntitySet="Invoice" />
     </AssociationSet>
@@ -884,7 +959,7 @@
       <End Role="Properties" EntitySet="Properties" />
       <End Role="Listing" EntitySet="Listing" />
     </AssociationSet>
-    <AssociationSet Name="FK__Notificat__UserI__40058253" Association="Self.FK__Notificat__UserI__40058253">
+    <AssociationSet Name="FK__Notificat__UserI__489AC854" Association="Self.FK__Notificat__UserI__489AC854">
       <End Role="UserAccount" EntitySet="UserAccount" />
       <End Role="Notification" EntitySet="Notification" />
     </AssociationSet>
@@ -927,6 +1002,14 @@
     <AssociationSet Name="FK__Ward__DistrictID__72C60C4A" Association="Self.FK__Ward__DistrictID__72C60C4A">
       <End Role="District" EntitySet="District" />
       <End Role="Ward" EntitySet="Ward" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentLog_Payment" Association="Self.FK_PaymentLog_Payment">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="PaymentLog" EntitySet="PaymentLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PaymentTransaction_Payment" Association="Self.FK_PaymentTransaction_Payment">
+      <End Role="Payment" EntitySet="Payment" />
+      <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
     </AssociationSet>
     <AssociationSet Name="FK_Properties_PropertyType" Association="Self.FK_Properties_PropertyType">
       <End Role="PropertyType" EntitySet="PropertyType" />

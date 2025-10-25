@@ -42,9 +42,10 @@ namespace Realtors_Portal.Models
         public virtual ICollection<Listing> Listings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PropertyDetail> PropertyDetails { get; set; }
+        public virtual PropertyType PropertyType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PropertyImage> PropertyImages { get; set; }
-        public virtual PropertyType PropertyType1 { get; set; }
-        public string PropertyType { get; internal set; }
+        
+
     }
 }

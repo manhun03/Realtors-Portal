@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="RealtorsPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="RealtorsPortalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ActivityLog">
           <Key>
             <PropertyRef Name="LogID" />
@@ -27,7 +27,7 @@
           <Property Name="WardID" Type="int" Nullable="false" />
           <Property Name="Street" Type="nvarchar" MaxLength="255" />
           <Property Name="HouseNumber" Type="nvarchar" MaxLength="50" />
-          <Property Name="FullAddress" Type="varchar(max)" />
+          <Property Name="FullAddress" Type="nvarchar" MaxLength="342" StoreGeneratedPattern="Computed" Nullable="false" />
         </EntityType>
         <EntityType Name="BoostHistory">
           <Key>
@@ -85,6 +85,14 @@
           <Property Name="StartDate" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
           <Property Name="Status" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyCode" />
+          </Key>
+          <Property Name="CurrencyCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="ExchangeRate" Type="decimal" Precision="18" Scale="6" />
+          <Property Name="LastUpdated" Type="datetime" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -206,6 +214,46 @@
           <Property Name="StartDate" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="TransactionCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExternalTransactionId" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrencyCode" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentGateway">
+          <Key>
+            <PropertyRef Name="GatewayId" />
+          </Key>
+          <Property Name="GatewayId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ApiKey" Type="nvarchar" MaxLength="200" />
+          <Property Name="SecretKey" Type="nvarchar" MaxLength="200" />
+          <Property Name="Endpoint" Type="nvarchar" MaxLength="400" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentId" Type="int" />
+          <Property Name="LogType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" MaxLength="400" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentId" Type="int" Nullable="false" />
+          <Property Name="ActionType" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ResponseCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResponseMessage" Type="nvarchar" MaxLength="400" />
+          <Property Name="RawResponse" Type="nvarchar(max)" />
+          <Property Name="CreatedAt" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="Properties">
           <Key>
@@ -220,7 +268,6 @@
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Area" Type="decimal" Precision="10" Scale="2" />
           <Property Name="LegalStatus" Type="nvarchar" MaxLength="100" />
-          <Property Name="PropertyType" Type="nvarchar" MaxLength="100" />
           <Property Name="CreatedAt" Type="datetime" />
           <Property Name="UpdatedAt" Type="datetime" />
           <Property Name="PropertyTypeID" Type="int" />
@@ -274,12 +321,12 @@
           <Property Name="PageType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Content" Type="nvarchar(max)" />
           <Property Name="Thumbnail" Type="nvarchar" MaxLength="255" />
-          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" />
           <Property Name="UpdatedBy" Type="int" />
           <Property Name="CreatedAt" Type="datetime" />
           <Property Name="UpdatedAt" Type="datetime" />
           <Property Name="Status" Type="nvarchar" MaxLength="20" />
-          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" />
         </EntityType>
         <EntityType Name="SystemConfig">
           <Key>
@@ -318,7 +365,7 @@
           <Property Name="WardName" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="IsActive" Type="bit" Nullable="false" />
         </EntityType>
-        <Association Name="FK__ActivityL__UserI__3B40CD36">
+        <Association Name="FK__ActivityL__UserI__43D61337">
           <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1" />
           <End Role="ActivityLog" Type="Self.ActivityLog" Multiplicity="*" />
           <ReferentialConstraint>
@@ -366,7 +413,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BoostHist__Custo__46B27FE2">
+        <Association Name="FK__BoostHist__Custo__4F47C5E3">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -380,7 +427,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__BoostHist__Listi__45BE5BA9">
+        <Association Name="FK__BoostHist__Listi__4E53A1AA">
           <End Role="Listing" Type="Self.Listing" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -394,7 +441,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Contact__Listing__2FCF1A8A">
+        <Association Name="FK__Contact__Listing__3864608B">
           <End Role="Listing" Type="Self.Listing" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -408,7 +455,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Contact__Receive__31B762FC">
+        <Association Name="FK__Contact__Receive__3A4CA8FD">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
           <ReferentialConstraint>
@@ -420,7 +467,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Contact__SenderC__30C33EC3">
+        <Association Name="FK__Contact__SenderC__395884C4">
           <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
           <End Role="Contact" Type="Self.Contact" Multiplicity="*" />
           <ReferentialConstraint>
@@ -492,7 +539,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FavoriteL__Custo__367C1819">
+        <Association Name="FK__FavoriteL__Custo__3F115E1A">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -506,7 +553,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__FavoriteL__Listi__37703C52">
+        <Association Name="FK__FavoriteL__Listi__40058253">
           <End Role="Listing" Type="Self.Listing" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -520,7 +567,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Invoice__Payment__4C6B5938">
+        <Association Name="FK__Invoice__Payment__55009F39">
           <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
           <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
           <ReferentialConstraint>
@@ -592,7 +639,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Notificat__UserI__40058253">
+        <Association Name="FK__Notificat__UserI__489AC854">
           <End Role="UserAccount" Type="Self.UserAccount" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -726,6 +773,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PaymentLog_Payment">
+          <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+          <End Role="PaymentLog" Type="Self.PaymentLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="PaymentLog">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_Payment">
+          <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="Self.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Properties_PropertyType">
           <End Role="PropertyType" Type="Self.PropertyType" Multiplicity="0..1" />
           <End Role="Properties" Type="Self.Properties" Multiplicity="*" />
@@ -753,7 +824,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StaticPage_Employee_CreatedBy">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="StaticPage" Type="Self.StaticPage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -784,6 +855,7 @@
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contact" EntityType="Self.Contact" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Currency" EntityType="Self.Currency" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="District" EntityType="Self.District" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
@@ -793,6 +865,9 @@
           <EntitySet Name="Notification" EntityType="Self.Notification" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Package" EntityType="Self.Package" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Payment" EntityType="Self.Payment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentGateway" EntityType="Self.PaymentGateway" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentLog" EntityType="Self.PaymentLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentTransaction" EntityType="Self.PaymentTransaction" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Properties" EntityType="Self.Properties" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PropertyDetail" EntityType="Self.PropertyDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PropertyImage" EntityType="Self.PropertyImage" Schema="dbo" store:Type="Tables" />
@@ -801,7 +876,7 @@
           <EntitySet Name="SystemConfig" EntityType="Self.SystemConfig" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ward" EntityType="Self.Ward" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__ActivityL__UserI__3B40CD36" Association="Self.FK__ActivityL__UserI__3B40CD36">
+          <AssociationSet Name="FK__ActivityL__UserI__43D61337" Association="Self.FK__ActivityL__UserI__43D61337">
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="ActivityLog" EntitySet="ActivityLog" />
           </AssociationSet>
@@ -817,23 +892,23 @@
             <End Role="Ward" EntitySet="Ward" />
             <End Role="Address" EntitySet="Address" />
           </AssociationSet>
-          <AssociationSet Name="FK__BoostHist__Custo__46B27FE2" Association="Self.FK__BoostHist__Custo__46B27FE2">
+          <AssociationSet Name="FK__BoostHist__Custo__4F47C5E3" Association="Self.FK__BoostHist__Custo__4F47C5E3">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="BoostHistory" EntitySet="BoostHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__BoostHist__Listi__45BE5BA9" Association="Self.FK__BoostHist__Listi__45BE5BA9">
+          <AssociationSet Name="FK__BoostHist__Listi__4E53A1AA" Association="Self.FK__BoostHist__Listi__4E53A1AA">
             <End Role="Listing" EntitySet="Listing" />
             <End Role="BoostHistory" EntitySet="BoostHistory" />
           </AssociationSet>
-          <AssociationSet Name="FK__Contact__Listing__2FCF1A8A" Association="Self.FK__Contact__Listing__2FCF1A8A">
+          <AssociationSet Name="FK__Contact__Listing__3864608B" Association="Self.FK__Contact__Listing__3864608B">
             <End Role="Listing" EntitySet="Listing" />
             <End Role="Contact" EntitySet="Contact" />
           </AssociationSet>
-          <AssociationSet Name="FK__Contact__Receive__31B762FC" Association="Self.FK__Contact__Receive__31B762FC">
+          <AssociationSet Name="FK__Contact__Receive__3A4CA8FD" Association="Self.FK__Contact__Receive__3A4CA8FD">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Contact" EntitySet="Contact" />
           </AssociationSet>
-          <AssociationSet Name="FK__Contact__SenderC__30C33EC3" Association="Self.FK__Contact__SenderC__30C33EC3">
+          <AssociationSet Name="FK__Contact__SenderC__395884C4" Association="Self.FK__Contact__SenderC__395884C4">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="Contact" EntitySet="Contact" />
           </AssociationSet>
@@ -857,15 +932,15 @@
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="Employee" EntitySet="Employee" />
           </AssociationSet>
-          <AssociationSet Name="FK__FavoriteL__Custo__367C1819" Association="Self.FK__FavoriteL__Custo__367C1819">
+          <AssociationSet Name="FK__FavoriteL__Custo__3F115E1A" Association="Self.FK__FavoriteL__Custo__3F115E1A">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="FavoriteListing" EntitySet="FavoriteListing" />
           </AssociationSet>
-          <AssociationSet Name="FK__FavoriteL__Listi__37703C52" Association="Self.FK__FavoriteL__Listi__37703C52">
+          <AssociationSet Name="FK__FavoriteL__Listi__40058253" Association="Self.FK__FavoriteL__Listi__40058253">
             <End Role="Listing" EntitySet="Listing" />
             <End Role="FavoriteListing" EntitySet="FavoriteListing" />
           </AssociationSet>
-          <AssociationSet Name="FK__Invoice__Payment__4C6B5938" Association="Self.FK__Invoice__Payment__4C6B5938">
+          <AssociationSet Name="FK__Invoice__Payment__55009F39" Association="Self.FK__Invoice__Payment__55009F39">
             <End Role="Payment" EntitySet="Payment" />
             <End Role="Invoice" EntitySet="Invoice" />
           </AssociationSet>
@@ -889,7 +964,7 @@
             <End Role="Properties" EntitySet="Properties" />
             <End Role="Listing" EntitySet="Listing" />
           </AssociationSet>
-          <AssociationSet Name="FK__Notificat__UserI__40058253" Association="Self.FK__Notificat__UserI__40058253">
+          <AssociationSet Name="FK__Notificat__UserI__489AC854" Association="Self.FK__Notificat__UserI__489AC854">
             <End Role="UserAccount" EntitySet="UserAccount" />
             <End Role="Notification" EntitySet="Notification" />
           </AssociationSet>
@@ -933,6 +1008,14 @@
             <End Role="District" EntitySet="District" />
             <End Role="Ward" EntitySet="Ward" />
           </AssociationSet>
+          <AssociationSet Name="FK_PaymentLog_Payment" Association="Self.FK_PaymentLog_Payment">
+            <End Role="Payment" EntitySet="Payment" />
+            <End Role="PaymentLog" EntitySet="PaymentLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_Payment" Association="Self.FK_PaymentTransaction_Payment">
+            <End Role="Payment" EntitySet="Payment" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransaction" />
+          </AssociationSet>
           <AssociationSet Name="FK_Properties_PropertyType" Association="Self.FK_Properties_PropertyType">
             <End Role="PropertyType" EntitySet="PropertyType" />
             <End Role="Properties" EntitySet="Properties" />
@@ -950,7 +1033,8 @@
             <End Role="StaticPage" EntitySet="StaticPage" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RealtorsPortalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -977,11 +1061,11 @@
           <Property Name="WardID" Type="Int32" Nullable="false" />
           <Property Name="Street" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="HouseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullAddress" Type="String" MaxLength="342" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
           <NavigationProperty Name="City" Relationship="Self.FK__Address__CityID__75A278F5" FromRole="Address" ToRole="City" />
           <NavigationProperty Name="District" Relationship="Self.FK__Address__Distric__76969D2E" FromRole="Address" ToRole="District" />
           <NavigationProperty Name="Ward" Relationship="Self.FK__Address__WardID__778AC167" FromRole="Address" ToRole="Ward" />
           <NavigationProperty Name="Properties" Relationship="Self.FK__Propertie__Addre__00200768" FromRole="Address" ToRole="Properties" />
-          <Property Name="FullAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="BoostHistory">
           <Key>
@@ -1051,6 +1135,14 @@
           <NavigationProperty Name="Customer" Relationship="Self.FK__Contract__Custom__6754599E" FromRole="Contract" ToRole="Customer" />
           <NavigationProperty Name="Package" Relationship="Self.FK__Contract__Packag__68487DD7" FromRole="Contract" ToRole="Package" />
           <NavigationProperty Name="Payments" Relationship="Self.FK__Payment__Contrac__208CD6FA" FromRole="Contract" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="CurrencyCode" />
+          </Key>
+          <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ExchangeRate" Type="Decimal" Precision="18" Scale="6" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -1205,11 +1297,55 @@
           <Property Name="StartDate" Type="DateTime" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ExternalTransactionId" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrencyCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Contract" Relationship="Self.FK__Payment__Contrac__208CD6FA" FromRole="Payment" ToRole="Contract" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Payment__Custome__1F98B2C1" FromRole="Payment" ToRole="Customer" />
           <NavigationProperty Name="Invoices" Relationship="Self.FK__Invoice__Payment__55009F39" FromRole="Payment" ToRole="Invoice" />
           <NavigationProperty Name="Listing" Relationship="Self.FK__Payment__Listing__2180FB33" FromRole="Payment" ToRole="Listing" />
           <NavigationProperty Name="Package" Relationship="Self.FK__Payment__Package__22751F6C" FromRole="Payment" ToRole="Package" />
+          <NavigationProperty Name="PaymentLogs" Relationship="Self.FK_PaymentLog_Payment" FromRole="Payment" ToRole="PaymentLog" />
+          <NavigationProperty Name="PaymentTransactions" Relationship="Self.FK_PaymentTransaction_Payment" FromRole="Payment" ToRole="PaymentTransaction" />
+        </EntityType>
+        <EntityType Name="PaymentGateway">
+          <Key>
+            <PropertyRef Name="GatewayId" />
+          </Key>
+          <Property Name="GatewayId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ApiKey" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SecretKey" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Endpoint" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="PaymentLog">
+          <Key>
+            <PropertyRef Name="LogId" />
+          </Key>
+          <Property Name="LogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentId" Type="Int32" />
+          <Property Name="LogType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Payment" Relationship="Self.FK_PaymentLog_Payment" FromRole="PaymentLog" ToRole="Payment" />
+        </EntityType>
+        <EntityType Name="PaymentTransaction">
+          <Key>
+            <PropertyRef Name="TransactionId" />
+          </Key>
+          <Property Name="TransactionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentId" Type="Int32" Nullable="false" />
+          <Property Name="ActionType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ResponseCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResponseMessage" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="RawResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Payment" Relationship="Self.FK_PaymentTransaction_Payment" FromRole="PaymentTransaction" ToRole="Payment" />
         </EntityType>
         <EntityType Name="Property">
           <Key>
@@ -1226,14 +1362,14 @@
           <Property Name="LegalStatus" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="CreatedAt" Type="DateTime" Precision="3" />
           <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
+          <Property Name="PropertyTypeID" Type="Int32" />
           <NavigationProperty Name="Address" Relationship="Self.FK__Propertie__Addre__00200768" FromRole="Properties" ToRole="Address" />
           <NavigationProperty Name="Category" Relationship="Self.FK__Propertie__Categ__7F2BE32F" FromRole="Properties" ToRole="Category" />
           <NavigationProperty Name="Customer" Relationship="Self.FK__Propertie__Custo__7E37BEF6" FromRole="Properties" ToRole="Customer" />
           <NavigationProperty Name="Listings" Relationship="Self.FK__Listing__Propert__17F790F9" FromRole="Properties" ToRole="Listing" />
           <NavigationProperty Name="PropertyDetails" Relationship="Self.FK__PropertyD__Prope__06CD04F7" FromRole="Properties" ToRole="PropertyDetail" />
+          <NavigationProperty Name="PropertyType" Relationship="Self.FK_Properties_PropertyType" FromRole="Properties" ToRole="PropertyType" />
           <NavigationProperty Name="PropertyImages" Relationship="Self.FK_PropertyImage_Properties" FromRole="Properties" ToRole="PropertyImage" />
-          <Property Name="PropertyTypeID" Type="Int32" />
-          <NavigationProperty Name="PropertyType1" Relationship="RealtorsPortalModel.FK_Properties_PropertyType" FromRole="Property" ToRole="PropertyType" />
         </EntityType>
         <EntityType Name="PropertyDetail">
           <Key>
@@ -1267,6 +1403,16 @@
           <Property Name="UploadedAt" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Property" Relationship="Self.FK_PropertyImage_Properties" FromRole="PropertyImage" ToRole="Properties" />
         </EntityType>
+        <EntityType Name="PropertyType">
+          <Key>
+            <PropertyRef Name="PropertyTypeID" />
+          </Key>
+          <Property Name="PropertyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" />
+          <NavigationProperty Name="Properties" Relationship="Self.FK_Properties_PropertyType" FromRole="PropertyType" ToRole="Properties" />
+        </EntityType>
         <EntityType Name="StaticPage">
           <Key>
             <PropertyRef Name="PageID" />
@@ -1277,12 +1423,12 @@
           <Property Name="PageType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Content" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Thumbnail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int32" />
           <Property Name="UpdatedBy" Type="Int32" />
           <Property Name="CreatedAt" Type="DateTime" Precision="3" />
           <Property Name="UpdatedAt" Type="DateTime" Precision="3" />
           <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_StaticPage_Employee_CreatedBy" FromRole="StaticPage" ToRole="Employee" />
           <NavigationProperty Name="Employee1" Relationship="Self.FK_StaticPage_Employee_UpdatedBy" FromRole="StaticPage" ToRole="Employee" />
         </EntityType>
@@ -1639,7 +1785,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StaticPage_Employee_CreatedBy">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
           <End Role="StaticPage" Type="Self.StaticPage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -1750,6 +1896,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PaymentLog_Payment">
+          <End Role="Payment" Type="Self.Payment" Multiplicity="0..1" />
+          <End Role="PaymentLog" Type="Self.PaymentLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="PaymentLog">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PaymentTransaction_Payment">
+          <End Role="Payment" Type="Self.Payment" Multiplicity="1" />
+          <End Role="PaymentTransaction" Type="Self.PaymentTransaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Payment">
+              <PropertyRef Name="PaymentID" />
+            </Principal>
+            <Dependent Role="PaymentTransaction">
+              <PropertyRef Name="PaymentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__PropertyD__Prope__06CD04F7">
           <End Role="Properties" Type="Self.Property" Multiplicity="1" />
           <End Role="PropertyDetail" Type="Self.PropertyDetail" Multiplicity="*" />
@@ -1759,6 +1929,18 @@
             </Principal>
             <Dependent Role="PropertyDetail">
               <PropertyRef Name="PropertyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Properties_PropertyType">
+          <End Role="PropertyType" Type="Self.PropertyType" Multiplicity="0..1" />
+          <End Role="Properties" Type="Self.Property" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PropertyType">
+              <PropertyRef Name="PropertyTypeID" />
+            </Principal>
+            <Dependent Role="Properties">
+              <PropertyRef Name="PropertyTypeID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1784,6 +1966,7 @@
           <EntitySet Name="Cities" EntityType="Self.City" />
           <EntitySet Name="Contacts" EntityType="Self.Contact" />
           <EntitySet Name="Contracts" EntityType="Self.Contract" />
+          <EntitySet Name="Currencies" EntityType="Self.Currency" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="Districts" EntityType="Self.District" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
@@ -1793,9 +1976,13 @@
           <EntitySet Name="Notifications" EntityType="Self.Notification" />
           <EntitySet Name="Packages" EntityType="Self.Package" />
           <EntitySet Name="Payments" EntityType="Self.Payment" />
+          <EntitySet Name="PaymentGateways" EntityType="Self.PaymentGateway" />
+          <EntitySet Name="PaymentLogs" EntityType="Self.PaymentLog" />
+          <EntitySet Name="PaymentTransactions" EntityType="Self.PaymentTransaction" />
           <EntitySet Name="Properties" EntityType="Self.Property" />
           <EntitySet Name="PropertyDetails" EntityType="Self.PropertyDetail" />
           <EntitySet Name="PropertyImages" EntityType="Self.PropertyImage" />
+          <EntitySet Name="PropertyTypes" EntityType="Self.PropertyType" />
           <EntitySet Name="StaticPages" EntityType="Self.StaticPage" />
           <EntitySet Name="SystemConfigs" EntityType="Self.SystemConfig" />
           <EntitySet Name="UserAccounts" EntityType="Self.UserAccount" />
@@ -1936,42 +2123,27 @@
             <End Role="Package" EntitySet="Packages" />
             <End Role="Payment" EntitySet="Payments" />
           </AssociationSet>
+          <AssociationSet Name="FK_PaymentLog_Payment" Association="Self.FK_PaymentLog_Payment">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="PaymentLog" EntitySet="PaymentLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PaymentTransaction_Payment" Association="Self.FK_PaymentTransaction_Payment">
+            <End Role="Payment" EntitySet="Payments" />
+            <End Role="PaymentTransaction" EntitySet="PaymentTransactions" />
+          </AssociationSet>
           <AssociationSet Name="FK__PropertyD__Prope__06CD04F7" Association="Self.FK__PropertyD__Prope__06CD04F7">
             <End Role="Properties" EntitySet="Properties" />
             <End Role="PropertyDetail" EntitySet="PropertyDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Properties_PropertyType" Association="Self.FK_Properties_PropertyType">
+            <End Role="PropertyType" EntitySet="PropertyTypes" />
+            <End Role="Properties" EntitySet="Properties" />
           </AssociationSet>
           <AssociationSet Name="FK_PropertyImage_Properties" Association="Self.FK_PropertyImage_Properties">
             <End Role="Properties" EntitySet="Properties" />
             <End Role="PropertyImage" EntitySet="PropertyImages" />
           </AssociationSet>
-          <EntitySet Name="PropertyTypes" EntityType="RealtorsPortalModel.PropertyType" />
-          <AssociationSet Name="FK_Properties_PropertyType" Association="RealtorsPortalModel.FK_Properties_PropertyType">
-            <End Role="PropertyType" EntitySet="PropertyTypes" />
-            <End Role="Property" EntitySet="Properties" />
-          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="PropertyType">
-          <Key>
-            <PropertyRef Name="PropertyTypeID" />
-          </Key>
-          <Property Name="PropertyTypeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="TypeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="IsActive" Type="Boolean" />
-          <NavigationProperty Name="Properties" Relationship="RealtorsPortalModel.FK_Properties_PropertyType" FromRole="PropertyType" ToRole="Property" />
-        </EntityType>
-        <Association Name="FK_Properties_PropertyType">
-          <End Type="RealtorsPortalModel.PropertyType" Role="PropertyType" Multiplicity="0..1" />
-          <End Type="RealtorsPortalModel.Property" Role="Property" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="PropertyType">
-              <PropertyRef Name="PropertyTypeID" />
-            </Principal>
-            <Dependent Role="Property">
-              <PropertyRef Name="PropertyTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1994,13 +2166,13 @@
           <EntitySetMapping Name="Addresses">
             <EntityTypeMapping TypeName="RealtorsPortalModel.Address">
               <MappingFragment StoreEntitySet="Address">
-                <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
                 <ScalarProperty Name="AddressID" ColumnName="AddressID" />
                 <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
                 <ScalarProperty Name="WardID" ColumnName="WardID" />
                 <ScalarProperty Name="Street" ColumnName="Street" />
                 <ScalarProperty Name="HouseNumber" ColumnName="HouseNumber" />
+                <ScalarProperty Name="FullAddress" ColumnName="FullAddress" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2063,6 +2235,15 @@
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="RealtorsPortalModel.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="ExchangeRate" ColumnName="ExchangeRate" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2193,13 +2374,55 @@
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="TransactionCode" ColumnName="TransactionCode" />
+                <ScalarProperty Name="ExternalTransactionId" ColumnName="ExternalTransactionId" />
+                <ScalarProperty Name="CurrencyCode" ColumnName="CurrencyCode" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentGateways">
+            <EntityTypeMapping TypeName="RealtorsPortalModel.PaymentGateway">
+              <MappingFragment StoreEntitySet="PaymentGateway">
+                <ScalarProperty Name="GatewayId" ColumnName="GatewayId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ApiKey" ColumnName="ApiKey" />
+                <ScalarProperty Name="SecretKey" ColumnName="SecretKey" />
+                <ScalarProperty Name="Endpoint" ColumnName="Endpoint" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentLogs">
+            <EntityTypeMapping TypeName="RealtorsPortalModel.PaymentLog">
+              <MappingFragment StoreEntitySet="PaymentLog">
+                <ScalarProperty Name="LogId" ColumnName="LogId" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="LogType" ColumnName="LogType" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentTransactions">
+            <EntityTypeMapping TypeName="RealtorsPortalModel.PaymentTransaction">
+              <MappingFragment StoreEntitySet="PaymentTransaction">
+                <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+                <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+                <ScalarProperty Name="ActionType" ColumnName="ActionType" />
+                <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+                <ScalarProperty Name="ResponseMessage" ColumnName="ResponseMessage" />
+                <ScalarProperty Name="RawResponse" ColumnName="RawResponse" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Properties">
             <EntityTypeMapping TypeName="RealtorsPortalModel.Property">
               <MappingFragment StoreEntitySet="Properties">
-                <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
                 <ScalarProperty Name="PropertyID" ColumnName="PropertyID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
@@ -2211,6 +2434,7 @@
                 <ScalarProperty Name="LegalStatus" ColumnName="LegalStatus" />
                 <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
                 <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2243,6 +2467,16 @@
                 <ScalarProperty Name="Caption" ColumnName="Caption" />
                 <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
                 <ScalarProperty Name="UploadedAt" ColumnName="UploadedAt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyTypes">
+            <EntityTypeMapping TypeName="RealtorsPortalModel.PropertyType">
+              <MappingFragment StoreEntitySet="PropertyType">
+                <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
+                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2301,16 +2535,6 @@
                 <ScalarProperty Name="DistrictID" ColumnName="DistrictID" />
                 <ScalarProperty Name="WardName" ColumnName="WardName" />
                 <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="PropertyTypes">
-            <EntityTypeMapping TypeName="RealtorsPortalModel.PropertyType">
-              <MappingFragment StoreEntitySet="PropertyType">
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-                <ScalarProperty Name="TypeName" ColumnName="TypeName" />
-                <ScalarProperty Name="PropertyTypeID" ColumnName="PropertyTypeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
