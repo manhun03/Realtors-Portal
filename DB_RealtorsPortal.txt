@@ -1,0 +1,408 @@
+CREATE TABLE UserAccount (
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    Username NVARCHAR(50) UNIQUE NOT NULL,
+    PasswordHash NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(100) UNIQUE NOT NULL,
+    Phone NVARCHAR(20) NULL,
+    Role NVARCHAR(20) NOT NULL 
+        CHECK (Role IN ('Admin', 'Employee', 'Customer', 'Agent')),
+    IsVerified BIT DEFAULT 0,                      -- Đã xác minh email hay chưa
+    VerificationCode NVARCHAR(10) NULL,            -- Mã xác minh email
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE(),
+    IsActive BIT DEFAULT 1
+);
+
+CREATE TABLE Employee (
+    EmployeeID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL UNIQUE,
+    FullName NVARCHAR(100) NOT NULL,
+    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID)
+);
+
+CREATE TABLE Customer (
+    CustomerID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL UNIQUE,
+    FullName NVARCHAR(100) NOT NULL,
+    Address NVARCHAR(255),
+    JoinDate DATETIME DEFAULT GETDATE(),
+    CustomerType NVARCHAR(50) 
+    	DEFAULT 'Customer'
+    	CHECK (CustomerType IN ('Customer', 'Agent')),
+    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID)
+);
+
+CREATE TABLE Package (
+    PackageID INT IDENTITY(1,1) PRIMARY KEY,
+    PackageName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(255),
+    PackageType NVARCHAR(20) NOT NULL 
+	CHECK (PackageType IN ('Membership', 'Listing')),
+    DurationDays INT NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    DiscountPercent INT DEFAULT 0,
+    Features NVARCHAR(MAX),
+    Multiplier INT DEFAULT 1,
+    IsActive BIT DEFAULT 1,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE()
+);
+
+INSERT INTO Package (PackageName, PackageType, DurationDays, Price, DiscountPercent, Features)
+VALUES 
+(N'Hội viên Cơ bản', 'Membership', 30, 517000, 0, N'15 tin thường, 15 lượt đẩy'),
+(N'Hội viên Tiêu chuẩn', 'Membership', 30, 1383000, 0, N'30 tin thường, 30 lượt đẩy'),
+(N'Hội viên Cao cấp', 'Membership', 30, 2833000, 0, N'50 tin thường, 50 lượt đẩy');
+
+INSERT INTO Package (PackageName, PackageType, DurationDays, Price, Multiplier)
+VALUES
+(N'VIP Kim Cương', 'Listing', 1, 282900, 30),
+(N'VIP Vàng', 'Listing', 1, 111200, 15),
+(N'VIP Bạc', 'Listing', 1, 50600, 8),
+(N'Tin Thường', 'Listing', 1, 0, 1);
+
+CREATE TABLE Contract (
+    ContractID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT NOT NULL,
+    PackageID INT NOT NULL,
+    StartDate DATETIME DEFAULT GETDATE(),
+    EndDate DATETIME NULL,
+    Status NVARCHAR(20) DEFAULT 'Active' CHECK (Status IN ('Active', 'Expired', 'Cancelled')),
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+    FOREIGN KEY (PackageID) REFERENCES Package(PackageID)
+);
+
+
+CREATE TABLE City (
+    CityID INT IDENTITY(1,1) PRIMARY KEY,
+    CityName NVARCHAR(100) NOT NULL,
+    IsActive BIT DEFAULT 1
+);
+
+CREATE TABLE District (
+    DistrictID INT IDENTITY(1,1) PRIMARY KEY,
+    CityID INT NOT NULL,
+    DistrictName NVARCHAR(100) NOT NULL,
+    IsActive BIT DEFAULT 1,
+    FOREIGN KEY (CityID) REFERENCES City(CityID)
+);
+
+CREATE TABLE Ward (
+    WardID INT IDENTITY(1,1) PRIMARY KEY,
+    DistrictID INT NOT NULL,
+    WardName NVARCHAR(100) NOT NULL,
+    IsActive BIT DEFAULT 1,
+    FOREIGN KEY (DistrictID) REFERENCES District(DistrictID)
+);
+
+CREATE TABLE Address (
+    AddressID INT IDENTITY(1,1) PRIMARY KEY,
+    CityID INT NOT NULL,
+    DistrictID INT NOT NULL,
+    WardID INT NOT NULL,
+    Street NVARCHAR(255) NULL,                 -- Số nhà, tên đường
+    HouseNumber NVARCHAR(50) NULL,
+    FullAddress AS 
+        (ISNULL(Street + ', ', '') + ISNULL(WardID, '') + ', ' 
+        + ISNULL(DistrictID, '') + ', ' + ISNULL(CityID, '')) PERSISTED,
+    FOREIGN KEY (CityID) REFERENCES City(CityID),
+    FOREIGN KEY (DistrictID) REFERENCES District(DistrictID),
+    FOREIGN KEY (WardID) REFERENCES Ward(WardID)
+);
+
+
+
+CREATE TABLE Category (
+    CategoryID INT IDENTITY(1,1) PRIMARY KEY,
+    CategoryName NVARCHAR(100) NOT NULL,
+    Description NVARCHAR(255) NULL,
+    ParentCategoryID INT NULL
+);
+
+CREATE TABLE Properties (
+    PropertyID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT NOT NULL,
+    CategoryID INT NULL,
+    AddressID INT NOT NULL,
+    Title NVARCHAR(255) NOT NULL,               -- Ví dụ: "Góc 2 MT CHDV 1/ thông xe..."
+    Description NVARCHAR(MAX) NULL,             -- Mô tả chi tiết
+    Price DECIMAL(18,2) NULL,                   -- 22000000000 (22 tỷ)
+    Area DECIMAL(10,2) NULL,                    -- 79.4 m²
+    LegalStatus NVARCHAR(100) NULL,             -- "Sổ đỏ / Sổ hồng"
+    PropertyType NVARCHAR(100) NULL,            -- "Nhà riêng", "Căn hộ dịch vụ"...
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID),
+    FOREIGN KEY (AddressID) REFERENCES Address(AddressID)
+);
+
+CREATE TABLE PropertyDetail (
+    PropertyDetailID INT IDENTITY(1,1) PRIMARY KEY,
+    PropertyID INT NOT NULL,
+    Bedrooms INT NULL,                           -- 16
+    Bathrooms INT NULL,                          -- nếu có
+    Floors INT NULL,                             -- 6
+    FrontWidth DECIMAL(5,2) NULL,                -- 5 (m)
+    Direction NVARCHAR(50) NULL,                 -- Tây - Bắc
+    Furniture NVARCHAR(100) NULL,                -- Cơ bản
+    HasBalcony BIT DEFAULT 0,
+    HasGarage BIT DEFAULT 0,
+    HasGarden BIT DEFAULT 0,
+    HasElevator BIT DEFAULT 0,
+    AdditionalInfo NVARCHAR(MAX) NULL,           -- Ghi chú: “Có 15 phòng trọ, 1 penhouse…”
+    FOREIGN KEY (PropertyID) REFERENCES Properties(PropertyID)
+);
+
+CREATE TABLE PropertyImage (
+    ImageID INT IDENTITY(1,1) PRIMARY KEY,
+    PropertyID INT NOT NULL,              -- Khóa ngoại tới Property
+    ImageUrl NVARCHAR(MAX) NOT NULL,      -- Đường dẫn ảnh (link hoặc file path)
+    IsMain BIT DEFAULT 0,                 -- 1: ảnh chính, 0: ảnh phụ
+    Caption NVARCHAR(255) NULL,           -- Mô tả ngắn ảnh (tuỳ chọn)
+    SortOrder INT DEFAULT 0,              -- Thứ tự hiển thị
+    UploadedAt DATETIME DEFAULT GETDATE(),-- Ngày tải lên
+
+    CONSTRAINT FK_PropertyImage_Properties FOREIGN KEY (PropertyID)
+        REFERENCES Properties(PropertyID) ON DELETE CASCADE
+);
+
+
+CREATE TABLE Listing (
+    ListingID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT NOT NULL,                       -- Người đăng tin
+    PackageID INT NULL,                            -- Gói tin (VIP, Thường...)
+    CategoryID INT NULL,                           -- Danh mục bất động sản
+    PropertyID INT NOT NULL,
+    Title NVARCHAR(200) NOT NULL,
+    Description NVARCHAR(MAX) NULL,
+    Price DECIMAL(18,2) NULL,
+    Location NVARCHAR(255) NULL,
+    CreatedAt DATETIME DEFAULT GETDATE(),          -- Ngày đăng
+    ApprovedAt DATETIME NULL,                      -- Ngày duyệt
+    ExpirationDate DATETIME NULL,                  -- Ngày hết hạn
+    Status NVARCHAR(20) DEFAULT 'Pending'
+        CHECK (Status IN ('Pending', 'Approved', 'Rejected', 'Expired')),
+    ViewCount INT DEFAULT 0,
+    BoostCount INT DEFAULT 0,
+    IsFeatured BIT DEFAULT 0,
+    EmployeeID INT NULL,                           -- Nhân viên duyệt tin
+    ApprovalNote NVARCHAR(255) NULL,               -- Ghi chú khi duyệt hoặc từ chối
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+    FOREIGN KEY (CategoryID) REFERENCES Category(CategoryID),
+    FOREIGN KEY (PackageID) REFERENCES Package(PackageID),
+    FOREIGN KEY (PropertyID) REFERENCES Properties(PropertyID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
+);
+
+
+
+CREATE TABLE Payment (
+    PaymentID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT NOT NULL,
+    ContractID INT NULL,                   -- Nếu thanh toán gói Membership
+    ListingID INT NULL,                    -- Nếu thanh toán khi đăng tin
+    PackageID INT NOT NULL,                -- Gói áp dụng (VIP, Thường...)
+    Amount DECIMAL(18,2) NOT NULL,
+    VAT DECIMAL(18,2) DEFAULT 0,
+    TotalAmount AS (Amount + VAT) PERSISTED,
+    PaymentMethod NVARCHAR(50) NULL,       -- Ví dụ: 'BankTransfer', 'VNPay'
+    PaymentDate DATETIME DEFAULT GETDATE(),
+    PaymentStatus NVARCHAR(20) DEFAULT 'Pending' 
+        CHECK (PaymentStatus IN ('Pending', 'Paid', 'Failed')),
+    DurationDays INT NULL,                 -- Thời lượng gói tin
+    StartDate DATETIME NULL,               -- Ngày bắt đầu hiển thị tin
+    EndDate DATETIME NULL,                 -- Ngày kết thúc
+    Description NVARCHAR(255) NULL,        -- Ghi chú (VD: Thanh toán tin VIP Vàng 15 ngày)
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID),
+    FOREIGN KEY (ContractID) REFERENCES Contract(ContractID),
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID),
+    FOREIGN KEY (PackageID) REFERENCES Package(PackageID)
+);
+CREATE TABLE SystemConfig (
+	ID INT IDENTITY(1,1) PRIMARY KEY,
+	ConfigKey VARCHAR(100) UNIQUE NOT NULL,
+	ConfigValue NVARCHAR(MAX) NOT NULL,
+	Description NVARCHAR(MAX),
+	ConfigType VARCHAR(10) NOT NULL DEFAULT 'string'
+		CHECK (ConfigType IN ('string', 'number', 'boolean', 'json')),
+	UpdatedBy INT NULL,
+	CreatedAt DATETIME DEFAULT GETDATE(),
+	FOREIGN KEY (UpdatedBy) REFERENCES Employee(EmployeeID)
+);
+
+CREATE TABLE Contact (
+    ContactID INT IDENTITY(1,1) PRIMARY KEY,
+
+    ListingID INT NOT NULL,                      -- Tin đăng mà khách hàng liên hệ
+    SenderCustomerID INT NULL,                   -- Người gửi (nếu có tài khoản)
+    ReceiverCustomerID INT NOT NULL,             -- Người nhận (người đăng tin)
+
+    SenderName NVARCHAR(100) NOT NULL,           -- Tên người gửi (nếu không đăng nhập)
+    SenderEmail NVARCHAR(255) NULL,
+    SenderPhone NVARCHAR(20) NULL,
+
+    Message NVARCHAR(MAX) NOT NULL,              -- Nội dung liên hệ
+    SentAt DATETIME DEFAULT GETDATE(),           -- Ngày giờ gửi
+
+    IsRead BIT DEFAULT 0,                        -- Người nhận đã đọc hay chưa
+    ResponseMessage NVARCHAR(MAX) NULL,          -- Phản hồi từ người bán/môi giới
+    ResponseAt DATETIME NULL,                    -- Thời gian phản hồi
+
+    Status NVARCHAR(20) DEFAULT 'Pending'
+        CHECK (Status IN ('Pending', 'Responded', 'Closed')),
+
+    -- Chỉ để 1 CASCADE, 2 quan hệ còn lại dùng NO ACTION / SET NULL
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID) ON DELETE CASCADE,
+    FOREIGN KEY (SenderCustomerID) REFERENCES Customer(CustomerID) ON DELETE SET NULL,
+    FOREIGN KEY (ReceiverCustomerID) REFERENCES Customer(CustomerID) ON DELETE NO ACTION
+);
+
+CREATE TABLE FavoriteListing (
+    FavoriteID INT IDENTITY(1,1) PRIMARY KEY,
+    CustomerID INT NOT NULL,
+    ListingID INT NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE,
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID) ON DELETE CASCADE,
+    CONSTRAINT UQ_Favorite UNIQUE (CustomerID, ListingID)   -- Không cho trùng
+);
+
+CREATE TABLE ActivityLog (
+    LogID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,                            -- Ai thực hiện
+    Action NVARCHAR(100) NOT NULL,                  -- Đăng tin / Xóa tin / Duyệt tin / Mua gói
+    EntityName NVARCHAR(50) NULL,                   -- Đối tượng tác động: Listing, Contract, Payment...
+    EntityID INT NULL,                              -- ID của đối tượng
+    Description NVARCHAR(MAX) NULL,                 -- Mô tả chi tiết hành động
+    CreatedAt DATETIME DEFAULT GETDATE(),           -- Ngày thực hiện
+    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID)
+);
+
+CREATE TABLE Notification (
+    NotificationID INT IDENTITY(1,1) PRIMARY KEY,
+    UserID INT NOT NULL,                             -- Người nhận thông báo
+    Title NVARCHAR(255) NOT NULL,                    -- Tiêu đề ngắn
+    Message NVARCHAR(MAX) NOT NULL,                  -- Nội dung chi tiết
+    Link NVARCHAR(255) NULL,                         -- Đường dẫn tới trang cụ thể (VD: /listing/123)
+    IsRead BIT DEFAULT 0,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (UserID) REFERENCES UserAccount(UserID) ON DELETE CASCADE
+);
+
+CREATE TABLE BoostHistory (
+    BoostID INT IDENTITY(1,1) PRIMARY KEY,
+    ListingID INT NOT NULL,
+    CustomerID INT NOT NULL,
+    BoostDate DATETIME DEFAULT GETDATE(),
+    BoostType NVARCHAR(50) DEFAULT 'Manual'         -- Manual / Auto / Promotion
+        CHECK (BoostType IN ('Manual', 'Auto', 'Promotion')),
+    Notes NVARCHAR(255) NULL,
+    FOREIGN KEY (ListingID) REFERENCES Listing(ListingID) ON DELETE CASCADE,
+    FOREIGN KEY (CustomerID) REFERENCES Customer(CustomerID) ON DELETE CASCADE
+);
+
+CREATE TABLE Invoice (
+    InvoiceID INT IDENTITY(1,1) PRIMARY KEY,
+    PaymentID INT NOT NULL,
+    InvoiceNumber NVARCHAR(50) UNIQUE NOT NULL,
+    IssueDate DATETIME DEFAULT GETDATE(),
+    TaxPercent DECIMAL(5,2) DEFAULT 8,
+    TotalAmount DECIMAL(18,2) NOT NULL,
+    FilePath NVARCHAR(255) NULL,               -- đường dẫn file PDF hóa đơn
+    FOREIGN KEY (PaymentID) REFERENCES Payment(PaymentID)
+);
+
+
+
+CREATE TABLE StaticPage (
+    PageID INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(200) NOT NULL,
+    Slug NVARCHAR(200) UNIQUE,
+    PageType NVARCHAR(50) NOT NULL,
+    Content NVARCHAR(MAX) NULL,
+    Thumbnail NVARCHAR(255) NULL,
+
+    CreatedBy INT NULL,
+    UpdatedBy INT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    UpdatedAt DATETIME DEFAULT GETDATE(),
+    Status NVARCHAR(20) DEFAULT 'Published'
+        CHECK (Status IN ('Published', 'Draft', 'Hidden')),
+    IsActive BIT DEFAULT 1,
+
+    CONSTRAINT FK_StaticPage_Employee_CreatedBy 
+        FOREIGN KEY (CreatedBy) REFERENCES Employee(EmployeeID) ON DELETE SET NULL,
+
+    CONSTRAINT FK_StaticPage_Employee_UpdatedBy 
+        FOREIGN KEY (UpdatedBy) REFERENCES Employee(EmployeeID) ON DELETE NO ACTION
+);
+
+CREATE INDEX IX_UserAccount_Email ON UserAccount(Email);
+CREATE INDEX IX_UserAccount_Role ON UserAccount(Role);
+CREATE INDEX IX_UserAccount_IsActive ON UserAccount(IsActive);
+
+CREATE INDEX IX_Customer_UserID ON Customer(UserID);
+CREATE INDEX IX_Customer_CustomerType ON Customer(CustomerType);
+CREATE INDEX IX_Employee_UserID ON Employee(UserID);
+
+
+CREATE INDEX IX_Package_PackageType ON Package(PackageType);
+CREATE INDEX IX_Package_IsActive ON Package(IsActive);
+CREATE INDEX IX_Contract_CustomerID ON Contract(CustomerID);
+CREATE INDEX IX_Contract_PackageID ON Contract(PackageID);
+CREATE INDEX IX_Contract_Status ON Contract(Status);
+
+CREATE INDEX IX_City_CityName ON City(CityName);
+CREATE INDEX IX_District_CityID ON District(CityID);
+CREATE INDEX IX_District_DistrictName ON District(DistrictName);
+CREATE INDEX IX_Ward_DistrictID ON Ward(DistrictID);
+CREATE INDEX IX_Ward_WardName ON Ward(WardName);
+CREATE INDEX IX_Address_FullAddress ON Address(FullAddress);
+
+CREATE INDEX IX_Category_ParentCategoryID ON Category(ParentCategoryID);
+CREATE INDEX IX_Properties_CustomerID ON Properties(CustomerID);
+CREATE INDEX IX_Properties_CategoryID ON Properties(CategoryID);
+CREATE INDEX IX_Properties_AddressID ON Properties(AddressID);
+CREATE INDEX IX_Properties_Price ON Properties(Price);
+CREATE INDEX IX_Properties_Area ON Properties(Area);
+
+CREATE INDEX IX_Listing_CustomerID ON Listing(CustomerID);
+CREATE INDEX IX_Listing_PackageID ON Listing(PackageID);
+CREATE INDEX IX_Listing_CategoryID ON Listing(CategoryID);
+CREATE INDEX IX_Listing_Status ON Listing(Status);
+CREATE INDEX IX_Listing_ExpirationDate ON Listing(ExpirationDate);
+CREATE INDEX IX_Listing_ApprovedAt ON Listing(ApprovedAt);
+CREATE INDEX IX_Listing_EmployeeID ON Listing(EmployeeID);
+CREATE INDEX IX_Listing_Price ON Listing(Price);
+
+CREATE INDEX IX_Payment_CustomerID ON Payment(CustomerID);
+CREATE INDEX IX_Payment_ContractID ON Payment(ContractID);
+CREATE INDEX IX_Payment_ListingID ON Payment(ListingID);
+CREATE INDEX IX_Payment_PackageID ON Payment(PackageID);
+CREATE INDEX IX_Payment_PaymentStatus ON Payment(PaymentStatus);
+CREATE INDEX IX_Payment_PaymentDate ON Payment(PaymentDate);
+
+CREATE INDEX IX_FavoriteListing_CustomerID ON FavoriteListing(CustomerID);
+CREATE INDEX IX_FavoriteListing_ListingID ON FavoriteListing(ListingID);
+CREATE INDEX IX_Contact_ListingID ON Contact(ListingID);
+CREATE INDEX IX_Contact_SenderCustomerID ON Contact(SenderCustomerID);
+CREATE INDEX IX_Contact_ReceiverCustomerID ON Contact(ReceiverCustomerID);
+CREATE INDEX IX_Contact_Status ON Contact(Status);
+
+CREATE INDEX IX_ActivityLog_UserID ON ActivityLog(UserID);
+CREATE INDEX IX_ActivityLog_Action ON ActivityLog(Action);
+CREATE INDEX IX_Notification_UserID ON Notification(UserID);
+CREATE INDEX IX_Notification_IsRead ON Notification(IsRead);
+
+CREATE INDEX IX_BoostHistory_ListingID ON BoostHistory(ListingID);
+CREATE INDEX IX_BoostHistory_CustomerID ON BoostHistory(CustomerID);
+CREATE INDEX IX_Invoice_PaymentID ON Invoice(PaymentID);
+CREATE INDEX IX_Invoice_InvoiceNumber ON Invoice(InvoiceNumber);
+
+
+CREATE INDEX IX_StaticPage_PageType ON StaticPage(PageType);
+CREATE INDEX IX_StaticPage_Status ON StaticPage(Status);
+CREATE INDEX IX_SystemConfig_ConfigKey ON SystemConfig(ConfigKey);
+
+
